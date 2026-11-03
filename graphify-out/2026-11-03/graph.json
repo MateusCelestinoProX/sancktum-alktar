@@ -8580,7 +8580,7 @@
       "file_type": "code",
       "norm_label": "author",
       "source_file": "package.json",
-      "source_location": "L20"
+      "source_location": "L19"
     },
     {
       "id": "package_description",
@@ -8602,7 +8602,7 @@
       "file_type": "code",
       "norm_label": "keywords",
       "source_file": "package.json",
-      "source_location": "L9"
+      "source_location": "L8"
     },
     {
       "id": "package_license",
@@ -8613,7 +8613,7 @@
       "file_type": "code",
       "norm_label": "license",
       "source_file": "package.json",
-      "source_location": "L21"
+      "source_location": "L20"
     },
     {
       "id": "package_name",
@@ -8636,17 +8636,6 @@
       "norm_label": "scripts",
       "source_file": "package.json",
       "source_location": "L5"
-    },
-    {
-      "id": "package_scripts_build",
-      "label": "build",
-      "_origin": "ast",
-      "community": 25,
-      "community_name": "package.json",
-      "file_type": "code",
-      "norm_label": "build",
-      "source_file": "package.json",
-      "source_location": "L7"
     },
     {
       "id": "package_scripts_dev",
@@ -8795,7 +8784,18 @@
       "file_type": "code",
       "norm_label": "headers",
       "source_file": "vercel.json",
-      "source_location": "L11"
+      "source_location": "L12"
+    },
+    {
+      "id": "vercel_outputdirectory",
+      "label": "outputDirectory",
+      "_origin": "ast",
+      "community": 32,
+      "community_name": "vercel.json",
+      "file_type": "code",
+      "norm_label": "outputdirectory",
+      "source_file": "vercel.json",
+      "source_location": "L5"
     },
     {
       "id": "vercel_rewrites",
@@ -8806,7 +8806,7 @@
       "file_type": "code",
       "norm_label": "rewrites",
       "source_file": "vercel.json",
-      "source_location": "L5"
+      "source_location": "L6"
     },
     {
       "id": "vercel_schema",
@@ -31408,6 +31408,17 @@
     },
     {
       "source": "package",
+      "target": "package_author",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "package.json",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "package",
       "target": "package_name",
       "relation": "contains",
       "_origin": "ast",
@@ -31419,24 +31430,13 @@
     },
     {
       "source": "package",
-      "target": "package_author",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "package.json",
-      "source_location": "L20",
-      "weight": 1.0
-    },
-    {
-      "source": "package",
       "target": "package_license",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L21",
+      "source_location": "L20",
       "weight": 1.0
     },
     {
@@ -31480,7 +31480,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L9",
+      "source_location": "L8",
       "weight": 1.0
     },
     {
@@ -31492,17 +31492,6 @@
       "confidence_score": 1.0,
       "source_file": "package.json",
       "source_location": "L6",
-      "weight": 1.0
-    },
-    {
-      "source": "package_scripts",
-      "target": "package_scripts_build",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "package.json",
-      "source_location": "L7",
       "weight": 1.0
     },
     {
@@ -31568,7 +31557,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "vercel.json",
-      "source_location": "L11",
+      "source_location": "L12",
       "weight": 1.0
     },
     {
@@ -31606,13 +31595,24 @@
     },
     {
       "source": "vercel",
-      "target": "vercel_rewrites",
+      "target": "vercel_outputdirectory",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "vercel.json",
       "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "vercel",
+      "target": "vercel_rewrites",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "vercel.json",
+      "source_location": "L6",
       "weight": 1.0
     },
     {
@@ -33278,5 +33278,6 @@
       "weight": 1.0
     }
   ],
-  "hyperedges": []
+  "hyperedges": [],
+  "built_at_commit": "e96ef0da00346b2a15f98e0d6d74300ea677dcd4"
 }

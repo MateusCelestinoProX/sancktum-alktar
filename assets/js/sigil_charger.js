@@ -43,12 +43,14 @@ class SigilChargerEngine {
     this.ytIframe = document.getElementById('hypnotic-yt-iframe');
 
     this.toggleChargeBtn = document.getElementById('toggle-charge-btn');
-    this.fullscreenBtn = document.getElementById('toggle-fullscreen-btn');
+    this.fullscreenBtn = document.getElementById('btn-fullscreen-top');
     this.patternSelect = document.getElementById('hypnotic-pattern-select');
 
     this.dropzone = document.getElementById('sigil-dropzone');
     this.fileInput = document.getElementById('sigil-file-input');
     this.resetSigilBtn = document.getElementById('reset-sigil-btn');
+
+    this.dockEnergizerBtn = document.getElementById('dock-btn-energizer');
 
     this.hypnoticEngine = new HypnoticStageEngine('hypnotic-stage-canvas');
   }
@@ -58,7 +60,7 @@ class SigilChargerEngine {
       this.toggleChargeBtn.addEventListener('click', () => this.toggleCharging());
     }
 
-    if (this.fullscreenBtn && this.stageContainer) {
+    if (this.fullscreenBtn) {
       this.fullscreenBtn.addEventListener('click', () => this.toggleFullscreen());
     }
 
@@ -132,8 +134,11 @@ class SigilChargerEngine {
     if (this.isCharging) {
       this.applyPattern(pattern);
       if (this.toggleChargeBtn) {
-        this.toggleChargeBtn.innerHTML = 'Pausar Energização';
-        this.toggleChargeBtn.classList.add('active-charging');
+        this.toggleChargeBtn.textContent = 'Pausar Energização';
+        this.toggleChargeBtn.classList.add('is-active-charging');
+      }
+      if (this.dockEnergizerBtn) {
+        this.dockEnergizerBtn.classList.add('is-active-btn');
       }
       if (altarHalo) {
         altarHalo.classList.add('is-energized');
@@ -148,8 +153,11 @@ class SigilChargerEngine {
         this.ytIframe.src = '';
       }
       if (this.toggleChargeBtn) {
-        this.toggleChargeBtn.innerHTML = 'Energizar Sigilo';
-        this.toggleChargeBtn.classList.remove('active-charging');
+        this.toggleChargeBtn.textContent = 'Iniciar Energização';
+        this.toggleChargeBtn.classList.remove('is-active-charging');
+      }
+      if (this.dockEnergizerBtn) {
+        this.dockEnergizerBtn.classList.remove('is-active-btn');
       }
       if (altarHalo) {
         altarHalo.classList.remove('is-energized');
@@ -225,9 +233,7 @@ class SigilChargerEngine {
 
             const imgData = ctx.getImageData(0, 0, w, h);
             const d = imgData.data;
-            const totalPixels = w * h;
 
-            // Análise luminosa para purificação do sigilo
             let borderSum = 0;
             let borderCount = 0;
             for (let x = 0; x < w; x += 4) {

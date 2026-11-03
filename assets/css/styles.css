@@ -12,7 +12,7 @@
 
   --glass-bg: rgba(255, 255, 255, 0.04);
   --glass-bg-hover: rgba(255, 255, 255, 0.08);
-  --glass-bg-active: rgba(255, 255, 255, 0.12);
+  --glass-bg-active: rgba(255, 255, 255, 0.14);
   --glass-border: 1px solid rgba(255, 255, 255, 0.13);
   --glass-border-bright: 1px solid rgba(255, 255, 255, 0.28);
   --glass-highlight: inset 0 1px 1px 0 rgba(255, 255, 255, 0.3), inset 0 -1px 1px 0 rgba(0, 0, 0, 0.6);
@@ -97,7 +97,7 @@ html, body {
   text-transform: uppercase;
   color: var(--text-pure);
   text-shadow: 0 0 25px rgba(255, 255, 255, 0.65), 0 0 60px rgba(255, 255, 255, 0.25);
-  margin-left: 0.45em; /* Compensate for tracking offset */
+  margin-left: 0.45em;
   animation: heroTitleReveal 2.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
@@ -158,6 +158,50 @@ html, body {
 }
 
 /* ==========================================================================
+   TOP FLOATING FULLSCREEN BUTTON
+   ========================================================================== */
+
+.glass-fullscreen-btn {
+  position: fixed;
+  top: 1.5rem;
+  right: 1.5rem;
+  z-index: 100;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.6rem 1.1rem;
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  border-radius: 9999px;
+  color: var(--text-silver);
+  font-family: var(--font-sacred);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-fullscreen-btn:hover {
+  background: var(--glass-bg-hover);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: var(--text-pure);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), 0 0 20px rgba(255, 255, 255, 0.15);
+  transform: translateY(-1px);
+}
+
+.glass-fullscreen-btn svg {
+  width: 15px;
+  height: 15px;
+  stroke: currentColor;
+}
+
+/* ==========================================================================
    ALTAR STAGE CONTAINER (FULLSCREEN VIEWPORT)
    ========================================================================== */
 
@@ -199,7 +243,7 @@ html, body {
   display: none;
   pointer-events: none;
   opacity: 0.85;
-  transform: scale(1.15); /* Eliminar bordas pretas do player */
+  transform: scale(1.15);
 }
 
 /* Camada Central dos Sigilos */
@@ -277,19 +321,19 @@ html, body {
 }
 
 /* ==========================================================================
-   MINIMALIST LIQUID GLASS DOCK (BOTTOM HUD CONTROLS)
+   MINIMALIST LIQUID GLASS DOCK (APENAS 2 BOTÕES)
    ========================================================================== */
 
 .altar-dock {
   position: fixed;
-  bottom: 2rem;
+  bottom: 2.2rem;
   left: 50%;
   transform: translateX(-50%);
   z-index: 100;
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  padding: 0.65rem 1rem;
+  gap: 0.85rem;
+  padding: 0.55rem 0.95rem;
   background: var(--glass-bg);
   backdrop-filter: var(--glass-blur);
   -webkit-backdrop-filter: var(--glass-blur);
@@ -301,7 +345,7 @@ html, body {
 
 .altar-dock:hover {
   background: var(--glass-bg-hover);
-  border-color: rgba(255, 255, 255, 0.22);
+  border-color: rgba(255, 255, 255, 0.24);
 }
 
 /* Botões do Dock */
@@ -311,104 +355,64 @@ html, body {
   outline: none;
   color: var(--text-silver);
   font-family: var(--font-sacred);
-  font-size: 0.82rem;
+  font-size: 0.88rem;
   font-weight: 600;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  padding: 0.6rem 1.15rem;
+  padding: 0.65rem 1.45rem;
   border-radius: 9999px;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
-  gap: 0.55rem;
+  justify-content: center;
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .glass-dock-btn:hover {
   color: var(--text-pure);
   background: rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
-.glass-dock-btn.primary-energize {
-  background: rgba(255, 255, 255, 0.12);
-  border: 1px solid rgba(255, 255, 255, 0.22);
+.glass-dock-btn.is-active-btn {
+  background: rgba(255, 255, 255, 0.14);
   color: var(--text-pure);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3);
-}
-
-.glass-dock-btn.primary-energize:hover {
-  background: rgba(255, 255, 255, 0.2);
-  border-color: rgba(255, 255, 255, 0.4);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), 0 0 25px rgba(255, 255, 255, 0.25);
-}
-
-.glass-dock-btn.primary-energize.active-charging {
-  background: rgba(255, 255, 255, 0.24);
-  border-color: rgba(255, 255, 255, 0.5);
-  box-shadow: 0 0 30px rgba(255, 255, 255, 0.35);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35), 0 0 20px rgba(255, 255, 255, 0.15);
 }
 
 .dock-divider {
   width: 1px;
-  height: 20px;
-  background: rgba(255, 255, 255, 0.14);
-}
-
-/* Select de Padrões Hipnóticos no Dock */
-.glass-select-input {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  border-radius: 9999px;
-  color: var(--text-silver);
-  font-family: var(--font-modern);
-  font-size: 0.8rem;
-  letter-spacing: 0.05em;
-  padding: 0.55rem 1rem;
-  outline: none;
-  cursor: pointer;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  transition: all 0.2s ease;
-}
-
-.glass-select-input:hover, .glass-select-input:focus {
-  border-color: rgba(255, 255, 255, 0.3);
-  color: var(--text-pure);
-  background: rgba(255, 255, 255, 0.1);
-}
-
-.glass-select-input option, .glass-select-input optgroup {
-  background: #09090e;
-  color: #e2e8f0;
+  height: 22px;
+  background: rgba(255, 255, 255, 0.16);
 }
 
 /* ==========================================================================
-   GLASS MODAL & SETTINGS PANEL
+   GLASS MODALS (BACKGROUNDS & ENERGIZADOR)
    ========================================================================== */
 
-#settings-modal {
+.glass-modal-backdrop {
   position: fixed;
   inset: 0;
   z-index: 500;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(0, 0, 0, 0.65);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  background: rgba(0, 0, 0, 0.68);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.35s ease;
 }
 
-#settings-modal.active {
+.glass-modal-backdrop.active {
   opacity: 1;
   pointer-events: all;
 }
 
 .glass-modal-card {
   width: min(92vw, 480px);
-  background: rgba(14, 14, 18, 0.78);
+  background: rgba(14, 14, 18, 0.82);
   border: var(--glass-border-bright);
   border-radius: 24px;
   box-shadow: 0 30px 80px rgba(0, 0, 0, 0.9), inset 0 1px 1px rgba(255, 255, 255, 0.25);
@@ -416,11 +420,11 @@ html, body {
   display: flex;
   flex-direction: column;
   gap: 1.6rem;
-  transform: translateY(20px) scale(0.97);
+  transform: translateY(22px) scale(0.97);
   transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-#settings-modal.active .glass-modal-card {
+.glass-modal-backdrop.active .glass-modal-card {
   transform: translateY(0) scale(1);
 }
 
@@ -484,7 +488,36 @@ html, body {
   color: var(--text-dim);
 }
 
-/* Slider de Vidro */
+/* Select de Vidro */
+.glass-select-input {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 12px;
+  color: var(--text-silver);
+  font-family: var(--font-modern);
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  padding: 0.75rem 1rem;
+  outline: none;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  width: 100%;
+  transition: all 0.2s ease;
+}
+
+.glass-select-input:hover, .glass-select-input:focus {
+  border-color: rgba(255, 255, 255, 0.3);
+  color: var(--text-pure);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.glass-select-input option, .glass-select-input optgroup {
+  background: #09090e;
+  color: #e2e8f0;
+}
+
+/* Sliders de Vidro */
 .glass-range-slider {
   -webkit-appearance: none;
   appearance: none;
@@ -544,29 +577,55 @@ html, body {
 
 .modal-footer {
   display: flex;
+  flex-direction: column;
   gap: 0.8rem;
   padding-top: 0.6rem;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
+/* Botões de Ação do Modal */
 .glass-action-btn {
-  flex: 1;
+  width: 100%;
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.16);
   color: var(--text-silver);
   font-family: var(--font-sacred);
-  font-size: 0.8rem;
-  letter-spacing: 0.12em;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  padding: 0.65rem 1rem;
-  border-radius: 10px;
+  padding: 0.85rem 1.2rem;
+  border-radius: 12px;
   cursor: pointer;
   transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .glass-action-btn:hover {
   background: rgba(255, 255, 255, 0.16);
   color: var(--text-pure);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.glass-action-btn.primary-highlight {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.35);
+  color: var(--text-pure);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 0 25px rgba(255, 255, 255, 0.15);
+}
+
+.glass-action-btn.primary-highlight:hover {
+  background: rgba(255, 255, 255, 0.24);
+  border-color: rgba(255, 255, 255, 0.5);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), 0 0 35px rgba(255, 255, 255, 0.25);
+}
+
+.glass-action-btn.is-active-charging {
+  background: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 0 35px rgba(255, 255, 255, 0.35);
 }
 
 /* ==========================================================================
@@ -575,23 +634,24 @@ html, body {
 
 @media (max-width: 640px) {
   .altar-dock {
-    width: min(94vw, 400px);
-    bottom: 1.25rem;
-    padding: 0.5rem 0.75rem;
-    gap: 0.5rem;
-    justify-content: space-between;
+    width: min(92vw, 360px);
+    bottom: 1.5rem;
+    padding: 0.45rem 0.75rem;
+    gap: 0.6rem;
+    justify-content: space-evenly;
   }
 
   .glass-dock-btn {
-    font-size: 0.75rem;
-    padding: 0.5rem 0.85rem;
-    letter-spacing: 0.1em;
+    font-size: 0.8rem;
+    padding: 0.55rem 1rem;
+    letter-spacing: 0.12em;
   }
 
-  .glass-select-input {
+  .glass-fullscreen-btn {
+    top: 1rem;
+    right: 1rem;
+    padding: 0.5rem 0.85rem;
     font-size: 0.72rem;
-    padding: 0.45rem 0.75rem;
-    max-width: 140px;
   }
 
   .hero-title {

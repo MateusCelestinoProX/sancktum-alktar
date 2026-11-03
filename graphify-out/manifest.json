@@ -18,9 +18,9 @@
     "semantic_hash": ""
   },
   "assets/js/sigil_charger.js": {
-    "mtime": 1793724791.385188,
-    "seen": 1793724933.703208,
-    "ast_hash": "9f9b51b845db6029af7e672d402369d1",
+    "mtime": 1793727074.090805,
+    "seen": 1793727149.139835,
+    "ast_hash": "95b7666691a56943c8ec798a23b7429e",
     "semantic_hash": ""
   },
   "assets/js/vendor/gsap.min.js": {
@@ -60,9 +60,9 @@
     "semantic_hash": ""
   },
   "index.html": {
-    "mtime": 1793724871.1040845,
-    "seen": 1793724933.703213,
-    "ast_hash": "b3fd16e2ad1ba47758f0ac2790156c2b",
+    "mtime": 1793727106.2198083,
+    "seen": 1793727149.1398468,
+    "ast_hash": "dda155f0ba6063914819de7f74ad9bd0",
     "semantic_hash": ""
   },
   "assets/images/sigils/sancktum_alktar_original.png": {

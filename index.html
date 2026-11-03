@@ -27,6 +27,16 @@
   </div>
 
   <!-- ===================================================================
+       BOTÃO DE TELA CHEIA (SUPERIOR DIREITO)
+       =================================================================== -->
+  <button type="button" class="glass-fullscreen-btn" id="btn-fullscreen-top" title="Alternar Tela Cheia">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/>
+    </svg>
+    <span>Tela Cheia</span>
+  </button>
+
+  <!-- ===================================================================
        PALCO PRINCIPAL / ALTAR DO SIGILO CENTRAL
        =================================================================== -->
   <main id="altar-stage-container">
@@ -41,64 +51,101 @@
   </main>
 
   <!-- ===================================================================
-       DOCK FLUTUANTE EM VIDRO LÍQUIDO (CONTROLES ESSENCIAIS)
+       DOCK FLUTUANTE EM VIDRO LÍQUIDO (ESTRITAMENTE 2 BOTÕES)
        =================================================================== -->
-  <nav class="altar-dock" aria-label="Controles do Altar">
-    <button type="button" class="glass-dock-btn primary-energize" id="toggle-charge-btn">
-      Energizar Sigilo
+  <nav class="altar-dock" aria-label="Navegação do Altar">
+    <button type="button" class="glass-dock-btn" id="dock-btn-energizer">
+      Energizador
     </button>
 
     <div class="dock-divider"></div>
 
-    <select class="glass-select-input" id="hypnotic-pattern-select" aria-label="Padrão Hipnótico">
-      <optgroup label="Shaders WebGL">
-        <option value="balatro">Balatro Esotérico</option>
-        <option value="ferrofluid">Ferrofluido Quântico</option>
-        <option value="metaballs">MetaBolas Alquímicas</option>
-        <option value="plasma">Plasma Astral</option>
-        <option value="splashcursor">Fluido Interativo</option>
-        <option value="prismaticburst">Dispersão Prismática</option>
-      </optgroup>
-      <optgroup label="Portais Hipnóticos">
-        <option value="yt_1">Portal Geométrico I</option>
-        <option value="yt_2">Vórtice Hipnótico II</option>
-        <option value="yt_3">Ondas Quânticas III</option>
-        <option value="yt_4">Geometria Sagrada IV</option>
-        <option value="yt_5">Portal de Luz V</option>
-        <option value="yt_6">Transe Ectoplasmático VI</option>
-        <option value="yt_7">Vórtice Astral VII</option>
-        <option value="yt_8">Freqüência Cósmica VIII</option>
-        <option value="yt_9">Fluxo Infinito IX</option>
-      </optgroup>
-    </select>
-
-    <div class="dock-divider"></div>
-
-    <button type="button" class="glass-dock-btn" id="open-settings-btn" title="Configurações do Altar">
-      Altar
-    </button>
-
-    <button type="button" class="glass-dock-btn" id="toggle-fullscreen-btn" title="Modo Tela Cheia">
-      Imersão
+    <button type="button" class="glass-dock-btn" id="dock-btn-backgrounds">
+      Backgrounds
     </button>
   </nav>
 
   <!-- ===================================================================
-       PAINEL MODAL DE AJUSTES DO ALTAR (VIDRO E MAGIA)
+       PAGE / MODAL: ENERGIZADOR DE SIGILOS
        =================================================================== -->
-  <div id="settings-modal" aria-hidden="true">
+  <div class="glass-modal-backdrop" id="modal-energizer" aria-hidden="true">
     <div class="glass-modal-card">
       <div class="modal-header">
-        <h2 class="modal-title">Ajustes do Altar</h2>
-        <button type="button" class="modal-close-btn" id="close-settings-btn" title="Fechar">✕</button>
+        <h2 class="modal-title">Energizador de Sigilos</h2>
+        <button type="button" class="modal-close-btn" id="close-energizer-btn" title="Fechar">✕</button>
       </div>
 
-      <!-- Fundo Cinematográfico -->
+      <!-- Botão de Ação Principal -->
+      <div class="setting-group">
+        <button type="button" class="glass-action-btn primary-highlight" id="toggle-charge-btn">
+          Iniciar Energização
+        </button>
+      </div>
+
+      <!-- Padrão Hipnótico -->
+      <div class="setting-group">
+        <div class="setting-label-row">
+          <label class="setting-title" for="hypnotic-pattern-select">Padrão Hipnótico de Transe</label>
+        </div>
+        <select class="glass-select-input" id="hypnotic-pattern-select">
+          <optgroup label="Shaders WebGL">
+            <option value="balatro">Balatro Esotérico</option>
+            <option value="ferrofluid">Ferrofluido Quântico</option>
+            <option value="metaballs">MetaBolas Alquímicas</option>
+            <option value="plasma">Plasma Astral</option>
+            <option value="splashcursor">Fluido Interativo</option>
+            <option value="prismaticburst">Dispersão Prismática</option>
+          </optgroup>
+          <optgroup label="Portais Hipnóticos">
+            <option value="yt_1">Portal Geométrico I</option>
+            <option value="yt_2">Vórtice Hipnótico II</option>
+            <option value="yt_3">Ondas Quânticas III</option>
+            <option value="yt_4">Geometria Sagrada IV</option>
+            <option value="yt_5">Portal de Luz V</option>
+            <option value="yt_6">Transe Ectoplasmático VI</option>
+            <option value="yt_7">Vórtice Astral VII</option>
+            <option value="yt_8">Freqüência Cósmica VIII</option>
+            <option value="yt_9">Fluxo Infinito IX</option>
+          </optgroup>
+        </select>
+      </div>
+
+      <!-- Upload de Sigilo Customizado -->
+      <div class="setting-group">
+        <div class="setting-label-row">
+          <span class="setting-title">Purificação de Sigilo Próprio</span>
+        </div>
+        <div class="sigil-upload-box" id="sigil-dropzone">
+          <div class="upload-hint-title">Arraste ou Clique para Enviar</div>
+          <p class="upload-hint-sub">PNG, JPG ou SVG. O fundo é isolado automaticamente para brilhar em vidro no Altar.</p>
+          <input type="file" id="sigil-file-input" accept="image/*" style="display: none;">
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="glass-action-btn" id="reset-sigil-btn">
+          Restaurar Sigilo Sancktum Alktar
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================================================================
+       PAGE / MODAL: BACKGROUNDS & ATMOSFERA
+       =================================================================== -->
+  <div class="glass-modal-backdrop" id="modal-backgrounds" aria-hidden="true">
+    <div class="glass-modal-card">
+      <div class="modal-header">
+        <h2 class="modal-title">Backgrounds & Atmosfera</h2>
+        <button type="button" class="modal-close-btn" id="close-backgrounds-btn" title="Fechar">✕</button>
+      </div>
+
+      <!-- Categoria de Fundo -->
       <div class="setting-group">
         <div class="setting-label-row">
           <label class="setting-title" for="bg-category-select">Atmosfera de Fundo</label>
         </div>
-        <select class="glass-select-input" id="bg-category-select" style="width: 100%;">
+        <select class="glass-select-input" id="bg-category-select">
           <option value="caosphere">Caosfera</option>
           <option value="celestial">Celestial</option>
           <option value="horror">Abissal</option>
@@ -109,7 +156,7 @@
       <!-- Escurecimento -->
       <div class="setting-group">
         <div class="setting-label-row">
-          <span class="setting-title">Escurecimento do Fundo</span>
+          <span class="setting-title">Escurecimento</span>
           <span class="setting-val" id="bg-dim-val">52%</span>
         </div>
         <input type="range" class="glass-range-slider" id="bg-dim-slider" min="0.1" max="0.9" step="0.05" value="0.52">
@@ -122,24 +169,6 @@
           <span class="setting-val" id="bg-blur-val">0px</span>
         </div>
         <input type="range" class="glass-range-slider" id="bg-blur-slider" min="0" max="20" step="1" value="0">
-      </div>
-
-      <!-- Upload Customizado de Sigilo -->
-      <div class="setting-group">
-        <div class="setting-label-row">
-          <span class="setting-title">Purificação de Sigilo Próprio</span>
-        </div>
-        <div class="sigil-upload-box" id="sigil-dropzone">
-          <div class="upload-hint-title">Arraste ou Clique para Carregar</div>
-          <p class="upload-hint-sub">PNG, JPG ou SVG. O fundo é isolado automaticamente para brilhar em vidro no Altar.</p>
-          <input type="file" id="sigil-file-input" accept="image/*" style="display: none;">
-        </div>
-      </div>
-
-      <div class="modal-footer">
-        <button type="button" class="glass-action-btn" id="reset-sigil-btn">
-          Restaurar Sigilo Sancktum
-        </button>
       </div>
     </div>
   </div>
@@ -157,7 +186,6 @@
       // 2. Transição Cinemática do Hero ao Recarregar
       const hero = document.getElementById('cinematic-hero');
       if (hero) {
-        // Exibe o Hero por 2.4s com tipografia sagrada e dissolve suavemente
         setTimeout(() => {
           hero.classList.add('fade-out');
           setTimeout(() => {
@@ -166,37 +194,59 @@
         }, 2200);
       }
 
-      // 3. Gerenciamento do Modal de Ajustes
-      const settingsModal = document.getElementById('settings-modal');
-      const openSettingsBtn = document.getElementById('open-settings-btn');
-      const closeSettingsBtn = document.getElementById('close-settings-btn');
+      // 3. Modais do Dock
+      const modalEnergizer = document.getElementById('modal-energizer');
+      const modalBackgrounds = document.getElementById('modal-backgrounds');
 
-      if (openSettingsBtn && settingsModal) {
-        openSettingsBtn.addEventListener('click', () => {
-          settingsModal.classList.add('active');
-          settingsModal.setAttribute('aria-hidden', 'false');
-        });
-      }
+      const btnEnergizer = document.getElementById('dock-btn-energizer');
+      const btnBackgrounds = document.getElementById('dock-btn-backgrounds');
 
-      const closeModal = () => {
-        if (settingsModal) {
-          settingsModal.classList.remove('active');
-          settingsModal.setAttribute('aria-hidden', 'true');
+      const closeEnergizerBtn = document.getElementById('close-energizer-btn');
+      const closeBackgroundsBtn = document.getElementById('close-backgrounds-btn');
+
+      const openModal = (modal) => {
+        closeAllModals();
+        if (modal) {
+          modal.classList.add('active');
+          modal.setAttribute('aria-hidden', 'false');
         }
       };
 
-      if (closeSettingsBtn) {
-        closeSettingsBtn.addEventListener('click', closeModal);
+      const closeAllModals = () => {
+        [modalEnergizer, modalBackgrounds].forEach(m => {
+          if (m) {
+            m.classList.remove('active');
+            m.setAttribute('aria-hidden', 'true');
+          }
+        });
+      };
+
+      if (btnEnergizer) {
+        btnEnergizer.addEventListener('click', () => openModal(modalEnergizer));
       }
 
-      if (settingsModal) {
-        settingsModal.addEventListener('click', (e) => {
-          if (e.target === settingsModal) closeModal();
-        });
+      if (btnBackgrounds) {
+        btnBackgrounds.addEventListener('click', () => openModal(modalBackgrounds));
       }
+
+      if (closeEnergizerBtn) {
+        closeEnergizerBtn.addEventListener('click', closeAllModals);
+      }
+
+      if (closeBackgroundsBtn) {
+        closeBackgroundsBtn.addEventListener('click', closeAllModals);
+      }
+
+      [modalEnergizer, modalBackgrounds].forEach(m => {
+        if (m) {
+          m.addEventListener('click', (e) => {
+            if (e.target === m) closeAllModals();
+          });
+        }
+      });
 
       document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') closeModal();
+        if (e.key === 'Escape') closeAllModals();
       });
     });
   </script>
