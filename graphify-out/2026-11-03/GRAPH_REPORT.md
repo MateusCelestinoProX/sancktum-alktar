@@ -1,45 +1,45 @@
 # Graph Report - sancktum-alktar  (2026-11-03)
 
 ## Corpus Check
-- 10 files · ~782,289 words
+- 12 files · ~783,639 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 737 nodes · 2094 edges · 63 communities (37 shown, 25 thin omitted)
+- 754 nodes · 2120 edges · 63 communities (51 shown, 11 thin omitted)
 - Extraction: 95% EXTRACTED · 5% INFERRED · 0% AMBIGUOUS · INFERRED: 111 edges (avg confidence: 0.85)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `51eccdeb`
+- Built from commit: `8fb58811`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
 ## Community Hubs (Navigation)
-- v2
-- add
+- aa
+- i
 - tailwindcss.js
 - gsap.min.js
-- i
-- K
-- ul
-- sort
+- stringify
+- has
+- Pf
+- Pl
 - remove
 - decl
 - push
-- cb
+- t
 - replace
 - r
 - BackgroundEngine
 - group
 - SigilChargerEngine
-- Vb
-- ca
-- hk
+- add
+- J
+- .toString
 - _deleteIfExpired
-- t
+- Tween
 - _d
-- showSourceCode
-- Vn
+- each
+- S
 - package.json
 - HypnoticStageEngine
 - ja
@@ -48,34 +48,34 @@
 - $p
 - SANCKTUM ALKTAR
 - vercel.json
+- AmbientSoundEngine
+- AlchemicalColorEngine
+- ul
 - k2
-- xe
+- Wa
+- dr
 - async
-- Pa
+- Sh
+- prefixQuery
+- some
+- cleanFromUnprefixed
 - ja
 - bo
 - checkMissedSemicolon
 - cm
 - gk
-- Ht
+- X
 - gR
 - ro
-- Ub
-- Ak
-- ao
+- jC
+- rangeBy
+- applyVariantOffset
 - Ba
 - bk
 - Ck
-- ES
 - gg
-- Gy
-- Ma
-- mS
-- nS
 - OC
-- qa
-- Rf
-- sS
+- r
 - zk
 
 ## God Nodes (most connected - your core abstractions)
@@ -105,79 +105,99 @@
 ## Import Cycles
 - None detected.
 
-## Communities (63 total, 25 thin omitted)
+## Communities (63 total, 11 thin omitted)
 
-### Community 0 - "v2"
-Cohesion: 0.14
-Nodes (14): aa(), ac(), b2(), bx(), Cl(), nn(), ol(), Sg() (+6 more)
+### Community 0 - "aa"
+Cohesion: 0.40
+Nodes (5): aa(), ac(), bx(), sn(), wx()
 
-### Community 1 - "add"
-Cohesion: 0.07
-Nodes (82): y(), _2(), add(), l(), o(), already(), as(), au() (+74 more)
+### Community 1 - "i"
+Cohesion: 0.09
+Nodes (37): y(), ax(), B(), comma(), d2(), i(), E(), ea() (+29 more)
 
 ### Community 2 - "tailwindcss.js"
 Cohesion: 0.03
-Nodes (21): Bh(), c(), clear(), cloneAfter(), contain3d(), displayType(), H5(), Hf() (+13 more)
+Nodes (21): Ak(), ao(), ES(), go(), Gy(), Ht(), jp(), Ma() (+13 more)
 
 ### Community 3 - "gsap.min.js"
 Cohesion: 0.06
-Nodes (13): ee(), Kd(), la(), Ld(), ma(), Md(), na(), Od() (+5 more)
+Nodes (8): la(), ma(), na(), Q(), Ub(), Vb(), ve(), wd()
 
-### Community 4 - "i"
-Cohesion: 0.15
-Nodes (23): content(), css(), dp(), i(), ei(), getAsyncError(), getIterator(), getProxyProcessor() (+15 more)
+### Community 4 - "stringify"
+Cohesion: 0.16
+Nodes (21): content(), css(), dp(), getAsyncError(), getIterator(), getProxyProcessor(), handleError(), map() (+13 more)
 
-### Community 5 - "K"
-Cohesion: 0.08
-Nodes (36): _a(), applyParallelOffset(), arbitraryProperty(), ax(), Bf(), create(), Eh(), en() (+28 more)
+### Community 5 - "has"
+Cohesion: 0.06
+Nodes (64): _a(), applyParallelOffset(), as(), b2(), Bf(), ca(), Cl(), cs() (+56 more)
 
-### Community 6 - "ul"
-Cohesion: 0.09
-Nodes (29): br(), comma(), cx(), dx(), ec(), F_(), Fh(), fS() (+21 more)
+### Community 6 - "Pf"
+Cohesion: 0.12
+Nodes (21): clear(), cx(), dx(), ec(), fx(), gx(), Hs(), hx() (+13 more)
 
-### Community 7 - "sort"
-Cohesion: 0.15
-Nodes (14): applyVariantOffset(), compare(), dm(), eE(), hm(), Lh(), qh(), QS() (+6 more)
+### Community 7 - "Pl"
+Cohesion: 0.20
+Nodes (12): _2(), E2(), O2(), Pl(), qh(), QS(), recalculateVariantOffsets(), remapArbitraryVariantOffsets() (+4 more)
 
 ### Community 8 - "remove"
-Cohesion: 0.06
-Nodes (59): after(), append(), before(), beforeAfter(), block(), body(), calcBefore(), Cc() (+51 more)
+Cohesion: 0.18
+Nodes (17): before(), check(), Gl(), Hl(), isHack(), isNot(), isOr(), isProp() (+9 more)
 
 ### Community 9 - "decl"
 Cohesion: 0.07
-Nodes (40): An(), atrule(), comment(), constructor(), createTokenizer(), da(), decl(), emptyRule() (+32 more)
+Nodes (43): An(), atrule(), beforeAfter(), block(), body(), calcBefore(), cleanBrackets(), comment() (+35 more)
 
 ### Community 10 - "push"
-Cohesion: 0.10
-Nodes (29): Jd(), Ah(), BC(), c2(), cleanFromUnprefixed(), cleanOtherPrefixes(), cloneDiv(), colorStops() (+21 more)
+Cohesion: 0.09
+Nodes (37): after(), append(), BC(), c2(), Cc(), clone(), cloneAfter(), cloneDiv() (+29 more)
 
-### Community 11 - "cb"
-Cohesion: 0.29
-Nodes (7): Ab(), Bb(), cb(), Context(), Ew(), fb(), zb()
+### Community 11 - "t"
+Cohesion: 0.16
+Nodes (15): Ab(), Bb(), cb(), Context(), Ec(), Ew(), fb(), Fc() (+7 more)
 
 ### Community 12 - "replace"
-Cohesion: 0.06
-Nodes (55): addToError(), Ae(), cy(), $d(), Dl(), dy(), error(), fromOffset() (+47 more)
+Cohesion: 0.13
+Nodes (18): addToError(), isStretch(), Md(), possible(), prefixeds(), rawBeforeClose(), rawBeforeComment(), rawBeforeOpen() (+10 more)
 
 ### Community 13 - "r"
-Cohesion: 0.16
-Nodes (19): _a(), ac(), Bo(), db(), ea(), eb(), ga(), gb() (+11 more)
+Cohesion: 0.23
+Nodes (13): _a(), ac(), Bo(), db(), ea(), eb(), ga(), r() (+5 more)
 
 ### Community 15 - "group"
 Cohesion: 0.33
 Nodes (6): group(), otherPrefixes(), parentPrefix(), prefixes(), unprefixed(), withPrefix()
 
-### Community 20 - "_deleteIfExpired"
+### Community 17 - "add"
 Cohesion: 0.18
-Nodes (11): _deleteIfExpired(), _emitEvictions(), _entriesAscending(), entriesDescending(), _getItemValue(), _getOrDeleteIfExpired(), _moveToRecent(), _peek() (+3 more)
+Nodes (19): add(), already(), checkForWarning(), cloneBefore(), contain3d(), disabled(), disabledDecl(), disabledValue() (+11 more)
 
-### Community 21 - "t"
-Cohesion: 0.15
-Nodes (17): _assertThisInitialized(), Ec(), Fc(), gc(), ka(), qa(), t(), tb() (+9 more)
+### Community 18 - "J"
+Cohesion: 0.14
+Nodes (17): arbitraryProperty(), Bh(), cr(), create(), Eh(), forVariant(), J(), o() (+9 more)
+
+### Community 19 - ".toString"
+Cohesion: 0.18
+Nodes (14): cy(), dy(), error(), fromOffset(), fy(), G2(), mh(), Nt() (+6 more)
+
+### Community 20 - "_deleteIfExpired"
+Cohesion: 0.22
+Nodes (9): _deleteIfExpired(), _emitEvictions(), _entriesAscending(), entriesDescending(), _getOrDeleteIfExpired(), _moveToRecent(), resize(), _set() (+1 more)
+
+### Community 21 - "Tween"
+Cohesion: 0.27
+Nodes (10): _assertThisInitialized(), gc(), qa(), Timeline(), Tween(), ua(), va(), w() (+2 more)
 
 ### Community 22 - "_d"
 Cohesion: 0.29
 Nodes (10): be(), _d(), fa(), ia(), ie(), je(), ke(), le() (+2 more)
+
+### Community 23 - "each"
+Cohesion: 0.26
+Nodes (12): each(), index(), insertAfter(), insertBefore(), IS(), markDirty(), pr(), Qt() (+4 more)
+
+### Community 24 - "S"
+Cohesion: 0.18
+Nodes (10): $d(), Jn(), nd(), Qf(), rawBeforeDecl(), rawColon(), replaceWith(), S() (+2 more)
 
 ### Community 25 - "package.json"
 Cohesion: 0.22
@@ -207,21 +227,41 @@ Nodes (5): Deploy na Vercel, Estrutura do Projeto, Estética Sagrada, SANCKTUM A
 Cohesion: 0.29
 Nodes (6): cleanUrls, headers, outputDirectory, rewrites, $schema, trailingSlash
 
+### Community 35 - "ul"
+Cohesion: 0.40
+Nodes (6): br(), ly(), pm(), ul(), uy(), zl()
+
 ### Community 36 - "k2"
 Cohesion: 0.33
 Nodes (6): Ig(), k2(), Ne(), qg(), Rl(), Y2()
 
-### Community 38 - "xe"
-Cohesion: 0.50
-Nodes (4): Ud(), vd(), we(), xe()
+### Community 37 - "Wa"
+Cohesion: 0.40
+Nodes (5): hb(), lb(), oa(), ob(), Wa()
+
+### Community 38 - "dr"
+Cohesion: 0.14
+Nodes (15): ee(), Jd(), Kd(), Ld(), Md(), Od(), Sd(), Td() (+7 more)
 
 ### Community 39 - "async"
 Cohesion: 0.67
 Nodes (4): async(), catch(), finally(), then()
 
-### Community 42 - "Pa"
+### Community 40 - "Sh"
+Cohesion: 0.70
+Nodes (5): Ah(), g_(), jo(), Sh(), y_()
+
+### Community 41 - "prefixQuery"
+Cohesion: 0.50
+Nodes (4): clean(), div(), prefixName(), prefixQuery()
+
+### Community 42 - "some"
+Cohesion: 0.14
+Nodes (20): l(), o(), au(), c(), Fg(), jg(), L2(), Mo() (+12 more)
+
+### Community 43 - "cleanFromUnprefixed"
 Cohesion: 0.67
-Nodes (3): OA(), Pa(), wk()
+Nodes (4): cleanFromUnprefixed(), cleanOtherPrefixes(), findProp(), prefix()
 
 ### Community 44 - "ja"
 Cohesion: 0.67
@@ -243,9 +283,9 @@ Nodes (3): cm(), mm(), rE()
 Cohesion: 0.67
 Nodes (3): gk(), Np(), yk()
 
-### Community 49 - "Ht"
-Cohesion: 0.67
-Nodes (3): go(), Ht(), sr()
+### Community 49 - "X"
+Cohesion: 0.50
+Nodes (4): dm(), eE(), hm(), X()
 
 ### Community 50 - "gR"
 Cohesion: 1.00
@@ -255,25 +295,41 @@ Nodes (3): gR(), M0(), Yu()
 Cohesion: 0.67
 Nodes (3): LS(), ro(), To()
 
+### Community 52 - "jC"
+Cohesion: 0.50
+Nodes (4): jC(), NC(), Once(), removeAll()
+
+### Community 53 - "rangeBy"
+Cohesion: 0.83
+Nodes (4): positionBy(), positionInside(), rangeBy(), Wr()
+
+### Community 54 - "applyVariantOffset"
+Cohesion: 0.67
+Nodes (3): applyVariantOffset(), compare(), Lh()
+
+### Community 66 - "r"
+Cohesion: 0.23
+Nodes (12): Ae(), Dl(), Gs(), a(), Je(), Os(), $r(), Rf() (+4 more)
+
 ## Knowledge Gaps
 - **17 isolated node(s):** `name`, `version`, `description`, `dev`, `keywords` (+12 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 104 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
-- **25 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 108 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **11 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `t()` connect `t` to `add`, `tailwindcss.js`, `gsap.min.js`, `i`, `zk`, `ul`, `remove`, `decl`, `cb`, `replace`, `r`, `gk`?**
-  _High betweenness centrality (0.173) - this node is a cross-community bridge._
-- **Why does `dr()` connect `add` to `tailwindcss.js`, `gsap.min.js`, `i`, `xe`, `remove`, `push`, `replace`, `_d`?**
+- **Why does `t()` connect `t` to `i`, `tailwindcss.js`, `gsap.min.js`, `r`, `has`, `Pf`, `stringify`, `zk`, `decl`, `push`, `gk`, `Tween`?**
+  _High betweenness centrality (0.166) - this node is a cross-community bridge._
+- **Why does `dr()` connect `dr` to `i`, `tailwindcss.js`, `has`, `some`, `replace`, `add`, `J`, `_d`, `each`, `S`?**
   _High betweenness centrality (0.019) - this node is a cross-community bridge._
-- **Why does `J()` connect `add` to `tailwindcss.js`, `gsap.min.js`, `K`, `push`, `replace`?**
+- **Why does `J()` connect `J` to `i`, `tailwindcss.js`, `r`, `has`, `dr`, `Pf`, `some`, `push`, `add`?**
   _High betweenness centrality (0.010) - this node is a cross-community bridge._
 - **Are the 4 inferred relationships involving `add()` (e.g. with `l()` and `i()`) actually correct?**
   _`add()` has 4 INFERRED edges - model-reasoned connections that need verification._
 - **What connects `name`, `version`, `description` to the rest of the system?**
   _17 weakly-connected nodes found - possible documentation gaps or missing edges._
-- **Should `v2` be split into smaller, more focused modules?**
-  _Cohesion score 0.14285714285714285 - nodes in this community are weakly interconnected._
-- **Should `add` be split into smaller, more focused modules?**
-  _Cohesion score 0.07086834733893557 - nodes in this community are weakly interconnected._
+- **Should `i` be split into smaller, more focused modules?**
+  _Cohesion score 0.09041835357624832 - nodes in this community are weakly interconnected._
+- **Should `tailwindcss.js` be split into smaller, more focused modules?**
+  _Cohesion score 0.031469825990373936 - nodes in this community are weakly interconnected._

@@ -24,7 +24,7 @@ class SigilChargerEngine {
       yt_2: 'wx1zn2BzJXA',
       yt_3: '4ZiTrVxEQ-U',
       yt_4: 'MagELQywiGI',
-      yt_5: 'M5vi8vNKq0E',
+      yt_5: 'n_KqI7g44-4',
       yt_6: 'wjQq0nSGS28',
       yt_7: 'hOgVAYpHPCc',
       yt_8: 'uP2W7trXBPQ',
@@ -197,7 +197,10 @@ class SigilChargerEngine {
       const videoId = this.ytVideos[pattern] || '4m58zTmoqkw';
       if (this.hypnoticEngine) this.hypnoticEngine.stop();
       if (this.ytIframe) {
-        this.ytIframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}&controls=0&showinfo=0&autohide=1`;
+        const origin = window.location.origin || 'https://sancktum-alktar.vercel.app';
+        this.ytIframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
+        this.ytIframe.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
+        this.ytIframe.src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}&controls=0&showinfo=0&rel=0&iv_load_policy=3&enablejsapi=1&origin=${encodeURIComponent(origin)}`;
         this.ytIframe.style.display = 'block';
       }
     } else {
