@@ -1,0 +1,22 @@
+{
+  "name": "sancktum-alktar",
+  "version": "1.0.0",
+  "description": "SANCKTUM ALKTAR — Altar Digital & Energizador de Sigilos em Vidro e Magia",
+  "scripts": {
+    "dev": "bunx serve .",
+    "build": "echo 'Static deployment ready for Vercel'"
+  },
+  "keywords": [
+    "sancktum",
+    "alktar",
+    "altar",
+    "sigil",
+    "magic",
+    "glassmorphism",
+    "liquid-glass",
+    "esoteric",
+    "vercel"
+  ],
+  "author": "Mateus Celestino <202405039459@alunos.estacio.br>",
+  "license": "MIT"
+}

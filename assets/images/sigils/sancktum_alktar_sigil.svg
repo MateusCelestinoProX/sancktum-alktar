@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 400" width="100%" height="100%" fill="none" stroke="#ffffff" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round">
+  <defs>
+    <filter id="sigil-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="blur1" />
+      <feGaussianBlur stdDeviation="8" result="blur2" />
+      <feMerge>
+        <feMergeNode in="blur2" />
+        <feMergeNode in="blur1" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <g filter="url(#sigil-glow)">
+    <!-- Top Sacred Circle -->
+    <circle cx="100" cy="80" r="45" />
+
+    <!-- Horizontal line in left hemisphere of circle -->
+    <line x1="55" y1="80" x2="100" y2="80" />
+
+    <!-- Central Vertical Staff / Axis -->
+    <line x1="100" y1="35" x2="100" y2="340" />
+
+    <!-- Bottom Crossed Star Lines -->
+    <line x1="50" y1="280" x2="150" y2="350" />
+    <line x1="150" y1="280" x2="50" y2="350" />
+
+    <!-- Horizontal Base Bar -->
+    <line x1="35" y1="310" x2="165" y2="310" />
+
+    <!-- Lower Chevron / Base Foundation -->
+    <polyline points="70,310 100,345 130,310" />
+    <polyline points="50,335 70,310" />
+    <polyline points="150,335 130,310" />
+  </g>
+</svg>
