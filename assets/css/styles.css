@@ -259,8 +259,8 @@ html, body {
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  width: min(80vw, 400px) !important;
-  height: min(80vw, 400px) !important;
+  width: min(78vw, 52vh, 380px) !important;
+  height: min(78vw, 52vh, 380px) !important;
   aspect-ratio: 1 / 1 !important;
   pointer-events: none;
 }
