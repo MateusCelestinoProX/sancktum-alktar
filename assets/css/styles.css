@@ -233,16 +233,17 @@ html, body {
   transition: opacity 1.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Quando energizando, o background do sistema é completamente invisível */
+/* Quando energizando, o background do sistema é mantido 100% visível e cinematográfico */
 body.is-energizing #cinematic-bg-container {
-  opacity: 0 !important;
-  visibility: hidden !important;
+  opacity: 1 !important;
+  visibility: visible !important;
   pointer-events: none !important;
-  transition: opacity 0.8s ease, visibility 0.8s ease !important;
+  filter: brightness(0.85);
+  transition: filter 0.8s ease !important;
 }
 
 #altar-stage-container.stage-energized {
-  background: #000000 !important;
+  background: transparent !important;
 }
 
 #altar-stage-container.stage-energized .hypnotic-canvas {

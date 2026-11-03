@@ -53,7 +53,7 @@ class SigilChargerEngine {
     this.dockEnergizerBtn = document.getElementById('dock-btn-energizer');
 
     try {
-      this.hypnoticEngine = new HypnoticStageEngine('hypnotic-stage-canvas');
+      this.hypnoticEngine = new HypnoticStageEngine('hypnotic-stage-canvas', 'hypnotic-2d-canvas');
     } catch (err) {
       console.warn('HypnoticStageEngine init warning:', err);
     }
@@ -155,9 +155,9 @@ class SigilChargerEngine {
         this.stageContainer.classList.add('stage-energized');
       }
 
-      // Ocultar background do sistema e pausar slideshow
-      if (window.backgroundEngine && typeof window.backgroundEngine.pauseSlideshow === 'function') {
-        window.backgroundEngine.pauseSlideshow();
+      // O background do sistema permanece visível e ativo em harmonia com a energia
+      if (window.backgroundEngine && typeof window.backgroundEngine.resumeSlideshow === 'function') {
+        window.backgroundEngine.resumeSlideshow();
       }
 
       // Auto-fechar janela do energizador conforme ordem do usuário
