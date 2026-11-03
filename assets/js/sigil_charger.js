@@ -18,17 +18,15 @@ class SigilChargerEngine {
     this.hypnoticEngine = null;
     this.isCharging = false;
 
-    // 9 Vídeos Hipnóticos de Gnose do YouTube
+    // Portais Hipnóticos do YouTube (Vídeos selecionados + 1 de Velas Rituais)
     this.ytVideos = {
-      yt_1: '4m58zTmoqkw',
-      yt_2: 'wx1zn2BzJXA',
-      yt_3: '4ZiTrVxEQ-U',
-      yt_4: 'MagELQywiGI',
-      yt_5: 'n_KqI7g44-4',
-      yt_6: 'wjQq0nSGS28',
-      yt_7: 'hOgVAYpHPCc',
-      yt_8: 'uP2W7trXBPQ',
-      yt_9: 'XrDUTpeGW0A'
+      yt_1: 'QxzU3FBy57k',
+      yt_2: 'JKe0gryiCCw',
+      yt_3: 'R2PiVXjanws',
+      yt_4: 'L1vrPpM4eyM',
+      yt_5: 'J0YZQNgkf9Y',
+      yt_6: 'p_gv1JQ3OiA',
+      yt_7: 'XrDUTpeGW0A'
     };
 
     this.initElements();
