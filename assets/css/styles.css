@@ -426,9 +426,9 @@ body.is-energizing #cinematic-bg-container {
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  background: rgba(2, 2, 5, 0.75) !important;
-  backdrop-filter: blur(20px) !important;
-  -webkit-backdrop-filter: blur(20px) !important;
+  background: rgba(2, 2, 5, 0.35) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
   opacity: 0 !important;
   visibility: hidden !important;
   pointer-events: none !important;
@@ -775,11 +775,11 @@ body.is-energizing #cinematic-bg-container {
   box-shadow: 0 0 20px var(--swatch-color), inset 0 0 0 2px rgba(0, 0, 0, 0.5);
 }
 
-/* Modais: Escurecimento Absoluto no Energizador */
+/* Modais: Transparência em Vidro Líquido para Manter o Background Visível */
 #modal-energizer {
-  backdrop-filter: blur(32px) brightness(0.2) !important;
-  -webkit-backdrop-filter: blur(32px) brightness(0.2) !important;
-  background: rgba(3, 3, 6, 0.94) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+  background: rgba(2, 2, 5, 0.35) !important;
 }
 
 .glass-action-btn.is-active-btn {
