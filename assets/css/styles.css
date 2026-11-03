@@ -791,6 +791,55 @@ body.is-energizing #cinematic-bg-container {
 }
 
 /* ==========================================================================
+   MODO FULLSCREEN PURIFICADO (APENAS O SIGILO E O BOTÃO DE TELA CHEIA VISÍVEIS)
+   ========================================================================== */
+body.is-fullscreen #btn-sound-top,
+:fullscreen #btn-sound-top,
+:-webkit-full-screen #btn-sound-top,
+body.is-fullscreen .altar-dock,
+:fullscreen .altar-dock,
+:-webkit-full-screen .altar-dock,
+body.is-fullscreen .glass-modal-backdrop,
+:fullscreen .glass-modal-backdrop,
+:-webkit-full-screen .glass-modal-backdrop {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  transform: translateY(40px) !important;
+  transition: opacity 0.4s ease, visibility 0.4s ease, transform 0.4s ease !important;
+}
+
+body.is-fullscreen #btn-fullscreen-top,
+:fullscreen #btn-fullscreen-top,
+:-webkit-full-screen #btn-fullscreen-top {
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+  background: rgba(8, 8, 14, 0.45) !important;
+  border-color: rgba(255, 255, 255, 0.22) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6) !important;
+}
+
+body.is-fullscreen #btn-fullscreen-top:hover,
+:fullscreen #btn-fullscreen-top:hover,
+:-webkit-full-screen #btn-fullscreen-top:hover {
+  background: rgba(18, 18, 28, 0.75) !important;
+  border-color: rgba(255, 255, 255, 0.4) !important;
+}
+
+body.is-fullscreen .fullscreen-icon-enter,
+:fullscreen .fullscreen-icon-enter,
+:-webkit-full-screen .fullscreen-icon-enter {
+  display: none !important;
+}
+
+body.is-fullscreen .fullscreen-icon-exit,
+:fullscreen .fullscreen-icon-exit,
+:-webkit-full-screen .fullscreen-icon-exit {
+  display: inline-block !important;
+}
+
+/* ==========================================================================
    MOBILE & RESPONSIVE REFINEMENTS
    ========================================================================== */
 

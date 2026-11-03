@@ -320,10 +320,13 @@
        BOTÃO DE TELA CHEIA (SUPERIOR DIREITO)
        =================================================================== -->
   <button type="button" class="glass-fullscreen-btn" id="btn-fullscreen-top" onclick="window.toggleAltarFullscreen()" title="Alternar Tela Cheia">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <svg class="fullscreen-icon-enter" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
       <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/>
     </svg>
-    <span>Tela Cheia</span>
+    <svg class="fullscreen-icon-exit" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+      <path d="M8 3v3a2 2 0 0 1-2 2H3m18 0h-3a2 2 0 0 1-2-2V3m0 18v-3a2 2 0 0 1 2-2h3M3 16h3a2 2 0 0 1 2 2v3"/>
+    </svg>
+    <span id="fullscreen-btn-text">Tela Cheia</span>
   </button>
 
   <!-- ===================================================================
@@ -529,23 +532,59 @@
       }
     };
 
+    window.updateFullscreenUI = function() {
+      const isFs = !!(document.fullscreenElement || document.webkitFullscreenElement || document.body.classList.contains('is-fullscreen'));
+      document.body.classList.toggle('is-fullscreen', isFs);
+      const fsText = document.getElementById('fullscreen-btn-text');
+      if (fsText) {
+        fsText.textContent = isFs ? 'Sair da Tela Cheia' : 'Tela Cheia';
+      }
+      if (isFs && typeof window.closeAllAltarModals === 'function') {
+        window.closeAllAltarModals();
+      }
+    };
+
+    document.addEventListener('fullscreenchange', window.updateFullscreenUI);
+    document.addEventListener('webkitfullscreenchange', window.updateFullscreenUI);
+
     window.toggleAltarFullscreen = function() {
       try {
-        if (!document.fullscreenElement && !document.webkitFullscreenElement) {
+        const isCurrentlyFs = !!(document.fullscreenElement || document.webkitFullscreenElement || document.body.classList.contains('is-fullscreen'));
+        if (!isCurrentlyFs) {
           if (document.documentElement.requestFullscreen) {
-            document.documentElement.requestFullscreen();
+            document.documentElement.requestFullscreen().then(() => {
+              window.updateFullscreenUI();
+            }).catch(() => {
+              document.body.classList.add('is-fullscreen');
+              window.updateFullscreenUI();
+            });
           } else if (document.documentElement.webkitRequestFullscreen) {
             document.documentElement.webkitRequestFullscreen();
+            window.updateFullscreenUI();
+          } else {
+            document.body.classList.add('is-fullscreen');
+            window.updateFullscreenUI();
           }
         } else {
           if (document.exitFullscreen) {
-            document.exitFullscreen();
+            document.exitFullscreen().then(() => {
+              window.updateFullscreenUI();
+            }).catch(() => {
+              document.body.classList.remove('is-fullscreen');
+              window.updateFullscreenUI();
+            });
           } else if (document.webkitExitFullscreen) {
             document.webkitExitFullscreen();
+            window.updateFullscreenUI();
+          } else {
+            document.body.classList.remove('is-fullscreen');
+            window.updateFullscreenUI();
           }
         }
       } catch (e) {
-        console.warn('Fullscreen não suportado ou negado:', e);
+        console.warn('Fullscreen fallback:', e);
+        document.body.classList.toggle('is-fullscreen');
+        window.updateFullscreenUI();
       }
     };
 
