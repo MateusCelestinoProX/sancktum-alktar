@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "description": "SANCKTUM ALKTAR — Altar Digital & Energizador de Sigilos em Vidro e Magia",
   "scripts": {
-    "dev": "bunx serve .",
-    "build": "echo 'Static deployment ready for Vercel'"
+    "dev": "bunx serve ."
   },
   "keywords": [
     "sancktum",

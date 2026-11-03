@@ -1,13 +1,18 @@
 # Graph Report - sancktum-alktar  (2026-11-03)
 
 ## Corpus Check
-- 10 files · ~781,688 words
+- 10 files · ~781,683 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
 - 738 nodes · 2096 edges · 70 communities (48 shown, 20 thin omitted)
 - Extraction: 95% EXTRACTED · 5% INFERRED · 0% AMBIGUOUS · INFERRED: 111 edges (avg confidence: 0.85)
 - Token cost: 0 input · 0 output
+
+## Graph Freshness
+- Built from commit: `e96ef0da`
+- Run `git rev-parse HEAD` and compare to check if the graph is stale.
+- Run `graphify update .` after code changes (no API cost).
 
 ## Community Hubs (Navigation)
 - has
@@ -197,8 +202,8 @@ Cohesion: 0.24
 Nodes (10): decl(), l1(), load(), other(), precheckMissedSemicolon(), preprocess(), spacesFromEnd(), stringFrom() (+2 more)
 
 ### Community 25 - "package.json"
-Cohesion: 0.20
-Nodes (9): author, description, keywords, license, name, scripts, build, dev (+1 more)
+Cohesion: 0.22
+Nodes (8): author, description, keywords, license, name, scripts, dev, version
 
 ### Community 27 - "ja"
 Cohesion: 0.28
@@ -221,8 +226,8 @@ Cohesion: 0.33
 Nodes (5): Deploy na Vercel, Estrutura do Projeto, Estética Sagrada, SANCKTUM ALKTAR, Sigilo Central
 
 ### Community 32 - "vercel.json"
-Cohesion: 0.33
-Nodes (5): cleanUrls, headers, rewrites, $schema, trailingSlash
+Cohesion: 0.29
+Nodes (6): cleanUrls, headers, outputDirectory, rewrites, $schema, trailingSlash
 
 ### Community 33 - "Wa"
 Cohesion: 0.40
@@ -301,7 +306,7 @@ Cohesion: 0.67
 Nodes (3): LS(), ro(), To()
 
 ## Knowledge Gaps
-- **17 isolated node(s):** `name`, `version`, `description`, `dev`, `build` (+12 more)
+- **17 isolated node(s):** `name`, `version`, `description`, `dev`, `keywords` (+12 more)
   These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 104 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
 - **20 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
