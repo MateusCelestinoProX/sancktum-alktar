@@ -101,6 +101,111 @@
       pointer-events: auto !important;
     }
 
+    .glass-sound-btn {
+      position: fixed !important;
+      top: 1.5rem !important;
+      left: 1.5rem !important;
+      z-index: 1000 !important;
+      display: inline-flex !important;
+      align-items: center;
+      gap: 0.65rem;
+      padding: 0.6rem 1.15rem;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(28px);
+      -webkit-backdrop-filter: blur(28px);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 9999px;
+      color: #e2e8f0;
+      font-family: 'Cinzel', serif;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      cursor: pointer;
+      pointer-events: auto !important;
+      transition: all 0.3s ease;
+    }
+
+    .glass-sound-btn:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: #ffffff;
+    }
+
+    .glass-sound-btn.is-active {
+      background: rgba(255, 255, 255, 0.14);
+      border-color: rgba(255, 255, 255, 0.4);
+      color: #ffffff;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
+    }
+
+    .sound-wave-icon {
+      width: 15px;
+      height: 15px;
+      stroke: currentColor;
+    }
+
+    .sound-status-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.25);
+      transition: all 0.3s ease;
+    }
+
+    .glass-sound-btn.is-active .sound-status-dot {
+      background: var(--sigil-color, #ffffff);
+      box-shadow: 0 0 8px var(--sigil-color, #ffffff);
+    }
+
+    /* Ocultar background do sistema no energizador */
+    body.is-energizing #cinematic-bg-container {
+      opacity: 0 !important;
+      visibility: hidden !important;
+      pointer-events: none !important;
+      transition: opacity 0.8s ease, visibility 0.8s ease !important;
+    }
+
+    #altar-stage-container.stage-energized {
+      background: #000000 !important;
+    }
+
+    /* 12 Cores Básicas no Modal */
+    .sigil-color-palette {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 0.65rem;
+      margin-top: 0.75rem;
+    }
+
+    .color-swatch-btn {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      background: var(--swatch-color);
+      cursor: pointer;
+      position: relative;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    }
+
+    .color-swatch-btn:hover {
+      transform: scale(1.15);
+      border-color: rgba(255, 255, 255, 0.7);
+    }
+
+    .color-swatch-btn.is-selected {
+      transform: scale(1.22);
+      border-color: #ffffff;
+      box-shadow: 0 0 16px var(--swatch-color), inset 0 0 0 2px rgba(0, 0, 0, 0.6);
+    }
+
+    .glass-modal-backdrop#modal-energizer {
+      background: rgba(3, 3, 6, 0.94) !important;
+      backdrop-filter: blur(32px) brightness(0.2) !important;
+      -webkit-backdrop-filter: blur(32px) brightness(0.2) !important;
+    }
+
     .altar-dock {
       position: fixed !important;
       bottom: 2.2rem !important;
@@ -181,6 +286,19 @@
       <div class="hero-crest-line"></div>
     </div>
   </div>
+
+  <!-- ===================================================================
+       BOTÃO DE SOM AMBIENTE MCP SUBLIMINAL (SUPERIOR ESQUERDO)
+       =================================================================== -->
+  <button type="button" class="glass-sound-btn" id="btn-sound-top" onclick="window.toggleAmbientSound()" title="Som Ambiente: MCP Subliminal" aria-label="Alternar MCP Subliminal">
+    <svg class="sound-wave-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+      <path class="sound-wave-bar wave-1" d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+      <path class="sound-wave-bar wave-2" d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+    </svg>
+    <span class="sound-btn-label">MCP Subliminal</span>
+    <span class="sound-status-dot"></span>
+  </button>
 
   <!-- ===================================================================
        BOTÃO DE TELA CHEIA (SUPERIOR DIREITO)
@@ -268,6 +386,26 @@
             <option value="yt_9">Fluxo Infinito IX</option>
           </optgroup>
         </select>
+      </div>
+
+      <!-- Cromática Sagrada (12 Cores Básicas) -->
+      <div class="setting-group">
+        <div class="setting-label-row">
+          <span class="setting-title">Cromática do Sigilo Sagrado</span>
+          <span class="setting-val" id="sigil-color-name">Branco Celestial</span>
+        </div>
+        <div class="sigil-color-palette" id="sigil-color-palette" role="radiogroup" aria-label="12 Cores Sagradas"></div>
+      </div>
+
+      <!-- Som Ambiente MCP Subliminal -->
+      <div class="setting-group">
+        <div class="setting-label-row">
+          <span class="setting-title">Som Ambiente (MCP Subliminal)</span>
+          <span class="setting-val" id="sound-status-label">Desativado</span>
+        </div>
+        <button type="button" class="glass-action-btn" id="modal-sound-toggle-btn" onclick="window.toggleAmbientSound()">
+          Ativar MCP Subliminal
+        </button>
       </div>
 
       <!-- Upload de Sigilo Customizado -->
@@ -378,26 +516,49 @@
       }
     };
 
+    window.toggleAmbientSound = function() {
+      if (window.ambientSoundEngine) {
+        window.ambientSoundEngine.toggle();
+      }
+    };
+
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') window.closeAllAltarModals();
     });
   </script>
 
   <!-- Scripts do Motor do Altar -->
-  <script src="assets/js/hypnotic_canvas.js?v=2.2"></script>
-  <script src="assets/js/background_engine.js?v=2.2"></script>
-  <script src="assets/js/sigil_charger.js?v=2.2"></script>
+  <script src="assets/js/ambient_sound.js?v=2.3"></script>
+  <script src="assets/js/alchemical_colors.js?v=2.3"></script>
+  <script src="assets/js/hypnotic_canvas.js?v=2.3"></script>
+  <script src="assets/js/background_engine.js?v=2.3"></script>
+  <script src="assets/js/sigil_charger.js?v=2.3"></script>
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      // 1. Inicializar o Energizador de Sigilos
+      // 1. Inicializar o Motor de Cores Alquímicas
+      try {
+        window.alchemicalColorEngine = new AlchemicalColorEngine();
+        window.alchemicalColorEngine.init();
+      } catch (err) {
+        console.warn('Erro ao inicializar AlchemicalColorEngine:', err);
+      }
+
+      // 2. Inicializar o Motor de Som Ambiente
+      try {
+        window.ambientSoundEngine = new AmbientSoundEngine();
+      } catch (err) {
+        console.warn('Erro ao inicializar AmbientSoundEngine:', err);
+      }
+
+      // 3. Inicializar o Energizador de Sigilos
       try {
         window.sigilChargerEngine = new SigilChargerEngine();
       } catch (err) {
         console.warn('Erro ao inicializar SigilChargerEngine:', err);
       }
 
-      // 2. Transição Cinemática do Hero ao Recarregar
+      // 4. Transição Cinemática do Hero ao Recarregar
       const hero = document.getElementById('cinematic-hero');
       if (hero) {
         setTimeout(() => {

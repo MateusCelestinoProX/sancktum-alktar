@@ -101,6 +101,19 @@ class BackgroundEngine {
     }, this.displayDuration);
   }
 
+  pauseSlideshow() {
+    if (this.slideshowInterval) {
+      clearInterval(this.slideshowInterval);
+      this.slideshowInterval = null;
+    }
+  }
+
+  resumeSlideshow() {
+    if (!this.slideshowInterval) {
+      this.startSlideshow();
+    }
+  }
+
   showNextImage() {
     if (!this.currentImages || !this.currentImages.length) return;
 

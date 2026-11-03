@@ -126,6 +126,10 @@ class SigilChargerEngine {
       wrapper.appendChild(img);
       this.stageOverlay.appendChild(wrapper);
     });
+
+    if (window.alchemicalColorEngine && typeof window.alchemicalColorEngine.applyColor === 'function') {
+      window.alchemicalColorEngine.applyColor(window.alchemicalColorEngine.currentColorId);
+    }
   }
 
   toggleCharging() {
@@ -135,6 +139,7 @@ class SigilChargerEngine {
     const pattern = this.patternSelect ? this.patternSelect.value : 'balatro';
 
     if (this.isCharging) {
+      document.body.classList.add('is-energizing');
       this.applyPattern(pattern);
       if (this.toggleChargeBtn) {
         this.toggleChargeBtn.textContent = 'Pausar Energização';
@@ -149,7 +154,18 @@ class SigilChargerEngine {
       if (this.stageContainer) {
         this.stageContainer.classList.add('stage-energized');
       }
+
+      // Ocultar background do sistema e pausar slideshow
+      if (window.backgroundEngine && typeof window.backgroundEngine.pauseSlideshow === 'function') {
+        window.backgroundEngine.pauseSlideshow();
+      }
+
+      // Auto-fechar janela do energizador conforme ordem do usuário
+      if (typeof window.closeAllAltarModals === 'function') {
+        window.closeAllAltarModals();
+      }
     } else {
+      document.body.classList.remove('is-energizing');
       if (this.hypnoticEngine) this.hypnoticEngine.stop();
       if (this.ytIframe) {
         this.ytIframe.style.display = 'none';
@@ -167,6 +183,11 @@ class SigilChargerEngine {
       }
       if (this.stageContainer) {
         this.stageContainer.classList.remove('stage-energized');
+      }
+
+      // Restaurar background do sistema
+      if (window.backgroundEngine && typeof window.backgroundEngine.resumeSlideshow === 'function') {
+        window.backgroundEngine.resumeSlideshow();
       }
     }
   }

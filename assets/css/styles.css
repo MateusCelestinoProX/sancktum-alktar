@@ -27,7 +27,9 @@
   --font-sacred: 'Cinzel', serif;
   --font-modern: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 
-  --sigil-glow: rgba(255, 255, 255, 0.85);
+  --sigil-color: #FFFFFF;
+  --sigil-glow: rgba(255, 255, 255, 0.90);
+  --sigil-glow-soft: rgba(220, 230, 255, 0.45);
   --sigil-glow-ambient: rgba(220, 230, 255, 0.45);
 }
 
@@ -231,6 +233,18 @@ html, body {
   transition: opacity 1.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+/* Quando energizando, o background do sistema é completamente invisível */
+body.is-energizing #cinematic-bg-container {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  transition: opacity 0.8s ease, visibility 0.8s ease !important;
+}
+
+#altar-stage-container.stage-energized {
+  background: #000000 !important;
+}
+
 #altar-stage-container.stage-energized .hypnotic-canvas {
   opacity: 1;
 }
@@ -285,8 +299,8 @@ html, body {
 }
 
 .sancktum-sigil-halo.is-energized {
-  border-color: rgba(255, 255, 255, 0.3) !important;
-  box-shadow: inset 0 0 70px rgba(255, 255, 255, 0.14), 0 0 100px rgba(255, 255, 255, 0.2), 0 0 140px rgba(0, 0, 0, 0.9) !important;
+  border-color: var(--sigil-color, #ffffff) !important;
+  box-shadow: inset 0 0 70px rgba(255, 255, 255, 0.14), 0 0 100px var(--sigil-glow, rgba(255, 255, 255, 0.9)), 0 0 140px rgba(0, 0, 0, 0.9) !important;
   animation: altarEnergizedPulse 2.8s ease-in-out infinite alternate;
 }
 
@@ -299,13 +313,13 @@ html, body {
   object-fit: contain !important;
   margin: auto !important;
   display: block !important;
-  filter: drop-shadow(0 0 16px var(--sigil-glow)) drop-shadow(0 0 38px var(--sigil-glow-ambient));
-  transition: filter 1s ease, transform 1s ease;
+  filter: drop-shadow(0 0 16px var(--sigil-glow)) drop-shadow(0 0 38px var(--sigil-glow-soft));
+  transition: filter 0.5s ease, transform 1s ease;
   transform-origin: center center;
 }
 
 .is-energized .central-sacred-sigil {
-  filter: drop-shadow(0 0 22px #ffffff) drop-shadow(0 0 55px rgba(255, 255, 255, 0.9)) drop-shadow(0 0 95px rgba(200, 220, 255, 0.5));
+  filter: drop-shadow(0 0 24px var(--sigil-color, #ffffff)) drop-shadow(0 0 60px var(--sigil-glow, rgba(255, 255, 255, 0.9))) drop-shadow(0 0 95px var(--sigil-glow-soft, rgba(200, 220, 255, 0.5)));
   transform: scale(1.03);
 }
 
@@ -644,6 +658,135 @@ html, body {
   background: rgba(255, 255, 255, 0.28);
   border-color: rgba(255, 255, 255, 0.65);
   box-shadow: 0 0 35px rgba(255, 255, 255, 0.4);
+}
+
+/* ==========================================================================
+   SOM AMBIENTE (MCP SUBLIMINAL) & PALETA ALQUÍMICA (12 CORES)
+   ========================================================================== */
+
+/* Botão Flutuante de Som Top-Left */
+.glass-sound-btn {
+  position: fixed !important;
+  top: 1.5rem !important;
+  left: 1.5rem !important;
+  z-index: 1000 !important;
+  display: inline-flex !important;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.6rem 1.15rem;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 9999px;
+  color: var(--text-silver);
+  font-family: var(--font-sacred);
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  user-select: none;
+}
+
+.glass-sound-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.6), 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+.glass-sound-btn.is-active {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.4);
+  color: #ffffff;
+  box-shadow: 0 0 24px rgba(255, 255, 255, 0.18), inset 0 0 12px rgba(255, 255, 255, 0.08);
+}
+
+.sound-wave-icon {
+  width: 15px;
+  height: 15px;
+  stroke: currentColor;
+  flex-shrink: 0;
+}
+
+.sound-status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.25);
+  transition: all 0.4s ease;
+}
+
+.glass-sound-btn.is-active .sound-status-dot {
+  background: var(--sigil-color, #ffffff);
+  box-shadow: 0 0 8px var(--sigil-color, #ffffff);
+  animation: soundPulse 1.8s ease-in-out infinite alternate;
+}
+
+@keyframes soundPulse {
+  0% { transform: scale(0.85); opacity: 0.5; }
+  100% { transform: scale(1.3); opacity: 1; }
+}
+
+.glass-sound-btn.is-active .sound-wave-bar.wave-1 {
+  animation: wavePulse 1.2s ease-in-out infinite alternate;
+}
+
+.glass-sound-btn.is-active .sound-wave-bar.wave-2 {
+  animation: wavePulse 1.2s ease-in-out infinite alternate 0.3s;
+}
+
+@keyframes wavePulse {
+  0% { opacity: 0.3; }
+  100% { opacity: 1; }
+}
+
+/* Paleta Alquímica das 12 Cores Básicas */
+.sigil-color-palette {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 0.65rem;
+  margin-top: 0.75rem;
+}
+
+.color-swatch-btn {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: var(--swatch-color);
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4), inset 0 0 4px rgba(255, 255, 255, 0.2);
+}
+
+.color-swatch-btn:hover {
+  transform: scale(1.15);
+  border-color: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 0 16px var(--swatch-color);
+}
+
+.color-swatch-btn.is-selected {
+  transform: scale(1.22);
+  border-color: #ffffff;
+  box-shadow: 0 0 20px var(--swatch-color), inset 0 0 0 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Modais: Escurecimento Absoluto no Energizador */
+#modal-energizer {
+  backdrop-filter: blur(32px) brightness(0.2) !important;
+  -webkit-backdrop-filter: blur(32px) brightness(0.2) !important;
+  background: rgba(3, 3, 6, 0.94) !important;
+}
+
+.glass-action-btn.is-active-btn {
+  background: rgba(255, 255, 255, 0.22) !important;
+  border-color: rgba(255, 255, 255, 0.55) !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.2) !important;
 }
 
 /* ==========================================================================

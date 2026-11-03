@@ -6,9 +6,9 @@
     "semantic_hash": ""
   },
   "assets/js/background_engine.js": {
-    "mtime": 1793724764.9122653,
-    "seen": 1793724933.7032058,
-    "ast_hash": "d30b67abdba409ac13100bbe2eaba71b",
+    "mtime": 1793741160.2425992,
+    "seen": 1793741560.5120971,
+    "ast_hash": "b30a7b4c0578742d0e8322b61afd2c47",
     "semantic_hash": ""
   },
   "assets/js/hypnotic_canvas.js": {
@@ -18,9 +18,9 @@
     "semantic_hash": ""
   },
   "assets/js/sigil_charger.js": {
-    "mtime": 1793729856.1601908,
-    "seen": 1793729904.607594,
-    "ast_hash": "80a3f37002acbde102618e03565a9e5c",
+    "mtime": 1793741190.4696844,
+    "seen": 1793741560.5121,
+    "ast_hash": "81690374d92235dd00052fdc5c2bb46c",
     "semantic_hash": ""
   },
   "assets/js/vendor/gsap.min.js": {
@@ -60,9 +60,9 @@
     "semantic_hash": ""
   },
   "index.html": {
-    "mtime": 1793735056.2213411,
-    "seen": 1793735073.619819,
-    "ast_hash": "3f06b73ffb643ca4256f8da3cda6deef",
+    "mtime": 1793741418.4005125,
+    "seen": 1793741560.512106,
+    "ast_hash": "5fdd4bc485b7b756aa195e8169e2a20a",
     "semantic_hash": ""
   },
   "assets/images/sigils/sancktum_alktar_original.png": {
@@ -441,6 +441,24 @@
     "mtime": 1793724556.2969594,
     "seen": 1793724933.70327,
     "ast_hash": "0f40644d9267bc5e92fb4b9248090157",
+    "semantic_hash": ""
+  },
+  "assets/js/alchemical_colors.js": {
+    "mtime": 1793741140.6650789,
+    "seen": 1793741560.512095,
+    "ast_hash": "e03f5bfbc4cb8549fe2e5c494d5506b8",
+    "semantic_hash": ""
+  },
+  "assets/js/ambient_sound.js": {
+    "mtime": 1793741119.0001888,
+    "seen": 1793741560.512096,
+    "ast_hash": "f209049f63edc50fa4570e3d4a887a4f",
+    "semantic_hash": ""
+  },
+  "assets/audio/mcp-subliminal.mp3": {
+    "mtime": 1793740951.185122,
+    "seen": 1793741560.5121589,
+    "ast_hash": "3164c11851fb965f96a0b6ad47af4719",
     "semantic_hash": ""
   }
 }
