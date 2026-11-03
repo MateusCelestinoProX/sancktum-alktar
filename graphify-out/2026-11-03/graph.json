@@ -2848,7 +2848,7 @@
       "file_type": "code",
       "norm_label": ".applypattern()",
       "source_file": "assets/js/sigil_charger.js",
-      "source_location": "L163"
+      "source_location": "L171"
     },
     {
       "id": "assets_js_sigil_charger_sigilchargerengine_bindevents",
@@ -2860,7 +2860,7 @@
       "file_type": "code",
       "norm_label": ".bindevents()",
       "source_file": "assets/js/sigil_charger.js",
-      "source_location": "L56"
+      "source_location": "L58"
     },
     {
       "id": "assets_js_sigil_charger_sigilchargerengine_constructor",
@@ -2884,7 +2884,7 @@
       "file_type": "code",
       "norm_label": ".handlefileupload()",
       "source_file": "assets/js/sigil_charger.js",
-      "source_location": "L272"
+      "source_location": "L278"
     },
     {
       "id": "assets_js_sigil_charger_sigilchargerengine_initelements",
@@ -2908,7 +2908,7 @@
       "file_type": "code",
       "norm_label": ".processimagetosigilmask()",
       "source_file": "assets/js/sigil_charger.js",
-      "source_location": "L197"
+      "source_location": "L205"
     },
     {
       "id": "assets_js_sigil_charger_sigilchargerengine_renderstageoverlay",
@@ -2920,7 +2920,7 @@
       "file_type": "code",
       "norm_label": ".renderstageoverlay()",
       "source_file": "assets/js/sigil_charger.js",
-      "source_location": "L103"
+      "source_location": "L105"
     },
     {
       "id": "assets_js_sigil_charger_sigilchargerengine_togglecharging",
@@ -2932,7 +2932,7 @@
       "file_type": "code",
       "norm_label": ".togglecharging()",
       "source_file": "assets/js/sigil_charger.js",
-      "source_location": "L126"
+      "source_location": "L128"
     },
     {
       "id": "assets_js_sigil_charger_sigilchargerengine_togglefullscreen",
@@ -2944,7 +2944,7 @@
       "file_type": "code",
       "norm_label": ".togglefullscreen()",
       "source_file": "assets/js/sigil_charger.js",
-      "source_location": "L180"
+      "source_location": "L188"
     },
     {
       "id": "assets_js_vendor_tailwindcss_addtoerror",
@@ -9049,6 +9049,18 @@
     },
     {
       "source": "assets_js_sigil_charger_sigilchargerengine_bindevents",
+      "target": "assets_js_sigil_charger_sigilchargerengine_renderstageoverlay",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "assets/js/sigil_charger.js",
+      "source_location": "L100",
+      "weight": 1.0
+    },
+    {
+      "source": "assets_js_sigil_charger_sigilchargerengine_bindevents",
       "target": "assets_js_sigil_charger_sigilchargerengine_togglecharging",
       "relation": "calls",
       "_origin": "ast",
@@ -9056,7 +9068,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "assets/js/sigil_charger.js",
-      "source_location": "L58",
+      "source_location": "L60",
       "weight": 1.0
     },
     {
@@ -9068,7 +9080,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "assets/js/sigil_charger.js",
-      "source_location": "L62",
+      "source_location": "L64",
       "weight": 1.0
     },
     {
@@ -9080,7 +9092,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "assets/js/sigil_charger.js",
-      "source_location": "L68",
+      "source_location": "L70",
       "weight": 1.0
     },
     {
@@ -9092,19 +9104,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "assets/js/sigil_charger.js",
-      "source_location": "L75",
-      "weight": 1.0
-    },
-    {
-      "source": "assets_js_sigil_charger_sigilchargerengine_bindevents",
-      "target": "assets_js_sigil_charger_sigilchargerengine_renderstageoverlay",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "assets/js/sigil_charger.js",
-      "source_location": "L98",
+      "source_location": "L77",
       "weight": 1.0
     },
     {
@@ -9152,7 +9152,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "assets/js/sigil_charger.js",
-      "source_location": "L277",
+      "source_location": "L283",
       "weight": 1.0
     },
     {
@@ -9164,7 +9164,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "assets/js/sigil_charger.js",
-      "source_location": "L286",
+      "source_location": "L292",
       "weight": 1.0
     },
     {
@@ -9176,7 +9176,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "assets/js/sigil_charger.js",
-      "source_location": "L133",
+      "source_location": "L135",
       "weight": 1.0
     },
     {
@@ -31810,7 +31810,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "assets/js/sigil_charger.js",
-      "source_location": "L103",
+      "source_location": "L105",
       "weight": 1.0
     },
     {
@@ -31821,7 +31821,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "assets/js/sigil_charger.js",
-      "source_location": "L126",
+      "source_location": "L128",
       "weight": 1.0
     },
     {
@@ -31832,7 +31832,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "assets/js/sigil_charger.js",
-      "source_location": "L163",
+      "source_location": "L171",
       "weight": 1.0
     },
     {
@@ -31843,7 +31843,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "assets/js/sigil_charger.js",
-      "source_location": "L180",
+      "source_location": "L188",
       "weight": 1.0
     },
     {
@@ -31854,7 +31854,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "assets/js/sigil_charger.js",
-      "source_location": "L197",
+      "source_location": "L205",
       "weight": 1.0
     },
     {
@@ -31865,7 +31865,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "assets/js/sigil_charger.js",
-      "source_location": "L272",
+      "source_location": "L278",
       "weight": 1.0
     },
     {
@@ -31887,7 +31887,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "assets/js/sigil_charger.js",
-      "source_location": "L56",
+      "source_location": "L58",
       "weight": 1.0
     },
     {
@@ -33279,5 +33279,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "e96ef0da00346b2a15f98e0d6d74300ea677dcd4"
+  "built_at_commit": "59912a5a6017fdcdb5bac4a29348f3b97d2578d1"
 }

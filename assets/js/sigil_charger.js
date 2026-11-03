@@ -52,16 +52,16 @@ class SigilChargerEngine {
 
     this.dockEnergizerBtn = document.getElementById('dock-btn-energizer');
 
-    this.hypnoticEngine = new HypnoticStageEngine('hypnotic-stage-canvas');
+    try {
+      this.hypnoticEngine = new HypnoticStageEngine('hypnotic-stage-canvas');
+    } catch (err) {
+      console.warn('HypnoticStageEngine init warning:', err);
+    }
   }
 
   bindEvents() {
     if (this.toggleChargeBtn) {
       this.toggleChargeBtn.addEventListener('click', () => this.toggleCharging());
-    }
-
-    if (this.fullscreenBtn) {
-      this.fullscreenBtn.addEventListener('click', () => this.toggleFullscreen());
     }
 
     if (this.patternSelect) {
@@ -113,6 +113,9 @@ class SigilChargerEngine {
     this.activeSigils.forEach(s => {
       const wrapper = document.createElement('div');
       wrapper.className = 'sancktum-sigil-halo';
+      if (this.isCharging) {
+        wrapper.classList.add('is-energized');
+      }
 
       const img = document.createElement('img');
       img.className = 'central-sacred-sigil';
@@ -182,23 +185,6 @@ class SigilChargerEngine {
         this.ytIframe.src = '';
       }
       if (this.hypnoticEngine) this.hypnoticEngine.start(pattern);
-    }
-  }
-
-  toggleFullscreen() {
-    const stage = this.stageContainer || document.documentElement;
-    if (!document.fullscreenElement) {
-      if (stage.requestFullscreen) {
-        stage.requestFullscreen();
-      } else if (stage.webkitRequestFullscreen) {
-        stage.webkitRequestFullscreen();
-      }
-    } else {
-      if (document.exitFullscreen) {
-        document.exitFullscreen();
-      } else if (document.webkitExitFullscreen) {
-        document.webkitExitFullscreen();
-      }
     }
   }
 

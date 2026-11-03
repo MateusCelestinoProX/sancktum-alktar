@@ -1,7 +1,7 @@
 # Graph Report - sancktum-alktar  (2026-11-03)
 
 ## Corpus Check
-- 10 files · ~781,683 words
+- 10 files · ~781,811 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
@@ -10,7 +10,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `e96ef0da`
+- Built from commit: `59912a5a`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
