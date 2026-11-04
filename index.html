@@ -15,6 +15,12 @@
   <link rel="stylesheet" href="assets/css/styles.css?v=2.4">
   <link rel="icon" type="image/png" href="assets/images/sigils/sancktum_alktar_sigil.png">
   <link rel="apple-touch-icon" href="assets/images/sigils/sancktum_alktar_sigil.png">
+  
+  <script>
+    if (window.Capacitor) {
+      document.documentElement.classList.add('is-capacitor');
+    }
+  </script>
 </head>
 <body>
 
@@ -323,58 +329,6 @@
 
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') window.closeAllAltarModals();
-      // 5. Integração Nativa Android Capacitor Bridge
-      if (window.Capacitor && window.Capacitor.Plugins) {
-        const { App, StatusBar, SplashScreen } = window.Capacitor.Plugins;
-        if (StatusBar) {
-          StatusBar.setOverlaysWebView({ overlay: true }).catch(() => {});
-          StatusBar.setStyle({ style: 'DARK' }).catch(() => {});
-        }
-        if (SplashScreen) {
-          setTimeout(() => {
-            SplashScreen.hide().catch(() => {});
-          }, 1400);
-        }
-        if (App) {
-          App.addListener('backButton', () => {
-            const activeModal = document.querySelector('.glass-modal-backdrop.active');
-            if (activeModal) {
-              window.closeAllAltarModals();
-              return;
-            }
-            if (document.body.classList.contains('is-fullscreen') || document.fullscreenElement) {
-              window.toggleAltarFullscreen();
-              return;
-            }
-            if (document.body.classList.contains('is-energizing')) {
-              if (window.sigilChargerEngine && window.sigilChargerEngine.isCharging) {
-                window.sigilChargerEngine.toggleCharging();
-                return;
-              }
-            }
-            App.exitApp();
-          });
-
-          App.addListener('appStateChange', ({ isActive }) => {
-            if (!isActive) {
-              if (window.sigilChargerEngine && window.sigilChargerEngine.hypnoticEngine) {
-                window.sigilChargerEngine.hypnoticEngine.stop();
-              }
-              if (window.backgroundEngine) {
-                window.backgroundEngine.pauseSlideshow();
-              }
-            } else {
-              if (window.backgroundEngine) {
-                window.backgroundEngine.resumeSlideshow();
-              }
-              if (window.sigilChargerEngine && window.sigilChargerEngine.isCharging) {
-                const pattern = window.sigilChargerEngine.patternSelect ? window.sigilChargerEngine.patternSelect.value : 'balatro';
-                window.sigilChargerEngine.applyPattern(pattern);
-              }
-            }
-          });
-        }
-      }
     });
   </script>
 

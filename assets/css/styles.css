@@ -938,17 +938,31 @@ html, body {
 }
 
 /* ==========================================================================
-   MOBILE PORTRAIT (NATIVE ANDROID & SMARTPHONES)
+   MOBILE PORTRAIT (WEB & NATIVE ANDROID)
    ========================================================================== */
 @media (max-width: 640px) and (orientation: portrait), (max-width: 500px) {
-  /* Botões de Topo: Proteção Total contra Status Bar / Notches */
+  /* Botões de Topo: Posicionamento Inteligente (Web vs Native APK) */
   .glass-sound-btn, .glass-fullscreen-btn {
-    top: max(3.1rem, calc(env(safe-area-inset-top, 38px) + 0.85rem)) !important;
+    top: max(1.2rem, calc(env(safe-area-inset-top, 0px) + 0.85rem)) !important;
     min-height: 42px !important;
     padding: 0.45rem 0.85rem !important;
     font-size: 0.72rem !important;
     letter-spacing: 0.12em !important;
     gap: 0.5rem !important;
+  }
+
+  /* No APK nativo Android com StatusBar transparente ou PWA standalone */
+  .is-capacitor .glass-sound-btn,
+  .is-capacitor .glass-fullscreen-btn,
+  body.is-capacitor .glass-sound-btn,
+  body.is-capacitor .glass-fullscreen-btn {
+    top: max(3.1rem, calc(env(safe-area-inset-top, 38px) + 0.85rem)) !important;
+  }
+
+  @media all and (display-mode: standalone) {
+    .glass-sound-btn, .glass-fullscreen-btn {
+      top: max(2.9rem, calc(env(safe-area-inset-top, 36px) + 0.85rem)) !important;
+    }
   }
 
   .glass-sound-btn {
@@ -967,11 +981,22 @@ html, body {
   /* Dock Inferior Ergonômico */
   .altar-dock {
     width: min(88vw, 340px) !important;
-    bottom: max(2.5rem, calc(env(safe-area-inset-bottom, 24px) + 1.25rem)) !important;
+    bottom: max(1.8rem, calc(env(safe-area-inset-bottom, 0px) + 1.1rem)) !important;
     padding: 0.42rem 0.75rem !important;
     gap: 0.55rem !important;
     min-height: 50px !important;
     justify-content: space-evenly !important;
+  }
+
+  .is-capacitor .altar-dock,
+  body.is-capacitor .altar-dock {
+    bottom: max(2.5rem, calc(env(safe-area-inset-bottom, 24px) + 1.25rem)) !important;
+  }
+
+  @media all and (display-mode: standalone) {
+    .altar-dock {
+      bottom: max(2.5rem, calc(env(safe-area-inset-bottom, 20px) + 1.2rem)) !important;
+    }
   }
 
   .glass-dock-btn {

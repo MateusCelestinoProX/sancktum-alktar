@@ -9,3 +9,4 @@ android/capacitor-cordova-android-plugins/build/
 android/build/
 .gradle/
 *.apk
+!SANCKTUM-ALKTAR-Android.apk
