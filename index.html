@@ -2,11 +2,14 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
   <title>SANCKTUM ALKTAR</title>
   
   <meta name="description" content="Sancktum Alktar — Altar Digital & Energizador de Sigilos em Puro Vidro e Magia.">
-  <meta name="theme-color" content="#040406">
+  <meta name="theme-color" content="#000000">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   
   <!-- Estilos Críticos Inlined para Garantia de Cache Zero e Renderização Imediata -->
   <link rel="stylesheet" href="assets/css/styles.css?v=2.2">
@@ -596,6 +599,58 @@
 
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') window.closeAllAltarModals();
+      // 5. Integração Nativa Android Capacitor Bridge
+      if (window.Capacitor && window.Capacitor.Plugins) {
+        const { App, StatusBar, SplashScreen } = window.Capacitor.Plugins;
+        if (StatusBar) {
+          StatusBar.setOverlaysWebView({ overlay: true }).catch(() => {});
+          StatusBar.setStyle({ style: 'DARK' }).catch(() => {});
+        }
+        if (SplashScreen) {
+          setTimeout(() => {
+            SplashScreen.hide().catch(() => {});
+          }, 1400);
+        }
+        if (App) {
+          App.addListener('backButton', () => {
+            const activeModal = document.querySelector('.glass-modal-backdrop.active');
+            if (activeModal) {
+              window.closeAllAltarModals();
+              return;
+            }
+            if (document.body.classList.contains('is-fullscreen') || document.fullscreenElement) {
+              window.toggleAltarFullscreen();
+              return;
+            }
+            if (document.body.classList.contains('is-energizing')) {
+              if (window.sigilChargerEngine && window.sigilChargerEngine.isCharging) {
+                window.sigilChargerEngine.toggleCharging();
+                return;
+              }
+            }
+            App.exitApp();
+          });
+
+          App.addListener('appStateChange', ({ isActive }) => {
+            if (!isActive) {
+              if (window.sigilChargerEngine && window.sigilChargerEngine.hypnoticEngine) {
+                window.sigilChargerEngine.hypnoticEngine.stop();
+              }
+              if (window.backgroundEngine) {
+                window.backgroundEngine.pauseSlideshow();
+              }
+            } else {
+              if (window.backgroundEngine) {
+                window.backgroundEngine.resumeSlideshow();
+              }
+              if (window.sigilChargerEngine && window.sigilChargerEngine.isCharging) {
+                const pattern = window.sigilChargerEngine.patternSelect ? window.sigilChargerEngine.patternSelect.value : 'balatro';
+                window.sigilChargerEngine.applyPattern(pattern);
+              }
+            }
+          });
+        }
+      }
     });
   </script>
 
@@ -639,6 +694,58 @@
             hero.style.display = 'none';
           }, 1400);
         }, 2200);
+      }
+      // 5. Integração Nativa Android Capacitor Bridge
+      if (window.Capacitor && window.Capacitor.Plugins) {
+        const { App, StatusBar, SplashScreen } = window.Capacitor.Plugins;
+        if (StatusBar) {
+          StatusBar.setOverlaysWebView({ overlay: true }).catch(() => {});
+          StatusBar.setStyle({ style: 'DARK' }).catch(() => {});
+        }
+        if (SplashScreen) {
+          setTimeout(() => {
+            SplashScreen.hide().catch(() => {});
+          }, 1400);
+        }
+        if (App) {
+          App.addListener('backButton', () => {
+            const activeModal = document.querySelector('.glass-modal-backdrop.active');
+            if (activeModal) {
+              window.closeAllAltarModals();
+              return;
+            }
+            if (document.body.classList.contains('is-fullscreen') || document.fullscreenElement) {
+              window.toggleAltarFullscreen();
+              return;
+            }
+            if (document.body.classList.contains('is-energizing')) {
+              if (window.sigilChargerEngine && window.sigilChargerEngine.isCharging) {
+                window.sigilChargerEngine.toggleCharging();
+                return;
+              }
+            }
+            App.exitApp();
+          });
+
+          App.addListener('appStateChange', ({ isActive }) => {
+            if (!isActive) {
+              if (window.sigilChargerEngine && window.sigilChargerEngine.hypnoticEngine) {
+                window.sigilChargerEngine.hypnoticEngine.stop();
+              }
+              if (window.backgroundEngine) {
+                window.backgroundEngine.pauseSlideshow();
+              }
+            } else {
+              if (window.backgroundEngine) {
+                window.backgroundEngine.resumeSlideshow();
+              }
+              if (window.sigilChargerEngine && window.sigilChargerEngine.isCharging) {
+                const pattern = window.sigilChargerEngine.patternSelect ? window.sigilChargerEngine.patternSelect.value : 'balatro';
+                window.sigilChargerEngine.applyPattern(pattern);
+              }
+            }
+          });
+        }
       }
     });
   </script>

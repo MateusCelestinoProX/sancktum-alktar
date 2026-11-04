@@ -3,3 +3,9 @@ node_modules/
 .vercel
 dist/
 *.log
+android/.gradle/
+android/app/build/
+android/capacitor-cordova-android-plugins/build/
+android/build/
+.gradle/
+*.apk

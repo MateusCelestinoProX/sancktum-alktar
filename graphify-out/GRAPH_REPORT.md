@@ -1,45 +1,45 @@
 # Graph Report - sancktum-alktar  (2026-11-03)
 
 ## Corpus Check
-- 12 files · ~785,262 words
+- 23 files · ~796,168 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 766 nodes · 2141 edges · 67 communities (43 shown, 23 thin omitted)
+- 807 nodes · 2181 edges · 71 communities (46 shown, 18 thin omitted)
 - Extraction: 95% EXTRACTED · 5% INFERRED · 0% AMBIGUOUS · INFERRED: 111 edges (avg confidence: 0.85)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `ca3c3f23`
+- Built from commit: `2aed0508`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
 ## Community Hubs (Navigation)
-- v2
-- prefixed
+- has
+- ExampleInstrumentedTest.java
 - tailwindcss.js
 - gsap.min.js
 - stringify
+- i
+- K
+- hx
 - push
-- r
-- sort
-- remove
 - decl
 - constructor
 - cb
-- .walk
+- MainActivity.java
 - r
 - BackgroundEngine
-- process
+- prefixes
 - SigilChargerEngine
 - oldWebkit
 - Ht
 - error
-- _deleteIfExpired
-- t
+- _entriesAscending
+- Tween
 - _d
 - Ub
-- replace
+- aa
 - package.json
 - HypnoticStageEngine
 - ja
@@ -57,30 +57,28 @@
 - async
 - Sh
 - ES
-- Pa
+- gradlew
 - Gy
 - ja
 - bo
 - checkMissedSemicolon
 - cm
 - gk
-- hk
+- ka
 - gR
 - ro
-- I2
+- xe
 - Ma
 - mS
 - Ba
-- bk
+- prefixQuery
 - Ck
-- nS
-- mg
-- Ph
+- applyVariantOffset
+- gg
+- calcBefore
 - qa
 - sS
-- Vn
 - OC
-- zk
 
 ## God Nodes (most connected - your core abstractions)
 1. `push()` - 67 edges
@@ -99,77 +97,77 @@
   assets/js/vendor/tailwindcss.js → assets/js/vendor/gsap.min.js
 - `decl()` --indirect_call--> `t()`  [INFERRED]
   assets/js/vendor/tailwindcss.js → assets/js/vendor/gsap.min.js
-- `i()` --indirect_call--> `t()`  [INFERRED]
-  assets/js/vendor/tailwindcss.js → assets/js/vendor/gsap.min.js
-- `E()` --indirect_call--> `t()`  [INFERRED]
-  assets/js/vendor/tailwindcss.js → assets/js/vendor/gsap.min.js
 - `gk()` --indirect_call--> `t()`  [INFERRED]
+  assets/js/vendor/tailwindcss.js → assets/js/vendor/gsap.min.js
+- `normalize()` --indirect_call--> `t()`  [INFERRED]
+  assets/js/vendor/tailwindcss.js → assets/js/vendor/gsap.min.js
+- `prepend()` --indirect_call--> `t()`  [INFERRED]
   assets/js/vendor/tailwindcss.js → assets/js/vendor/gsap.min.js
 
 ## Import Cycles
 - None detected.
 
-## Communities (67 total, 23 thin omitted)
+## Communities (71 total, 18 thin omitted)
 
-### Community 0 - "v2"
-Cohesion: 0.14
-Nodes (14): aa(), ac(), b2(), bx(), Cl(), nn(), ol(), Sg() (+6 more)
+### Community 0 - "has"
+Cohesion: 0.05
+Nodes (55): _2(), b2(), ca(), Cl(), cs(), DC(), delete(), _deleteIfExpired() (+47 more)
 
-### Community 1 - "prefixed"
-Cohesion: 0.23
-Nodes (12): check(), isHack(), isStretch(), _moveToRecent(), old(), prefixed(), prefixer(), regexp() (+4 more)
+### Community 1 - "ExampleInstrumentedTest.java"
+Cohesion: 0.33
+Nodes (5): ExampleInstrumentedTest, ExampleUnitTest, androidx.test.ext.junit.runners.AndroidJUnit4, org.junit.runner.RunWith, org.junit.Test
 
 ### Community 2 - "tailwindcss.js"
-Cohesion: 0.03
-Nodes (23): applyParallelOffset(), Bh(), c(), clear(), cloneAfter(), displayType(), Hf(), isAlready() (+15 more)
+Cohesion: 0.02
+Nodes (32): bk(), Bp(), Cc(), cleanBrackets(), clear(), cloneAfter(), contain3d(), displayType() (+24 more)
 
 ### Community 3 - "gsap.min.js"
 Cohesion: 0.06
-Nodes (16): Kd(), la(), Ld(), ma(), Md(), na(), Od(), Q() (+8 more)
+Nodes (15): Ec(), Fc(), Jd(), Kd(), la(), Ld(), ma(), Md() (+7 more)
 
 ### Community 4 - "stringify"
-Cohesion: 0.10
-Nodes (30): ca(), clean(), content(), css(), div(), dp(), Eh(), getAsyncError() (+22 more)
+Cohesion: 0.14
+Nodes (23): content(), css(), dp(), getAsyncError(), getIterator(), getProxyProcessor(), handleError(), map() (+15 more)
 
-### Community 5 - "push"
-Cohesion: 0.06
-Nodes (107): ee(), Jd(), _a(), add(), l(), o(), already(), arbitraryProperty() (+99 more)
-
-### Community 6 - "r"
+### Community 5 - "i"
 Cohesion: 0.07
-Nodes (44): _2(), Ae(), ax(), Bf(), cx(), dx(), ec(), every() (+36 more)
+Nodes (55): ee(), t(), y(), l(), o(), arbitraryProperty(), B(), Bh() (+47 more)
 
-### Community 7 - "sort"
-Cohesion: 0.15
-Nodes (14): applyVariantOffset(), compare(), dm(), eE(), hm(), Lh(), qh(), QS() (+6 more)
+### Community 6 - "K"
+Cohesion: 0.11
+Nodes (32): _a(), Ae(), applyParallelOffset(), ax(), Bf(), en(), every(), ex() (+24 more)
 
-### Community 8 - "remove"
-Cohesion: 0.06
-Nodes (58): after(), append(), BC(), before(), beforeAfter(), block(), body(), calcBefore() (+50 more)
+### Community 7 - "hx"
+Cohesion: 0.11
+Nodes (24): cx(), dm(), dx(), ec(), eE(), Fh(), fx(), gx() (+16 more)
+
+### Community 8 - "push"
+Cohesion: 0.05
+Nodes (107): add(), addToError(), after(), already(), append(), as(), au(), BC() (+99 more)
 
 ### Community 9 - "decl"
-Cohesion: 0.10
-Nodes (28): An(), atrule(), comment(), decl(), emptyRule(), end(), endFile(), freeSemicolon() (+20 more)
+Cohesion: 0.08
+Nodes (39): An(), atrule(), beforeAfter(), block(), body(), comment(), decl(), document() (+31 more)
 
 ### Community 10 - "constructor"
-Cohesion: 0.20
-Nodes (12): constructor(), createTokenizer(), da(), mapResolve(), positionBy(), positionInside(), possible(), prefixeds() (+4 more)
+Cohesion: 0.15
+Nodes (17): constructor(), createTokenizer(), da(), isStretch(), load(), mapResolve(), old(), positionBy() (+9 more)
 
 ### Community 11 - "cb"
 Cohesion: 0.29
 Nodes (7): Ab(), Bb(), cb(), Context(), Ew(), fb(), zb()
 
-### Community 12 - ".walk"
-Cohesion: 0.17
-Nodes (11): addToError(), Nt(), rawBeforeClose(), rawBeforeComment(), rawBeforeOpen(), rawBeforeRule(), rawEmptyBody(), rawIndent() (+3 more)
+### Community 12 - "MainActivity.java"
+Cohesion: 0.47
+Nodes (4): MainActivity, android.os.Bundle, com.getcapacitor.BridgeActivity, Override
 
 ### Community 13 - "r"
-Cohesion: 0.15
-Nodes (20): _a(), ac(), Bo(), db(), ea(), eb(), ga(), gb() (+12 more)
+Cohesion: 0.16
+Nodes (19): _a(), ac(), Bo(), db(), ea(), eb(), ga(), gb() (+11 more)
 
-### Community 15 - "process"
-Cohesion: 0.15
-Nodes (14): Cc(), cleanBrackets(), group(), normalize(), normalizeUnit(), otherPrefixes(), parentPrefix(), prefixes() (+6 more)
+### Community 15 - "prefixes"
+Cohesion: 0.50
+Nodes (4): otherPrefixes(), parentPrefix(), prefixes(), withPrefix()
 
 ### Community 17 - "oldWebkit"
 Cohesion: 0.67
@@ -180,28 +178,28 @@ Cohesion: 0.67
 Nodes (3): go(), Ht(), sr()
 
 ### Community 19 - "error"
-Cohesion: 0.13
-Nodes (18): ao(), cy(), Dl(), dy(), error(), fromOffset(), fy(), G2() (+10 more)
+Cohesion: 0.11
+Nodes (21): ao(), cy(), Dl(), dy(), error(), fromOffset(), jC(), ky() (+13 more)
 
-### Community 20 - "_deleteIfExpired"
-Cohesion: 0.29
-Nodes (7): _deleteIfExpired(), _emitEvictions(), _entriesAscending(), entriesDescending(), _getOrDeleteIfExpired(), resize(), [Symbol.iterator]()
+### Community 20 - "_entriesAscending"
+Cohesion: 0.67
+Nodes (3): _emitEvictions(), _entriesAscending(), resize()
 
-### Community 21 - "t"
-Cohesion: 0.15
-Nodes (17): _assertThisInitialized(), Ec(), Fc(), gc(), ka(), qa(), t(), tb() (+9 more)
+### Community 21 - "Tween"
+Cohesion: 0.27
+Nodes (10): _assertThisInitialized(), gc(), qa(), Timeline(), Tween(), ua(), va(), w() (+2 more)
 
 ### Community 22 - "_d"
 Cohesion: 0.29
 Nodes (10): be(), _d(), fa(), ia(), ie(), je(), ke(), le() (+2 more)
 
-### Community 24 - "replace"
-Cohesion: 0.27
-Nodes (11): $d(), Jn(), Md(), rawBeforeDecl(), rawColon(), replace(), replaceValues(), walkDecls() (+3 more)
+### Community 24 - "aa"
+Cohesion: 0.40
+Nodes (5): aa(), ac(), bx(), sn(), wx()
 
 ### Community 25 - "package.json"
-Cohesion: 0.22
-Nodes (8): author, description, keywords, license, name, scripts, dev, version
+Cohesion: 0.08
+Nodes (24): author, dependencies, @capacitor/android, @capacitor/app, @capacitor/cli, @capacitor/core, @capacitor/splash-screen, @capacitor/status-bar (+16 more)
 
 ### Community 26 - "HypnoticStageEngine"
 Cohesion: 0.17
@@ -232,8 +230,8 @@ Cohesion: 0.29
 Nodes (6): cleanUrls, headers, outputDirectory, rewrites, $schema, trailingSlash
 
 ### Community 35 - "ul"
-Cohesion: 0.29
-Nodes (8): br(), comma(), ly(), mt(), pm(), ul(), uy(), zl()
+Cohesion: 0.40
+Nodes (6): br(), ly(), pm(), ul(), uy(), zl()
 
 ### Community 36 - "k2"
 Cohesion: 0.33
@@ -247,9 +245,9 @@ Nodes (4): async(), catch(), finally(), then()
 Cohesion: 0.70
 Nodes (5): Ah(), g_(), jo(), Sh(), y_()
 
-### Community 42 - "Pa"
-Cohesion: 0.67
-Nodes (3): OA(), Pa(), wk()
+### Community 42 - "gradlew"
+Cohesion: 0.83
+Nodes (3): gradlew script, die(), warn()
 
 ### Community 44 - "ja"
 Cohesion: 0.67
@@ -271,6 +269,10 @@ Nodes (3): cm(), mm(), rE()
 Cohesion: 0.67
 Nodes (3): gk(), Np(), yk()
 
+### Community 49 - "ka"
+Cohesion: 0.50
+Nodes (4): ka(), tb(), xa(), za()
+
 ### Community 50 - "gR"
 Cohesion: 1.00
 Nodes (3): gR(), M0(), Yu()
@@ -279,29 +281,37 @@ Nodes (3): gR(), M0(), Yu()
 Cohesion: 0.67
 Nodes (3): LS(), ro(), To()
 
-### Community 59 - "mg"
-Cohesion: 0.40
-Nodes (5): c2(), f2(), gg(), mg(), nm()
+### Community 52 - "xe"
+Cohesion: 0.50
+Nodes (4): Ud(), vd(), we(), xe()
+
+### Community 56 - "prefixQuery"
+Cohesion: 0.50
+Nodes (4): clean(), div(), prefixName(), prefixQuery()
+
+### Community 58 - "applyVariantOffset"
+Cohesion: 0.67
+Nodes (3): applyVariantOffset(), compare(), Lh()
 
 ## Knowledge Gaps
-- **17 isolated node(s):** `name`, `version`, `description`, `dev`, `keywords` (+12 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 109 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
-- **23 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **32 isolated node(s):** `name`, `version`, `description`, `dev`, `build` (+27 more)
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 131 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **18 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `t()` connect `t` to `prefixed`, `tailwindcss.js`, `gsap.min.js`, `stringify`, `push`, `r`, `zk`, `remove`, `decl`, `cb`, `r`, `process`, `gk`?**
-  _High betweenness centrality (0.161) - this node is a cross-community bridge._
-- **Why does `dr()` connect `push` to `tailwindcss.js`, `gsap.min.js`, `remove`, `_d`, `replace`?**
-  _High betweenness centrality (0.018) - this node is a cross-community bridge._
-- **Why does `J()` connect `push` to `tailwindcss.js`, `r`?**
-  _High betweenness centrality (0.010) - this node is a cross-community bridge._
+- **Why does `t()` connect `i` to `tailwindcss.js`, `gsap.min.js`, `stringify`, `K`, `push`, `decl`, `constructor`, `cb`, `r`, `gk`, `ka`, `Tween`?**
+  _High betweenness centrality (0.145) - this node is a cross-community bridge._
+- **Why does `dr()` connect `i` to `tailwindcss.js`, `gsap.min.js`, `push`, `xe`, `_d`?**
+  _High betweenness centrality (0.016) - this node is a cross-community bridge._
+- **Why does `J()` connect `i` to `push`, `has`, `tailwindcss.js`, `K`?**
+  _High betweenness centrality (0.009) - this node is a cross-community bridge._
 - **Are the 4 inferred relationships involving `add()` (e.g. with `l()` and `i()`) actually correct?**
   _`add()` has 4 INFERRED edges - model-reasoned connections that need verification._
 - **What connects `name`, `version`, `description` to the rest of the system?**
-  _17 weakly-connected nodes found - possible documentation gaps or missing edges._
-- **Should `v2` be split into smaller, more focused modules?**
-  _Cohesion score 0.14285714285714285 - nodes in this community are weakly interconnected._
+  _32 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **Should `has` be split into smaller, more focused modules?**
+  _Cohesion score 0.05387205387205387 - nodes in this community are weakly interconnected._
 - **Should `tailwindcss.js` be split into smaller, more focused modules?**
-  _Cohesion score 0.02666666666666667 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.02492997198879552 - nodes in this community are weakly interconnected._

@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">SANCKTUM ALKTAR</string>
+    <string name="title_activity_main">SANCKTUM ALKTAR</string>
+    <string name="package_name">com.mcpos.sancktumalktar</string>
+    <string name="custom_url_scheme">com.mcpos.sancktumalktar</string>
+</resources>

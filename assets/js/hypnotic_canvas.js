@@ -217,7 +217,9 @@ class HypnoticStageEngine {
   }
 
   resize() {
-    const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
+    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    const maxDpr = isMobile ? 1.25 : 1.5;
+    const dpr = Math.min(window.devicePixelRatio || 1, maxDpr);
     const w = Math.floor(window.innerWidth * dpr);
     const h = Math.floor(window.innerHeight * dpr);
 

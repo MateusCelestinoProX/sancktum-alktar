@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "SANCKTUM ALKTAR — Altar Digital & Energizador de Sigilos em Vidro e Magia",
   "scripts": {
-    "dev": "bunx serve ."
+    "dev": "bunx serve .",
+    "build": "rm -rf dist && mkdir -p dist && cp -r index.html assets backgrounds dist",
+    "android:sync": "bun run build && bunx cap sync android",
+    "android:build": "bun run android:sync && cd android && ./gradlew assembleDebug"
   },
   "keywords": [
     "sancktum",
@@ -17,5 +20,13 @@
     "vercel"
   ],
   "author": "Mateus Celestino <202405039459@alunos.estacio.br>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "@capacitor/android": "^8.6.0",
+    "@capacitor/app": "^8.1.2",
+    "@capacitor/cli": "^8.6.0",
+    "@capacitor/core": "^8.6.0",
+    "@capacitor/splash-screen": "^8.0.2",
+    "@capacitor/status-bar": "^8.0.4"
+  }
 }
