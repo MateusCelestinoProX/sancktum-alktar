@@ -853,22 +853,53 @@ html, body {
   -webkit-tap-highlight-color: transparent !important;
 }
 
-/* Safe Area Insets para Top Buttons */
+/* Background Cinemático com Vinheta Alquímica Suave */
+#cinematic-bg-container {
+  position: fixed !important;
+  inset: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  z-index: 0 !important;
+  overflow: hidden !important;
+  pointer-events: none !important;
+}
+
+.bg-cinematic-layer {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  transition: opacity 1.2s ease-in-out, filter 0.5s ease !important;
+  opacity: 0;
+}
+
+#bg-dim-overlay {
+  position: absolute !important;
+  inset: 0 !important;
+  background: radial-gradient(circle at center, rgba(4, 4, 6, 0.35) 0%, rgba(4, 4, 6, 0.65) 70%, rgba(2, 2, 4, 0.88) 100%) !important;
+  transition: background-color 0.4s ease !important;
+  pointer-events: none !important;
+}
+
+/* Safe Area Insets para Top Buttons (Desktop Default) */
 .glass-sound-btn {
-  top: max(1.25rem, calc(env(safe-area-inset-top, 0px) + 0.85rem)) !important;
-  left: max(1.25rem, calc(env(safe-area-inset-left, 0px) + 0.85rem)) !important;
+  top: max(1.5rem, calc(env(safe-area-inset-top, 0px) + 1rem)) !important;
+  left: max(1.5rem, calc(env(safe-area-inset-left, 0px) + 1rem)) !important;
   min-height: 48px !important;
 }
 
 .glass-fullscreen-btn {
-  top: max(1.25rem, calc(env(safe-area-inset-top, 0px) + 0.85rem)) !important;
-  right: max(1.25rem, calc(env(safe-area-inset-right, 0px) + 0.85rem)) !important;
+  top: max(1.5rem, calc(env(safe-area-inset-top, 0px) + 1rem)) !important;
+  right: max(1.5rem, calc(env(safe-area-inset-right, 0px) + 1rem)) !important;
   min-height: 48px !important;
 }
 
-/* Safe Area Insets para Dock Inferior */
+/* Safe Area Insets para Dock Inferior (Desktop Default) */
 .altar-dock {
-  bottom: max(1.6rem, calc(env(safe-area-inset-bottom, 0px) + 1.25rem)) !important;
+  bottom: max(2.2rem, calc(env(safe-area-inset-bottom, 0px) + 1.5rem)) !important;
   min-height: 56px !important;
 }
 
@@ -906,53 +937,192 @@ html, body {
   min-height: 48px !important;
 }
 
-@media (max-width: 640px) {
+/* ==========================================================================
+   MOBILE PORTRAIT (NATIVE ANDROID & SMARTPHONES)
+   ========================================================================== */
+@media (max-width: 640px) and (orientation: portrait), (max-width: 500px) {
+  /* Botões de Topo: Proteção Total contra Status Bar / Notches */
+  .glass-sound-btn, .glass-fullscreen-btn {
+    top: max(3.1rem, calc(env(safe-area-inset-top, 38px) + 0.85rem)) !important;
+    min-height: 42px !important;
+    padding: 0.45rem 0.85rem !important;
+    font-size: 0.72rem !important;
+    letter-spacing: 0.12em !important;
+    gap: 0.5rem !important;
+  }
+
+  .glass-sound-btn {
+    left: max(1rem, calc(env(safe-area-inset-left, 0px) + 0.75rem)) !important;
+  }
+
+  .glass-fullscreen-btn {
+    right: max(1rem, calc(env(safe-area-inset-right, 0px) + 0.75rem)) !important;
+  }
+
+  .sound-wave-icon, .fullscreen-icon-enter, .fullscreen-icon-exit {
+    width: 14px !important;
+    height: 14px !important;
+  }
+
+  /* Dock Inferior Ergonômico */
   .altar-dock {
-    width: min(92vw, 360px) !important;
-    bottom: max(1.25rem, calc(env(safe-area-inset-bottom, 0px) + 0.85rem)) !important;
-    padding: 0.5rem 0.85rem !important;
-    gap: 0.6rem !important;
+    width: min(88vw, 340px) !important;
+    bottom: max(2.5rem, calc(env(safe-area-inset-bottom, 24px) + 1.25rem)) !important;
+    padding: 0.42rem 0.75rem !important;
+    gap: 0.55rem !important;
+    min-height: 50px !important;
     justify-content: space-evenly !important;
   }
 
   .glass-dock-btn {
-    font-size: 0.82rem;
-    padding: 0.6rem 1.1rem;
-    letter-spacing: 0.12em;
-    min-height: 48px;
+    font-size: 0.8rem !important;
+    padding: 0.55rem 1.1rem !important;
+    letter-spacing: 0.13em !important;
+    min-height: 42px !important;
   }
 
-  .glass-fullscreen-btn {
-    padding: 0.55rem 0.95rem;
-    font-size: 0.75rem;
+  .dock-divider {
+    height: 18px !important;
+  }
+
+  /* Halo Central & Sigilo em Proporção Áurea Harmônica */
+  .sigils-overlay-layer {
+    width: min(68vw, 38vh, 275px) !important;
+    height: min(68vw, 38vh, 275px) !important;
+    aspect-ratio: 1 / 1 !important;
+  }
+
+  .sancktum-sigil-halo {
+    padding: 1.2rem !important;
+  }
+
+  .central-sacred-sigil {
+    max-width: 68% !important;
+    max-height: 74% !important;
+  }
+
+  /* Modais em Portrait */
+  .glass-modal-card {
+    width: min(92vw, 420px) !important;
+    padding: 1.5rem !important;
+    gap: 1.2rem !important;
+    border-radius: 20px !important;
   }
 
   .hero-title {
-    font-size: 2.2rem;
-    letter-spacing: 0.35em;
+    font-size: 2.1rem !important;
+    letter-spacing: 0.32em !important;
   }
 }
 
-/* Landscape Handling */
-@media (max-height: 520px) and (orientation: landscape) {
+/* ==========================================================================
+   LANDSCAPE MODE (MOBILE ULTRA-WIDE & ROTATED SCREENS)
+   ========================================================================== */
+@media (orientation: landscape) and (max-height: 600px), (max-height: 520px) {
+  /* Botões Topo em Landscape com Margem de Câmera Punch-Hole */
   .glass-sound-btn, .glass-fullscreen-btn {
-    top: max(0.5rem, env(safe-area-inset-top, 0px)) !important;
-    padding: 0.4rem 0.75rem !important;
-    font-size: 0.7rem !important;
-    min-height: 38px !important;
+    top: max(0.65rem, calc(env(safe-area-inset-top, 0px) + 0.4rem)) !important;
+    padding: 0.35rem 0.75rem !important;
+    font-size: 0.68rem !important;
+    min-height: 34px !important;
+    gap: 0.45rem !important;
   }
+
+  .glass-sound-btn {
+    left: max(3.5rem, calc(env(safe-area-inset-left, 0px) + 1.25rem)) !important;
+  }
+
+  .glass-fullscreen-btn {
+    right: max(3.5rem, calc(env(safe-area-inset-right, 0px) + 1.25rem)) !important;
+  }
+
+  .sound-wave-icon, .fullscreen-icon-enter, .fullscreen-icon-exit {
+    width: 13px !important;
+    height: 13px !important;
+  }
+
+  /* Dock Inferior em Landscape */
   .altar-dock {
-    bottom: max(0.5rem, env(safe-area-inset-bottom, 0px)) !important;
-    padding: 0.35rem 0.6rem !important;
-    min-height: 44px !important;
+    bottom: max(0.65rem, calc(env(safe-area-inset-bottom, 0px) + 0.4rem)) !important;
+    padding: 0.32rem 0.75rem !important;
+    min-height: 38px !important;
+    width: auto !important;
+    max-width: 360px !important;
+    gap: 0.6rem !important;
   }
+
   .glass-dock-btn {
-    padding: 0.4rem 0.8rem !important;
-    font-size: 0.75rem !important;
-    min-height: 40px !important;
+    padding: 0.35rem 0.95rem !important;
+    font-size: 0.72rem !important;
+    min-height: 32px !important;
+    letter-spacing: 0.12em !important;
   }
+
+  .dock-divider {
+    height: 16px !important;
+  }
+
+  /* Halo Central em Landscape: Perfeita Centralização e Proporção */
   .sigils-overlay-layer {
-    width: min(52vh, 45vw, 240px) !important;
-    height: min(52vh, 45vw, 240px) !important;
+    width: min(48vh, 26vw, 190px) !important;
+    height: min(48vh, 26vw, 190px) !important;
+    aspect-ratio: 1 / 1 !important;
+  }
+
+  .sancktum-sigil-halo {
+    padding: 0.85rem !important;
+  }
+
+  .central-sacred-sigil {
+    max-width: 66% !important;
+    max-height: 72% !important;
+  }
+
+  /* Modais Compactos em Landscape */
+  .glass-modal-card {
+    width: min(88vw, 540px) !important;
+    max-height: calc(100vh - 1.5rem) !important;
+    padding: 1rem 1.4rem !important;
+    gap: 0.7rem !important;
+    border-radius: 18px !important;
+  }
+
+  .modal-header {
+    padding-bottom: 0.5rem !important;
+  }
+
+  .modal-title {
+    font-size: 0.92rem !important;
+  }
+
+  .setting-group {
+    gap: 0.35rem !important;
+  }
+
+  .glass-select-input, .glass-action-btn {
+    min-height: 38px !important;
+    padding: 0.45rem 0.8rem !important;
+    font-size: 0.78rem !important;
+  }
+
+  .sigil-upload-box {
+    padding: 0.75rem !important;
+  }
+
+  .sigil-color-palette {
+    grid-template-columns: repeat(12, 1fr) !important;
+    gap: 0.35rem !important;
+    margin-top: 0.4rem !important;
+  }
+
+  .hero-content {
+    gap: 0.6rem !important;
+    padding: 1rem !important;
+  }
+
+  .hero-title {
+    font-size: 1.8rem !important;
+    letter-spacing: 0.3em !important;
   }
 }
+

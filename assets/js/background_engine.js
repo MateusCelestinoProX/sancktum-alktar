@@ -46,14 +46,23 @@ class BackgroundEngine {
     `;
 
     this.container.innerHTML = `
-      <div id="bg-layer-a" class="bg-cinematic-layer" style="position: absolute; inset: 0; background-size: cover; background-position: center; transition: opacity 1.2s ease-in-out, filter 0.5s ease; opacity: 0;"></div>
-      <div id="bg-layer-b" class="bg-cinematic-layer" style="position: absolute; inset: 0; background-size: cover; background-position: center; transition: opacity 1.2s ease-in-out, filter 0.5s ease; opacity: 0;"></div>
-      <div id="bg-dim-overlay" style="position: absolute; inset: 0; background-color: rgba(4, 4, 6, ${this.dimOpacity}); transition: background-color 0.4s ease;"></div>
+      <div id="bg-layer-a" class="bg-cinematic-layer"></div>
+      <div id="bg-layer-b" class="bg-cinematic-layer"></div>
+      <div id="bg-dim-overlay"></div>
     `;
 
     this.layerA = document.getElementById('bg-layer-a');
     this.layerB = document.getElementById('bg-layer-b');
     this.dimOverlay = document.getElementById('bg-dim-overlay');
+    this.updateDimOverlay();
+  }
+
+  updateDimOverlay() {
+    if (this.dimOverlay) {
+      const alpha = this.dimOpacity;
+      const alphaEdge = Math.min(0.98, alpha + 0.35);
+      this.dimOverlay.style.background = `radial-gradient(circle at center, rgba(4, 4, 6, ${alpha * 0.7}) 0%, rgba(4, 4, 6, ${alpha}) 65%, rgba(2, 2, 4, ${alphaEdge}) 100%)`;
+    }
   }
 
   async loadBackgroundsData() {
@@ -137,9 +146,7 @@ class BackgroundEngine {
 
   setDimOpacity(val) {
     this.dimOpacity = parseFloat(val);
-    if (this.dimOverlay) {
-      this.dimOverlay.style.backgroundColor = `rgba(4, 4, 6, ${this.dimOpacity})`;
-    }
+    this.updateDimOverlay();
   }
 
   setBlurAmount(val) {
