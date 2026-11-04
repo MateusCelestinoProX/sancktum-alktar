@@ -10,3 +10,4 @@ android/build/
 .gradle/
 *.apk
 !SANCKTUM-ALKTAR-Android.apk
+.env*
