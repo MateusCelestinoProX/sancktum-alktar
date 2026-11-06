@@ -212,56 +212,83 @@ html, body {
   position: fixed !important;
   inset: 0 !important;
   width: 100vw !important;
+  width: 100dvw !important;
   height: 100vh !important;
+  height: 100dvh !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  overflow: hidden;
-  z-index: 10;
-  pointer-events: none;
-}
-
-/* Canvas de Transe Shaders */
-.hypnotic-canvas {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 2;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 1.6s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-/* Quando energizando, o background do sistema é mantido 100% visível e cinematográfico */
-body.is-energizing #cinematic-bg-container {
-  opacity: 1 !important;
-  visibility: visible !important;
+  overflow: hidden !important;
+  z-index: 10 !important;
   pointer-events: none !important;
-  filter: brightness(0.85);
-  transition: filter 0.8s ease !important;
+  background: #000000 !important;
+}
+
+/* Canvas de Transe Shaders & Geometria - 100% Full Screen Imersivo */
+.hypnotic-canvas {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100vw !important;
+  width: 100dvw !important;
+  height: 100vh !important;
+  height: 100dvh !important;
+  z-index: 2 !important;
+  pointer-events: none !important;
+  opacity: 1 !important;
+  object-fit: cover !important;
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 #altar-stage-container.stage-energized {
-  background: transparent !important;
+  background: #000000 !important;
 }
 
 #altar-stage-container.stage-energized .hypnotic-canvas {
-  opacity: 1;
+  opacity: 1 !important;
 }
 
-/* Iframe de Vídeos Hipnóticos */
+/* Iframe de Vídeos Hipnóticos YouTube - 100% Full Screen Cover Sem Borda/Letterbox */
 .hypnotic-yt-iframe {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  border: none;
-  z-index: 2;
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) scale(1.08) !important;
+  width: 100vw !important;
+  width: 100dvw !important;
+  height: 56.25vw !important;
+  height: 56.25dvw !important;
+  min-height: 100vh !important;
+  min-height: 100dvh !important;
+  min-width: 177.78vh !important;
+  min-width: 177.78dvh !important;
+  border: none !important;
+  z-index: 2 !important;
   display: none;
-  pointer-events: none;
-  opacity: 0.85;
-  transform: scale(1.15);
+  pointer-events: none !important;
+  opacity: 1 !important;
+  background: #000000 !important;
+}
+
+@media (max-aspect-ratio: 16/9) {
+  .hypnotic-yt-iframe {
+    width: 177.78vh !important;
+    width: 177.78dvh !important;
+    height: 100vh !important;
+    height: 100dvh !important;
+    min-width: 177.78vh !important;
+    min-width: 177.78dvh !important;
+  }
+}
+
+@media (min-aspect-ratio: 16/9) {
+  .hypnotic-yt-iframe {
+    width: 100vw !important;
+    width: 100dvw !important;
+    height: 56.25vw !important;
+    height: 56.25dvw !important;
+    min-height: 56.25vw !important;
+    min-height: 56.25dvw !important;
+  }
 }
 
 /* Camada Central dos Sigilos - Absolute Dead Center */
@@ -360,8 +387,9 @@ body.is-energizing #cinematic-bg-container {
   z-index: 1000 !important;
   display: flex !important;
   align-items: center !important;
-  gap: 0.85rem !important;
-  padding: 0.55rem 0.95rem !important;
+  justify-content: center !important;
+  padding: 0.55rem 1.5rem !important;
+  width: auto !important;
   background: var(--glass-bg);
   backdrop-filter: var(--glass-blur);
   -webkit-backdrop-filter: var(--glass-blur);
@@ -853,34 +881,13 @@ html, body {
   -webkit-tap-highlight-color: transparent !important;
 }
 
-/* Background Cinemático com Vinheta Alquímica Suave */
-#cinematic-bg-container {
-  position: fixed !important;
-  inset: 0 !important;
-  width: 100vw !important;
-  height: 100vh !important;
-  z-index: 0 !important;
-  overflow: hidden !important;
-  pointer-events: none !important;
-}
-
-.bg-cinematic-layer {
-  position: absolute !important;
-  inset: 0 !important;
-  width: 100% !important;
-  height: 100% !important;
-  background-size: cover !important;
-  background-position: center center !important;
-  background-repeat: no-repeat !important;
-  transition: opacity 1.2s ease-in-out, filter 0.5s ease !important;
-  opacity: 0;
-}
-
+/* Background Cinemático Antigo Eliminado: Fundo é Exclusivamente o Energizador */
+#cinematic-bg-container,
+.bg-cinematic-layer,
 #bg-dim-overlay {
-  position: absolute !important;
-  inset: 0 !important;
-  background: radial-gradient(circle at center, rgba(4, 4, 6, 0.35) 0%, rgba(4, 4, 6, 0.65) 70%, rgba(2, 2, 4, 0.88) 100%) !important;
-  transition: background-color 0.4s ease !important;
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
   pointer-events: none !important;
 }
 
@@ -980,12 +987,13 @@ html, body {
 
   /* Dock Inferior Ergonômico */
   .altar-dock {
-    width: min(88vw, 340px) !important;
+    width: auto !important;
+    min-width: 180px !important;
+    max-width: 88vw !important;
     bottom: max(1.8rem, calc(env(safe-area-inset-bottom, 0px) + 1.1rem)) !important;
-    padding: 0.42rem 0.75rem !important;
-    gap: 0.55rem !important;
+    padding: 0.45rem 1.35rem !important;
     min-height: 50px !important;
-    justify-content: space-evenly !important;
+    justify-content: center !important;
   }
 
   .is-capacitor .altar-dock,

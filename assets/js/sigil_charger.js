@@ -55,6 +55,10 @@ class SigilChargerEngine {
     } catch (err) {
       console.warn('HypnoticStageEngine init warning:', err);
     }
+
+    // A tela de fundo é SEMPRE o energizador content ativo e em full screen desde o início
+    const initialPattern = this.patternSelect ? this.patternSelect.value : 'balatro';
+    this.applyPattern(initialPattern);
   }
 
   bindEvents() {
@@ -64,9 +68,7 @@ class SigilChargerEngine {
 
     if (this.patternSelect) {
       this.patternSelect.addEventListener('change', (e) => {
-        if (this.isCharging) {
-          this.applyPattern(e.target.value);
-        }
+        this.applyPattern(e.target.value);
       });
     }
 
@@ -153,22 +155,12 @@ class SigilChargerEngine {
         this.stageContainer.classList.add('stage-energized');
       }
 
-      // O background do sistema permanece visível e ativo em harmonia com a energia
-      if (window.backgroundEngine && typeof window.backgroundEngine.resumeSlideshow === 'function') {
-        window.backgroundEngine.resumeSlideshow();
-      }
-
       // Auto-fechar janela do energizador conforme ordem do usuário
       if (typeof window.closeAllAltarModals === 'function') {
         window.closeAllAltarModals();
       }
     } else {
       document.body.classList.remove('is-energizing');
-      if (this.hypnoticEngine) this.hypnoticEngine.stop();
-      if (this.ytIframe) {
-        this.ytIframe.style.display = 'none';
-        this.ytIframe.src = '';
-      }
       if (this.toggleChargeBtn) {
         this.toggleChargeBtn.textContent = 'Iniciar Energização';
         this.toggleChargeBtn.classList.remove('is-active-charging');
@@ -182,23 +174,19 @@ class SigilChargerEngine {
       if (this.stageContainer) {
         this.stageContainer.classList.remove('stage-energized');
       }
-
-      // Restaurar background do sistema
-      if (window.backgroundEngine && typeof window.backgroundEngine.resumeSlideshow === 'function') {
-        window.backgroundEngine.resumeSlideshow();
-      }
+      // O energizador permanece rodando como a tela de fundo full screen contínua
     }
   }
 
   applyPattern(pattern) {
     if (pattern.startsWith('yt_')) {
-      const videoId = this.ytVideos[pattern] || '4m58zTmoqkw';
+      const videoId = this.ytVideos[pattern] || 'QxzU3FBy57k';
       if (this.hypnoticEngine) this.hypnoticEngine.stop();
       if (this.ytIframe) {
         const origin = window.location.origin || 'https://sancktum-alktar.vercel.app';
         this.ytIframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
         this.ytIframe.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
-        this.ytIframe.src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}&controls=0&showinfo=0&rel=0&iv_load_policy=3&enablejsapi=1&origin=${encodeURIComponent(origin)}`;
+        this.ytIframe.src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}&controls=0&showinfo=0&rel=0&iv_load_policy=3&playsinline=1&modestbranding=1&enablejsapi=1&origin=${encodeURIComponent(origin)}`;
         this.ytIframe.style.display = 'block';
       }
     } else {
