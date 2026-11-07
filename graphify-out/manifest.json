@@ -6,21 +6,21 @@
     "semantic_hash": ""
   },
   "assets/js/background_engine.js": {
-    "mtime": 1794001991.7462723,
-    "seen": 1794002145.318163,
-    "ast_hash": "f9f4431bc22e5186be27c922ad8c4366",
+    "mtime": 1794012378.0150523,
+    "seen": 1794012408.9075048,
+    "ast_hash": "c779198ff9380e08597069e9473a252b",
     "semantic_hash": ""
   },
   "assets/js/hypnotic_canvas.js": {
-    "mtime": 1794001833.0975277,
-    "seen": 1794002145.3181639,
-    "ast_hash": "ef071e9dcfb721b53ff25e10dbd67401",
+    "mtime": 1794012378.017294,
+    "seen": 1794012408.907506,
+    "ast_hash": "e92673a25d4f49176401a24b07ed2919",
     "semantic_hash": ""
   },
   "assets/js/sigil_charger.js": {
-    "mtime": 1794001882.2748759,
-    "seen": 1794002145.318165,
-    "ast_hash": "b5ee3d69d2d395bb8ba688a1e8a5e913",
+    "mtime": 1794012378.0187616,
+    "seen": 1794012408.907507,
+    "ast_hash": "7aa57915583f785d476739a77140f31b",
     "semantic_hash": ""
   },
   "assets/js/vendor/gsap.min.js": {
@@ -60,9 +60,9 @@
     "semantic_hash": ""
   },
   "index.html": {
-    "mtime": 1794001977.065475,
-    "seen": 1794002145.318172,
-    "ast_hash": "b4897216146ac140f648dbdd0c61450f",
+    "mtime": 1794012378.028252,
+    "seen": 1794012408.9075131,
+    "ast_hash": "45fab5f3e10ff1c564430e6dff4ec312",
     "semantic_hash": ""
   },
   "assets/images/sigils/sancktum_alktar_original.png": {
@@ -469,7 +469,7 @@
   },
   "android/app/capacitor.build.gradle": {
     "mtime": 1794002004.4237456,
-    "seen": 1794002145.3181498,
+    "seen": 1794012408.907493,
     "ast_hash": "1be4d5126c15aeb8e9b206576f8fcf54",
     "semantic_hash": ""
   },
@@ -499,7 +499,7 @@
   },
   "android/capacitor.settings.gradle": {
     "mtime": 1794002004.4234788,
-    "seen": 1794002145.318157,
+    "seen": 1794012408.907499,
     "ast_hash": "439c1e5c5291c7f02fcf499427a73458",
     "semantic_hash": ""
   },

@@ -12,7 +12,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   
   <!-- Estilos Críticos Inlined para Garantia de Cache Zero e Renderização Imediata -->
-  <link rel="stylesheet" href="assets/css/styles.css?v=2.5">
+  <link rel="stylesheet" href="assets/css/styles.css?v=2.4">
   <link rel="icon" type="image/png" href="assets/images/sigils/sancktum_alktar_sigil.png">
   <link rel="apple-touch-icon" href="assets/images/sigils/sancktum_alktar_sigil.png">
   
@@ -84,11 +84,17 @@
   </main>
 
   <!-- ===================================================================
-       DOCK FLUTUANTE EM VIDRO LÍQUIDO
+       DOCK FLUTUANTE EM VIDRO LÍQUIDO (ESTRITAMENTE 2 BOTÕES)
        =================================================================== -->
   <nav class="altar-dock" aria-label="Navegação do Altar">
     <button type="button" class="glass-dock-btn" id="dock-btn-energizer" onclick="window.openAltarModal('modal-energizer')">
       Energizador
+    </button>
+
+    <div class="dock-divider"></div>
+
+    <button type="button" class="glass-dock-btn" id="dock-btn-backgrounds" onclick="window.openAltarModal('modal-backgrounds')">
+      Backgrounds
     </button>
   </nav>
 
@@ -132,6 +138,12 @@
           <optgroup label="Motores Geométricos 2D & 3D">
             <option value="caosphere_vortex">Vórtice Caosfera (8 Setas Sagradas)</option>
             <option value="ascii_sphere">Esfera ASCII 3D Quântica</option>
+          </optgroup>
+          <optgroup label="Atmosferas Fotográficas Exclusivas">
+            <option value="bg_caosphere">Coleção Caosfera (7 Obras de Arte)</option>
+            <option value="bg_celestial">Coleção Celestial (14 Obras Cósmicas)</option>
+            <option value="bg_horror">Coleção Abissal (21 Obras Ocultas)</option>
+            <option value="bg_satanic">Coleção Arcana (17 Obras Herméticas)</option>
           </optgroup>
           <optgroup label="Portais Sagrados do YouTube">
             <option value="yt_1">Viagem Fractal Multiverso</option>
@@ -185,7 +197,48 @@
     </div>
   </div>
 
+  <!-- ===================================================================
+       PAGE / MODAL: BACKGROUNDS & ATMOSFERA
+       =================================================================== -->
+  <div class="glass-modal-backdrop" id="modal-backgrounds" aria-hidden="true" onclick="window.handleModalBackdropClick(event, 'modal-backgrounds')">
+    <div class="glass-modal-card" onclick="event.stopPropagation()">
+      <div class="modal-header">
+        <h2 class="modal-title">Backgrounds & Atmosfera</h2>
+        <button type="button" class="modal-close-btn" onclick="window.closeAllAltarModals()" title="Fechar">✕</button>
+      </div>
 
+      <!-- Categoria de Fundo -->
+      <div class="setting-group">
+        <div class="setting-label-row">
+          <label class="setting-title" for="bg-category-select">Atmosfera de Fundo</label>
+        </div>
+        <select class="glass-select-input" id="bg-category-select">
+          <option value="caosphere">Caosfera</option>
+          <option value="celestial">Celestial</option>
+          <option value="horror">Abissal</option>
+          <option value="satanic">Arcano</option>
+        </select>
+      </div>
+
+      <!-- Escurecimento -->
+      <div class="setting-group">
+        <div class="setting-label-row">
+          <span class="setting-title">Escurecimento</span>
+          <span class="setting-val" id="bg-dim-val">52%</span>
+        </div>
+        <input type="range" class="glass-range-slider" id="bg-dim-slider" min="0.1" max="0.9" step="0.05" value="0.52">
+      </div>
+
+      <!-- Desfoque / Blur -->
+      <div class="setting-group">
+        <div class="setting-label-row">
+          <span class="setting-title">Desfoque Óptico</span>
+          <span class="setting-val" id="bg-blur-val">0px</span>
+        </div>
+        <input type="range" class="glass-range-slider" id="bg-blur-slider" min="0" max="20" step="1" value="0">
+      </div>
+    </div>
+  </div>
 
   <!-- Funções Globais Imediatas dos Modais (Imunes a atrasos de script) -->
   <script>
@@ -280,10 +333,11 @@
   </script>
 
   <!-- Scripts do Motor do Altar -->
-  <script src="assets/js/ambient_sound.js?v=2.5"></script>
-  <script src="assets/js/alchemical_colors.js?v=2.5"></script>
-  <script src="assets/js/hypnotic_canvas.js?v=2.5"></script>
-  <script src="assets/js/sigil_charger.js?v=2.5"></script>
+  <script src="assets/js/ambient_sound.js?v=2.4"></script>
+  <script src="assets/js/alchemical_colors.js?v=2.4"></script>
+  <script src="assets/js/hypnotic_canvas.js?v=2.4"></script>
+  <script src="assets/js/background_engine.js?v=2.4"></script>
+  <script src="assets/js/sigil_charger.js?v=2.4"></script>
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
@@ -356,8 +410,14 @@
               if (window.sigilChargerEngine && window.sigilChargerEngine.hypnoticEngine) {
                 window.sigilChargerEngine.hypnoticEngine.stop();
               }
+              if (window.backgroundEngine) {
+                window.backgroundEngine.pauseSlideshow();
+              }
             } else {
-              if (window.sigilChargerEngine) {
+              if (window.backgroundEngine) {
+                window.backgroundEngine.resumeSlideshow();
+              }
+              if (window.sigilChargerEngine && window.sigilChargerEngine.isCharging) {
                 const pattern = window.sigilChargerEngine.patternSelect ? window.sigilChargerEngine.patternSelect.value : 'balatro';
                 window.sigilChargerEngine.applyPattern(pattern);
               }

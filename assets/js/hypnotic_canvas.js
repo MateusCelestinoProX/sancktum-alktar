@@ -242,12 +242,24 @@ class HypnoticStageEngine {
   }
 
   start(mode = 'balatro') {
-    this.stop();
     this.currentMode = mode;
     this.isActive = true;
+    this.stop();
     this.resize();
 
-    // 1. Motores Geométricos 2D & 3D
+    // 1. Coleções de Fotos de Atmosfera Hipnótica
+    if (mode.startsWith('bg_')) {
+      const cat = mode.replace('bg_', '');
+      if (this.canvasWebGL) this.canvasWebGL.style.display = 'none';
+      if (this.canvas2D) this.canvas2D.style.display = 'none';
+      if (window.backgroundEngine && typeof window.backgroundEngine.setCategory === 'function') {
+        window.backgroundEngine.setCategory(cat);
+        window.backgroundEngine.resumeSlideshow();
+      }
+      return;
+    }
+
+    // 2. Motores Geométricos 2D & 3D
     if (mode === 'caosphere_vortex' || mode === 'ascii_sphere') {
       if (this.canvasWebGL) this.canvasWebGL.style.display = 'none';
       if (this.canvas2D) {
@@ -258,7 +270,7 @@ class HypnoticStageEngine {
       return;
     }
 
-    // 2. Shaders WebGL
+    // 3. Shaders WebGL
     if (this.canvas2D) this.canvas2D.style.display = 'none';
     if (this.canvasWebGL) {
       this.canvasWebGL.style.display = 'block';
