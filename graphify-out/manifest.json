@@ -18,9 +18,9 @@
     "semantic_hash": ""
   },
   "assets/js/sigil_charger.js": {
-    "mtime": 1794013170.6904306,
-    "seen": 1794013245.488359,
-    "ast_hash": "5ab2a8d6876313bf542a04dc15549e57",
+    "mtime": 1794014149.1657836,
+    "seen": 1794014339.605855,
+    "ast_hash": "fe5c917bd4729f565866040b2977b3f6",
     "semantic_hash": ""
   },
   "assets/js/vendor/gsap.min.js": {
@@ -60,9 +60,9 @@
     "semantic_hash": ""
   },
   "index.html": {
-    "mtime": 1794013222.5906153,
-    "seen": 1794013245.4883661,
-    "ast_hash": "7efa487c56618c21a549115dd25dfcaa",
+    "mtime": 1794014058.763596,
+    "seen": 1794014339.605862,
+    "ast_hash": "2ee852b7fc39ef1fa7f8935f13b96c89",
     "semantic_hash": ""
   },
   "assets/images/sigils/sancktum_alktar_original.png": {
@@ -468,8 +468,8 @@
     "semantic_hash": ""
   },
   "android/app/capacitor.build.gradle": {
-    "mtime": 1794002004.4237456,
-    "seen": 1794012408.907493,
+    "mtime": 1794014224.8906345,
+    "seen": 1794014339.60584,
     "ast_hash": "1be4d5126c15aeb8e9b206576f8fcf54",
     "semantic_hash": ""
   },
@@ -498,8 +498,8 @@
     "semantic_hash": ""
   },
   "android/capacitor.settings.gradle": {
-    "mtime": 1794002004.4234788,
-    "seen": 1794012408.907499,
+    "mtime": 1794014224.8903844,
+    "seen": 1794014339.6058471,
     "ast_hash": "439c1e5c5291c7f02fcf499427a73458",
     "semantic_hash": ""
   },

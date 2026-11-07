@@ -37,7 +37,6 @@ class SigilChargerEngine {
   initElements() {
     this.stageContainer = document.getElementById('altar-stage-container');
     this.stageOverlay = document.getElementById('sigils-overlay-layer');
-    this.stageCanvas = document.getElementById('hypnotic-stage-canvas');
     this.ytIframe = document.getElementById('hypnotic-yt-iframe');
 
     this.toggleChargeBtn = document.getElementById('toggle-charge-btn');
@@ -49,12 +48,6 @@ class SigilChargerEngine {
     this.resetSigilBtn = document.getElementById('reset-sigil-btn');
 
     this.dockEnergizerBtn = document.getElementById('dock-btn-energizer');
-
-    try {
-      this.hypnoticEngine = new HypnoticStageEngine('hypnotic-stage-canvas', 'hypnotic-2d-canvas');
-    } catch (err) {
-      console.warn('HypnoticStageEngine init warning:', err);
-    }
   }
 
   bindEvents() {
@@ -65,19 +58,7 @@ class SigilChargerEngine {
     if (this.patternSelect) {
       this.patternSelect.addEventListener('change', (e) => {
         if (this.isCharging) {
-          const newPat = e.target.value;
-          if (newPat.startsWith('bg_')) {
-            document.body.classList.add('is-energizing-photo');
-            if (window.backgroundEngine && typeof window.backgroundEngine.resumeSlideshow === 'function') {
-              window.backgroundEngine.resumeSlideshow();
-            }
-          } else {
-            document.body.classList.remove('is-energizing-photo');
-            if (window.backgroundEngine && typeof window.backgroundEngine.pauseSlideshow === 'function') {
-              window.backgroundEngine.pauseSlideshow();
-            }
-          }
-          this.applyPattern(newPat);
+          this.applyPattern(e.target.value);
         }
       });
     }
@@ -146,23 +127,14 @@ class SigilChargerEngine {
     this.isCharging = !this.isCharging;
 
     const altarHalo = document.querySelector('.sancktum-sigil-halo');
-    const pattern = this.patternSelect ? this.patternSelect.value : 'balatro';
+    const pattern = this.patternSelect ? this.patternSelect.value : 'yt_1';
 
     if (this.isCharging) {
       document.body.classList.add('is-energizing');
 
-      // Se o usuário selecionou uma coleção fotográfica, mantemos a foto específica visível
-      if (pattern.startsWith('bg_')) {
-        document.body.classList.add('is-energizing-photo');
-        if (window.backgroundEngine && typeof window.backgroundEngine.resumeSlideshow === 'function') {
-          window.backgroundEngine.resumeSlideshow();
-        }
-      } else {
-        // Para shaders WebGL, 2D/3D e YouTube: o background geral do sistema NÃO pode aparecer
-        document.body.classList.remove('is-energizing-photo');
-        if (window.backgroundEngine && typeof window.backgroundEngine.pauseSlideshow === 'function') {
-          window.backgroundEngine.pauseSlideshow();
-        }
+      // Ocultar 100% o background geral do sistema durante a energização
+      if (window.backgroundEngine && typeof window.backgroundEngine.pauseSlideshow === 'function') {
+        window.backgroundEngine.pauseSlideshow();
       }
 
       this.applyPattern(pattern);
@@ -186,8 +158,6 @@ class SigilChargerEngine {
       }
     } else {
       document.body.classList.remove('is-energizing');
-      document.body.classList.remove('is-energizing-photo');
-      if (this.hypnoticEngine) this.hypnoticEngine.stop();
       if (this.ytIframe) {
         this.ytIframe.style.display = 'none';
         this.ytIframe.src = '';
@@ -214,22 +184,13 @@ class SigilChargerEngine {
   }
 
   applyPattern(pattern) {
-    if (pattern.startsWith('yt_')) {
-      const videoId = this.ytVideos[pattern] || 'QxzU3FBy57k';
-      if (this.hypnoticEngine) this.hypnoticEngine.stop();
-      if (this.ytIframe) {
-        const origin = window.location.origin || 'https://sancktum-alktar.vercel.app';
-        this.ytIframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
-        this.ytIframe.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
-        this.ytIframe.src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}&controls=0&showinfo=0&rel=0&iv_load_policy=3&playsinline=1&modestbranding=1&enablejsapi=1&origin=${encodeURIComponent(origin)}`;
-        this.ytIframe.style.display = 'block';
-      }
-    } else {
-      if (this.ytIframe) {
-        this.ytIframe.style.display = 'none';
-        this.ytIframe.src = '';
-      }
-      if (this.hypnoticEngine) this.hypnoticEngine.start(pattern);
+    const videoId = this.ytVideos[pattern] || this.ytVideos['yt_1'] || 'QxzU3FBy57k';
+    if (this.ytIframe) {
+      const origin = window.location.origin || 'https://sancktum-alktar.vercel.app';
+      this.ytIframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
+      this.ytIframe.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
+      this.ytIframe.src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}&controls=0&showinfo=0&rel=0&iv_load_policy=3&playsinline=1&modestbranding=1&enablejsapi=1&origin=${encodeURIComponent(origin)}`;
+      this.ytIframe.style.display = 'block';
     }
   }
 

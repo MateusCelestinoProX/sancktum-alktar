@@ -12,7 +12,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   
   <!-- Estilos Críticos Inlined para Garantia de Cache Zero e Renderização Imediata -->
-  <link rel="stylesheet" href="assets/css/styles.css?v=2.6">
+  <link rel="stylesheet" href="assets/css/styles.css?v=2.7">
   <link rel="icon" type="image/png" href="assets/images/sigils/sancktum_alktar_sigil.png">
   <link rel="apple-touch-icon" href="assets/images/sigils/sancktum_alktar_sigil.png">
   
@@ -69,12 +69,6 @@
     <!-- Camada de Vídeo Hipnótico (YouTube Portals) -->
     <iframe id="hypnotic-yt-iframe" class="hypnotic-yt-iframe" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-    <!-- Camada de Shaders WebGL Canvas -->
-    <canvas id="hypnotic-stage-canvas" class="hypnotic-canvas"></canvas>
-
-    <!-- Camada de Canvas Hipnótico 2D (Caosfera & ASCII) -->
-    <canvas id="hypnotic-2d-canvas" class="hypnotic-canvas"></canvas>
-
     <!-- Camada do Sigilo Sagrado Central (Pre-renderizado no centro absoluto) -->
     <div class="sigils-overlay-layer" id="sigils-overlay-layer">
       <div class="sancktum-sigil-halo">
@@ -121,39 +115,13 @@
           <label class="setting-title" for="hypnotic-pattern-select">Padrão Hipnótico de Transe</label>
         </div>
         <select class="glass-select-input" id="hypnotic-pattern-select">
-          <optgroup label="Shaders WebGL Hipnóticos">
-            <option value="balatro">Balatro Esotérico</option>
-            <option value="ferrofluid">Ferrofluido Quântico</option>
-            <option value="metaballs">MetaBolas Alquímicas</option>
-            <option value="plasma">Plasma Astral</option>
-            <option value="splashcursor">Fluido Interativo</option>
-            <option value="prismaticburst">Dispersão Prismática</option>
-            <option value="aurora">Aurora Boreal Astral</option>
-            <option value="liquidether">Éter Líquido</option>
-            <option value="darkveil">Véu Noturno Abissal</option>
-            <option value="lighttunnel">Túnel de Luz Espiritual</option>
-            <option value="galaxybits">Malha Cósmica Galáctica</option>
-            <option value="ghostfibers">Fibras Fantasma Ocultas</option>
-          </optgroup>
-          <optgroup label="Motores Geométricos 2D & 3D">
-            <option value="caosphere_vortex">Vórtice Caosfera (8 Setas Sagradas)</option>
-            <option value="ascii_sphere">Esfera ASCII 3D Quântica</option>
-          </optgroup>
-          <optgroup label="Atmosferas Fotográficas Exclusivas">
-            <option value="bg_caosphere">Coleção Caosfera (7 Obras de Arte)</option>
-            <option value="bg_celestial">Coleção Celestial (14 Obras Cósmicas)</option>
-            <option value="bg_horror">Coleção Abissal (21 Obras Ocultas)</option>
-            <option value="bg_satanic">Coleção Arcana (17 Obras Herméticas)</option>
-          </optgroup>
-          <optgroup label="Portais Sagrados do YouTube">
-            <option value="yt_1">Viagem Fractal Multiverso</option>
-            <option value="yt_2">Viagem Interdimensional 4K</option>
-            <option value="yt_3">Exploração Psicodélica Profunda</option>
-            <option value="yt_4">Jornada de Cura Sagrada</option>
-            <option value="yt_5">Alucinação Transe Cósmico</option>
-            <option value="yt_6">Santuário Astral (Don't Be Afraid)</option>
-            <option value="yt_7">Chama da Vela Ritual</option>
-          </optgroup>
+          <option value="yt_1">Viagem Fractal Multiverso</option>
+          <option value="yt_2">Viagem Interdimensional 4K</option>
+          <option value="yt_3">Exploração Psicodélica Profunda</option>
+          <option value="yt_4">Jornada de Cura Sagrada</option>
+          <option value="yt_5">Alucinação Transe Cósmico</option>
+          <option value="yt_6">Santuário Astral (Don't Be Afraid)</option>
+          <option value="yt_7">Chama da Vela Ritual</option>
         </select>
       </div>
 
@@ -333,11 +301,10 @@
   </script>
 
   <!-- Scripts do Motor do Altar -->
-  <script src="assets/js/ambient_sound.js?v=2.6"></script>
-  <script src="assets/js/alchemical_colors.js?v=2.6"></script>
-  <script src="assets/js/hypnotic_canvas.js?v=2.6"></script>
-  <script src="assets/js/background_engine.js?v=2.6"></script>
-  <script src="assets/js/sigil_charger.js?v=2.6"></script>
+  <script src="assets/js/ambient_sound.js?v=2.7"></script>
+  <script src="assets/js/alchemical_colors.js?v=2.7"></script>
+  <script src="assets/js/background_engine.js?v=2.7"></script>
+  <script src="assets/js/sigil_charger.js?v=2.7"></script>
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
@@ -407,19 +374,14 @@
 
           App.addListener('appStateChange', ({ isActive }) => {
             if (!isActive) {
-              if (window.sigilChargerEngine && window.sigilChargerEngine.hypnoticEngine) {
-                window.sigilChargerEngine.hypnoticEngine.stop();
-              }
               if (window.backgroundEngine) {
                 window.backgroundEngine.pauseSlideshow();
               }
             } else {
-              if (window.backgroundEngine) {
-                window.backgroundEngine.resumeSlideshow();
-              }
-              if (window.sigilChargerEngine && window.sigilChargerEngine.isCharging) {
-                const pattern = window.sigilChargerEngine.patternSelect ? window.sigilChargerEngine.patternSelect.value : 'balatro';
-                window.sigilChargerEngine.applyPattern(pattern);
+              if (!document.body.classList.contains('is-energizing')) {
+                if (window.backgroundEngine) {
+                  window.backgroundEngine.resumeSlideshow();
+                }
               }
             }
           });

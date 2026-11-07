@@ -223,21 +223,6 @@ html, body {
   pointer-events: none !important;
 }
 
-/* Canvas de Transe Shaders & Geometria - 100% Full Screen Imersivo */
-.hypnotic-canvas {
-  position: absolute !important;
-  inset: 0 !important;
-  width: 100vw !important;
-  width: 100dvw !important;
-  height: 100vh !important;
-  height: 100dvh !important;
-  z-index: 2 !important;
-  pointer-events: none !important;
-  opacity: 0;
-  object-fit: cover !important;
-  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
 /* Quando energizando: o background geral do sistema FICA 100% OCULTO */
 body.is-energizing #cinematic-bg-container {
   opacity: 0 !important;
@@ -246,25 +231,8 @@ body.is-energizing #cinematic-bg-container {
   transition: opacity 0.4s ease, visibility 0.4s ease !important;
 }
 
-/* Exceção: caso o usuário escolha atmosferas fotográficas no próprio energizador */
-body.is-energizing.is-energizing-photo #cinematic-bg-container {
-  opacity: 1 !important;
-  visibility: visible !important;
-  pointer-events: none !important;
-  filter: brightness(0.85);
-  transition: opacity 0.4s ease, visibility 0.4s ease, filter 0.8s ease !important;
-}
-
 #altar-stage-container.stage-energized {
   background: #000000 !important;
-}
-
-body.is-energizing.is-energizing-photo #altar-stage-container.stage-energized {
-  background: transparent !important;
-}
-
-#altar-stage-container.stage-energized .hypnotic-canvas {
-  opacity: 1 !important;
 }
 
 /* Iframe de Vídeos Hipnóticos YouTube - 100% Full Screen Cover Sem Borda/Letterbox */

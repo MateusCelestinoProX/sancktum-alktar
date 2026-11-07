@@ -1249,7 +1249,7 @@
       "file_type": "code",
       "norm_label": ".applypattern()",
       "source_file": "assets/js/sigil_charger.js",
-      "source_location": "L193"
+      "source_location": "L216"
     },
     {
       "id": "assets_js_sigil_charger_sigilchargerengine_bindevents",
@@ -1285,7 +1285,7 @@
       "file_type": "code",
       "norm_label": ".handlefileupload()",
       "source_file": "assets/js/sigil_charger.js",
-      "source_location": "L286"
+      "source_location": "L309"
     },
     {
       "id": "assets_js_sigil_charger_sigilchargerengine_initelements",
@@ -1309,7 +1309,7 @@
       "file_type": "code",
       "norm_label": ".processimagetosigilmask()",
       "source_file": "assets/js/sigil_charger.js",
-      "source_location": "L213"
+      "source_location": "L236"
     },
     {
       "id": "assets_js_sigil_charger_sigilchargerengine_renderstageoverlay",
@@ -1321,7 +1321,7 @@
       "file_type": "code",
       "norm_label": ".renderstageoverlay()",
       "source_file": "assets/js/sigil_charger.js",
-      "source_location": "L103"
+      "source_location": "L115"
     },
     {
       "id": "assets_js_sigil_charger_sigilchargerengine_togglecharging",
@@ -1333,7 +1333,7 @@
       "file_type": "code",
       "norm_label": ".togglecharging()",
       "source_file": "assets/js/sigil_charger.js",
-      "source_location": "L133"
+      "source_location": "L145"
     },
     {
       "id": "assets_js_vendor_gsap_min_jd",
@@ -3625,7 +3625,7 @@
       "file_type": "code",
       "norm_label": ".initshaderprogram()",
       "source_file": "assets/js/hypnotic_canvas.js",
-      "source_location": "L319"
+      "source_location": "L320"
     },
     {
       "id": "assets_js_hypnotic_canvas_hypnoticstageengine_loop2d",
@@ -3637,7 +3637,7 @@
       "file_type": "code",
       "norm_label": ".loop2d()",
       "source_file": "assets/js/hypnotic_canvas.js",
-      "source_location": "L307"
+      "source_location": "L308"
     },
     {
       "id": "assets_js_hypnotic_canvas_hypnoticstageengine_loopwebgl",
@@ -3649,7 +3649,7 @@
       "file_type": "code",
       "norm_label": ".loopwebgl()",
       "source_file": "assets/js/hypnotic_canvas.js",
-      "source_location": "L639"
+      "source_location": "L640"
     },
     {
       "id": "assets_js_hypnotic_canvas_hypnoticstageengine_resize",
@@ -3661,7 +3661,7 @@
       "file_type": "code",
       "norm_label": ".resize()",
       "source_file": "assets/js/hypnotic_canvas.js",
-      "source_location": "L219"
+      "source_location": "L220"
     },
     {
       "id": "assets_js_hypnotic_canvas_hypnoticstageengine_start",
@@ -3673,7 +3673,7 @@
       "file_type": "code",
       "norm_label": ".start()",
       "source_file": "assets/js/hypnotic_canvas.js",
-      "source_location": "L244"
+      "source_location": "L245"
     },
     {
       "id": "assets_js_hypnotic_canvas_hypnoticstageengine_stop",
@@ -3685,7 +3685,7 @@
       "file_type": "code",
       "norm_label": ".stop()",
       "source_file": "assets/js/hypnotic_canvas.js",
-      "source_location": "L284"
+      "source_location": "L285"
     },
     {
       "id": "assets_js_vendor_gsap_min_aa",
@@ -10232,7 +10232,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "assets/js/hypnotic_canvas.js",
-      "source_location": "L247",
+      "source_location": "L248",
       "weight": 1.0
     },
     {
@@ -10244,7 +10244,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "assets/js/hypnotic_canvas.js",
-      "source_location": "L248",
+      "source_location": "L249",
       "weight": 1.0
     },
     {
@@ -10256,7 +10256,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "assets/js/hypnotic_canvas.js",
-      "source_location": "L269",
+      "source_location": "L270",
       "weight": 1.0
     },
     {
@@ -10268,7 +10268,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "assets/js/hypnotic_canvas.js",
-      "source_location": "L279",
+      "source_location": "L280",
       "weight": 1.0
     },
     {
@@ -10280,7 +10280,19 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "assets/js/hypnotic_canvas.js",
-      "source_location": "L281",
+      "source_location": "L282",
+      "weight": 1.0
+    },
+    {
+      "source": "assets_js_sigil_charger_sigilchargerengine_bindevents",
+      "target": "assets_js_sigil_charger_sigilchargerengine_renderstageoverlay",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "assets/js/sigil_charger.js",
+      "source_location": "L110",
       "weight": 1.0
     },
     {
@@ -10304,7 +10316,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "assets/js/sigil_charger.js",
-      "source_location": "L68",
+      "source_location": "L80",
       "weight": 1.0
     },
     {
@@ -10316,19 +10328,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "assets/js/sigil_charger.js",
-      "source_location": "L75",
-      "weight": 1.0
-    },
-    {
-      "source": "assets_js_sigil_charger_sigilchargerengine_bindevents",
-      "target": "assets_js_sigil_charger_sigilchargerengine_renderstageoverlay",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "assets/js/sigil_charger.js",
-      "source_location": "L98",
+      "source_location": "L87",
       "weight": 1.0
     },
     {
@@ -10376,7 +10376,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "assets/js/sigil_charger.js",
-      "source_location": "L291",
+      "source_location": "L314",
       "weight": 1.0
     },
     {
@@ -10388,7 +10388,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "assets/js/sigil_charger.js",
-      "source_location": "L300",
+      "source_location": "L323",
       "weight": 1.0
     },
     {
@@ -10400,7 +10400,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "assets/js/sigil_charger.js",
-      "source_location": "L141",
+      "source_location": "L168",
       "weight": 1.0
     },
     {
@@ -33652,7 +33652,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "assets/js/hypnotic_canvas.js",
-      "source_location": "L219",
+      "source_location": "L220",
       "weight": 1.0
     },
     {
@@ -33663,7 +33663,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "assets/js/hypnotic_canvas.js",
-      "source_location": "L244",
+      "source_location": "L245",
       "weight": 1.0
     },
     {
@@ -33674,7 +33674,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "assets/js/hypnotic_canvas.js",
-      "source_location": "L284",
+      "source_location": "L285",
       "weight": 1.0
     },
     {
@@ -33685,7 +33685,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "assets/js/hypnotic_canvas.js",
-      "source_location": "L307",
+      "source_location": "L308",
       "weight": 1.0
     },
     {
@@ -33696,7 +33696,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "assets/js/hypnotic_canvas.js",
-      "source_location": "L319",
+      "source_location": "L320",
       "weight": 1.0
     },
     {
@@ -33707,7 +33707,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "assets/js/hypnotic_canvas.js",
-      "source_location": "L639",
+      "source_location": "L640",
       "weight": 1.0
     },
     {
@@ -33718,7 +33718,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "assets/js/sigil_charger.js",
-      "source_location": "L103",
+      "source_location": "L115",
       "weight": 1.0
     },
     {
@@ -33729,7 +33729,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "assets/js/sigil_charger.js",
-      "source_location": "L133",
+      "source_location": "L145",
       "weight": 1.0
     },
     {
@@ -33740,7 +33740,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "assets/js/sigil_charger.js",
-      "source_location": "L193",
+      "source_location": "L216",
       "weight": 1.0
     },
     {
@@ -33751,7 +33751,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "assets/js/sigil_charger.js",
-      "source_location": "L213",
+      "source_location": "L236",
       "weight": 1.0
     },
     {
@@ -33762,7 +33762,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "assets/js/sigil_charger.js",
-      "source_location": "L286",
+      "source_location": "L309",
       "weight": 1.0
     },
     {
@@ -35176,5 +35176,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "80b57e92a267f323b5862ff55064c71ea60cfb88"
+  "built_at_commit": "bc3f561768b8a9c21b1c2a45f35af5a1a4bdcc64"
 }
