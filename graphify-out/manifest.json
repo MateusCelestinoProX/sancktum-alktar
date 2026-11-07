@@ -12,15 +12,15 @@
     "semantic_hash": ""
   },
   "assets/js/hypnotic_canvas.js": {
-    "mtime": 1794012378.017294,
-    "seen": 1794012408.907506,
-    "ast_hash": "e92673a25d4f49176401a24b07ed2919",
+    "mtime": 1794013191.1101682,
+    "seen": 1794013245.4883578,
+    "ast_hash": "553a6644c9e665b0d74910a451ab636b",
     "semantic_hash": ""
   },
   "assets/js/sigil_charger.js": {
-    "mtime": 1794012378.0187616,
-    "seen": 1794012408.907507,
-    "ast_hash": "7aa57915583f785d476739a77140f31b",
+    "mtime": 1794013170.6904306,
+    "seen": 1794013245.488359,
+    "ast_hash": "5ab2a8d6876313bf542a04dc15549e57",
     "semantic_hash": ""
   },
   "assets/js/vendor/gsap.min.js": {
@@ -60,9 +60,9 @@
     "semantic_hash": ""
   },
   "index.html": {
-    "mtime": 1794012378.028252,
-    "seen": 1794012408.9075131,
-    "ast_hash": "45fab5f3e10ff1c564430e6dff4ec312",
+    "mtime": 1794013222.5906153,
+    "seen": 1794013245.4883661,
+    "ast_hash": "7efa487c56618c21a549115dd25dfcaa",
     "semantic_hash": ""
   },
   "assets/images/sigils/sancktum_alktar_original.png": {

@@ -202,6 +202,7 @@ class HypnoticStageEngine {
 
   initListeners() {
     window.addEventListener('resize', () => this.resize());
+    window.addEventListener('orientationchange', () => setTimeout(() => this.resize(), 120));
 
     const updateMouse = (clientX, clientY) => {
       const rect = (this.canvasWebGL || this.canvas2D).getBoundingClientRect();

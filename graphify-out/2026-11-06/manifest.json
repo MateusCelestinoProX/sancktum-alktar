@@ -1,0 +1,686 @@
+{
+  "assets/data/backgrounds.json": {
+    "mtime": 1793724556.311037,
+    "seen": 1793724933.703203,
+    "ast_hash": "9b72fc2a2d60ffa8620a5cc435b34fc2",
+    "semantic_hash": ""
+  },
+  "assets/js/background_engine.js": {
+    "mtime": 1794012378.0150523,
+    "seen": 1794012408.9075048,
+    "ast_hash": "c779198ff9380e08597069e9473a252b",
+    "semantic_hash": ""
+  },
+  "assets/js/hypnotic_canvas.js": {
+    "mtime": 1794012378.017294,
+    "seen": 1794012408.907506,
+    "ast_hash": "e92673a25d4f49176401a24b07ed2919",
+    "semantic_hash": ""
+  },
+  "assets/js/sigil_charger.js": {
+    "mtime": 1794012378.0187616,
+    "seen": 1794012408.907507,
+    "ast_hash": "7aa57915583f785d476739a77140f31b",
+    "semantic_hash": ""
+  },
+  "assets/js/vendor/gsap.min.js": {
+    "mtime": 1793724566.5934916,
+    "seen": 1793724933.703209,
+    "ast_hash": "448deef673e4d919eb5592410f72533e",
+    "semantic_hash": ""
+  },
+  "assets/js/vendor/lucide.min.js": {
+    "mtime": 1793724566.595478,
+    "seen": 1793724933.7032099,
+    "ast_hash": "f66517b1c8b9bdce52080327a041f76f",
+    "semantic_hash": ""
+  },
+  "assets/js/vendor/tailwindcss.js": {
+    "mtime": 1793724566.5943942,
+    "seen": 1793724933.703211,
+    "ast_hash": "7a614b9a197e532c00d09a23b0996b5f",
+    "semantic_hash": ""
+  },
+  "package.json": {
+    "mtime": 1793751151.0759387,
+    "seen": 1793751734.013091,
+    "ast_hash": "03ee2a379902b0055c078fbc81a5b006",
+    "semantic_hash": ""
+  },
+  "vercel.json": {
+    "mtime": 1793729719.2786446,
+    "seen": 1793729904.6076071,
+    "ast_hash": "4c45bd10a613fc6593d58c9038ade2ac",
+    "semantic_hash": ""
+  },
+  "README.md": {
+    "mtime": 1793724898.248119,
+    "seen": 1793724933.703213,
+    "ast_hash": "be18173a7d5665215c4959ac4b759378",
+    "semantic_hash": ""
+  },
+  "index.html": {
+    "mtime": 1794012378.028252,
+    "seen": 1794012408.9075131,
+    "ast_hash": "45fab5f3e10ff1c564430e6dff4ec312",
+    "semantic_hash": ""
+  },
+  "assets/images/sigils/sancktum_alktar_original.png": {
+    "mtime": 1793724556.3313353,
+    "seen": 1793724933.7032142,
+    "ast_hash": "abaa2c7b0592658f9b204bfc78775833",
+    "semantic_hash": ""
+  },
+  "assets/images/sigils/sancktum_alktar_sigil.png": {
+    "mtime": 1793724688.0707657,
+    "seen": 1793724933.7032151,
+    "ast_hash": "a7f708ffe4a754c517ecdf4c96290619",
+    "semantic_hash": ""
+  },
+  "assets/images/sigils/sancktum_alktar_sigil.svg": {
+    "mtime": 1793724707.0077708,
+    "seen": 1793724933.703216,
+    "ast_hash": "5630f51915194e9df422f8e90b774a55",
+    "semantic_hash": ""
+  },
+  "assets/images/sigils/sancktum_alktar_sigil_4x.png": {
+    "mtime": 1793724667.1091158,
+    "seen": 1793724933.703216,
+    "ast_hash": "a7f708ffe4a754c517ecdf4c96290619",
+    "semantic_hash": ""
+  },
+  "backgrounds/caosphere/01cf923b40124aca09c611aae4472da3.webp": {
+    "mtime": 1793724556.083106,
+    "seen": 1793724933.7032168,
+    "ast_hash": "c7f8b172b23d6145ecb358247c4594a3",
+    "semantic_hash": ""
+  },
+  "backgrounds/caosphere/1a5f6cabaab34b9ef7b2b496e9ed5e3a.webp": {
+    "mtime": 1793724556.0809817,
+    "seen": 1793724933.703218,
+    "ast_hash": "3a604d9d3c36c049667236b6aa54fe96",
+    "semantic_hash": ""
+  },
+  "backgrounds/caosphere/3f42d59081a724c9f1a93d7864633073.jpg": {
+    "mtime": 1793724556.0846298,
+    "seen": 1793724933.703219,
+    "ast_hash": "f9b0124f397606059749dd5b9a7e6e15",
+    "semantic_hash": ""
+  },
+  "backgrounds/caosphere/443538587cf89e5d710c0e37013a0bc3.webp": {
+    "mtime": 1793724556.1121094,
+    "seen": 1793724933.703219,
+    "ast_hash": "9b686b2a153e697249383467f5c70c70",
+    "semantic_hash": ""
+  },
+  "backgrounds/caosphere/6749d5e84da725084f89788476e79006.webp": {
+    "mtime": 1793724556.1088672,
+    "seen": 1793724933.70322,
+    "ast_hash": "9e7a99bee700647d72e1bb9ceaadb51b",
+    "semantic_hash": ""
+  },
+  "backgrounds/caosphere/c1e25e5be96aeaabae4e13b377d6156e.webp": {
+    "mtime": 1793724556.110331,
+    "seen": 1793724933.703221,
+    "ast_hash": "9feb1a39225ee84f9267f912974facae",
+    "semantic_hash": ""
+  },
+  "backgrounds/caosphere/f6eed768aeae0875b9b6391d4c3158ec.webp": {
+    "mtime": 1793724556.0874784,
+    "seen": 1793724933.7032251,
+    "ast_hash": "2a7c1401ee5368a66ebe484af436ae91",
+    "semantic_hash": ""
+  },
+  "backgrounds/celestial/0508abd96471f097ef27467f3ec66453.jpg": {
+    "mtime": 1793724556.1618023,
+    "seen": 1793724933.703228,
+    "ast_hash": "0e915f890f3d49853bde5905e55a8680",
+    "semantic_hash": ""
+  },
+  "backgrounds/celestial/0800f1c906b4376ce42a1f448f9a604c.webp": {
+    "mtime": 1793724556.1464746,
+    "seen": 1793724933.703229,
+    "ast_hash": "ceda32fe58dc6e2556585a7761d35ad0",
+    "semantic_hash": ""
+  },
+  "backgrounds/celestial/0e6d23762e8ed4580284231ce6f83128.jpg": {
+    "mtime": 1793724556.156778,
+    "seen": 1793724933.70323,
+    "ast_hash": "a13c737ec48bb9bba58b9e0a3f94e21d",
+    "semantic_hash": ""
+  },
+  "backgrounds/celestial/1bf702aecdb9c85b94ffdef676a3a67d.jpg": {
+    "mtime": 1793724556.1218128,
+    "seen": 1793724933.7032309,
+    "ast_hash": "3db944c30e7457995a73a454c070915c",
+    "semantic_hash": ""
+  },
+  "backgrounds/celestial/2782cb0349b7c39017b4d1fa683dc595.jpg": {
+    "mtime": 1793724556.1638012,
+    "seen": 1793724933.7032309,
+    "ast_hash": "d1aabcbf2eca437425af6dc40a107598",
+    "semantic_hash": ""
+  },
+  "backgrounds/celestial/66a7ef301af4720894d5e61245a56567.webp": {
+    "mtime": 1793724556.151969,
+    "seen": 1793724933.703232,
+    "ast_hash": "d0d03cebfd22f4eb3960068b97787ad9",
+    "semantic_hash": ""
+  },
+  "backgrounds/celestial/9c6acc9400cf58594c0743fffa28d726.webp": {
+    "mtime": 1793724556.1548512,
+    "seen": 1793724933.703233,
+    "ast_hash": "b21649d9378a88e5c9e019035f7337cb",
+    "semantic_hash": ""
+  },
+  "backgrounds/celestial/a5024f7ad58dad4c1fc182c8e5a6dc4d.webp": {
+    "mtime": 1793724556.1534758,
+    "seen": 1793724933.703234,
+    "ast_hash": "e2ad70eb9c7d669dcd9fcca191a3a466",
+    "semantic_hash": ""
+  },
+  "backgrounds/celestial/db1dd6c7010f199bef7f75059a3b01af.jpg": {
+    "mtime": 1793724556.1423998,
+    "seen": 1793724933.7032351,
+    "ast_hash": "4e26ad508225bc1a6e5c58aeb7b85503",
+    "semantic_hash": ""
+  },
+  "backgrounds/celestial/download (1).png": {
+    "mtime": 1793724556.1188397,
+    "seen": 1793724933.703236,
+    "ast_hash": "94328e821842bd30c8148a006e86877c",
+    "semantic_hash": ""
+  },
+  "backgrounds/celestial/download.png": {
+    "mtime": 1793724556.1368642,
+    "seen": 1793724933.703237,
+    "ast_hash": "6d4a6e56c41c006982d26f78d647ee95",
+    "semantic_hash": ""
+  },
+  "backgrounds/celestial/eb88ab0cbc19b0fba3e1026a89d57525.webp": {
+    "mtime": 1793724556.1236453,
+    "seen": 1793724933.703237,
+    "ast_hash": "fb103290701e65759adfdc59f5dc1473",
+    "semantic_hash": ""
+  },
+  "backgrounds/celestial/ed3a82c8d56027877675e8b02e17ab1c.webp": {
+    "mtime": 1793724556.1441152,
+    "seen": 1793724933.7032378,
+    "ast_hash": "7010f696c52e17bcf237e1d265d6dffc",
+    "semantic_hash": ""
+  },
+  "backgrounds/celestial/f7523e541443a22985ba22fa9c8c1628.webp": {
+    "mtime": 1793724556.1500795,
+    "seen": 1793724933.703239,
+    "ast_hash": "dfc6bc5c3d12113841ec8070d7118213",
+    "semantic_hash": ""
+  },
+  "backgrounds/horror/003c5d86014cd8aa1ff30dbe1543c0da.webp": {
+    "mtime": 1793724556.2426922,
+    "seen": 1793724933.70324,
+    "ast_hash": "29677a9b86d4fd2b5a510ab4c0adb856",
+    "semantic_hash": ""
+  },
+  "backgrounds/horror/2941f755fb862e37906a44287051a29b.jpg": {
+    "mtime": 1793724556.2346842,
+    "seen": 1793724933.70324,
+    "ast_hash": "6cdb674b3a54fb40f68a52ad2524af33",
+    "semantic_hash": ""
+  },
+  "backgrounds/horror/4019dad1b409b39d0e77d22a3af7cbd5.jpg": {
+    "mtime": 1793724556.250542,
+    "seen": 1793724933.7032409,
+    "ast_hash": "be17aea205d880d5cb60de4d2d984715",
+    "semantic_hash": ""
+  },
+  "backgrounds/horror/4ced75c3cc110512fb1445850336c051.jpg": {
+    "mtime": 1793724556.240478,
+    "seen": 1793724933.703242,
+    "ast_hash": "0e68b0f7c90dccc372262ecfc81e308f",
+    "semantic_hash": ""
+  },
+  "backgrounds/horror/55577d69b9f3e5bce953d1006e000e27.jpg": {
+    "mtime": 1793724556.2295387,
+    "seen": 1793724933.703243,
+    "ast_hash": "d8afa7479165f02dad4dafd9fbd351e0",
+    "semantic_hash": ""
+  },
+  "backgrounds/horror/60ac8e782e9bd57f4c386ff619a2bca3.jpg": {
+    "mtime": 1793724556.1757114,
+    "seen": 1793724933.703244,
+    "ast_hash": "2b1714aa548aa16c8f73aab8de021a52",
+    "semantic_hash": ""
+  },
+  "backgrounds/horror/81edc7e3ce05d8ce025d3db98731c76e.webp": {
+    "mtime": 1793724556.2334363,
+    "seen": 1793724933.703244,
+    "ast_hash": "e5b4b0a7f741216a91d774f62ecd4fcc",
+    "semantic_hash": ""
+  },
+  "backgrounds/horror/865bfdae0556a3e7d540499b74bc636b.webp": {
+    "mtime": 1793724556.2444139,
+    "seen": 1793724933.703246,
+    "ast_hash": "2ab728c7db0a77eb648b33ce85250688",
+    "semantic_hash": ""
+  },
+  "backgrounds/horror/894c7f039743ea297bea379bbb3801dd.webp": {
+    "mtime": 1793724556.2315907,
+    "seen": 1793724933.703247,
+    "ast_hash": "39e2b7acd17db42835ea7481a9a34263",
+    "semantic_hash": ""
+  },
+  "backgrounds/horror/985cbc203999f0bf52a6e0a56a6c8470.jpg": {
+    "mtime": 1793724556.2369041,
+    "seen": 1793724933.703247,
+    "ast_hash": "ab3fd79b2ae1c6fdea82a4904e83e7af",
+    "semantic_hash": ""
+  },
+  "backgrounds/horror/aed2d5e7646eb8dc475a8eb04b41c907.jpg": {
+    "mtime": 1793724556.1786404,
+    "seen": 1793724933.7032478,
+    "ast_hash": "8fc90f346b7dbf2319710e3de533cb99",
+    "semantic_hash": ""
+  },
+  "backgrounds/horror/b5e9cabd02febdd2d132dc4611ae6fcc.webp": {
+    "mtime": 1793724556.2477443,
+    "seen": 1793724933.703249,
+    "ast_hash": "289b16ebf2bd124f388645a97514f70b",
+    "semantic_hash": ""
+  },
+  "backgrounds/horror/bb57108e16d5d2d914cda886c1a1d76a.webp": {
+    "mtime": 1793724556.2196891,
+    "seen": 1793724933.70325,
+    "ast_hash": "7a36d54da767366493cb68d7e171eb28",
+    "semantic_hash": ""
+  },
+  "backgrounds/horror/bd8ffaced7851d06a0d1a49fb2979f18.webp": {
+    "mtime": 1793724556.2277384,
+    "seen": 1793724933.703251,
+    "ast_hash": "ec20ec5cc5f70dcab63d8ad11f25d139",
+    "semantic_hash": ""
+  },
+  "backgrounds/horror/d5a0e88d3b71e0646b0ec036bfb96d07.jpg": {
+    "mtime": 1793724556.1735525,
+    "seen": 1793724933.703251,
+    "ast_hash": "27318177e4db1f27f644209885ca19c3",
+    "semantic_hash": ""
+  },
+  "backgrounds/horror/d6cf878e41d8fbdd101f5b6610de328f.jpg": {
+    "mtime": 1793724556.2263777,
+    "seen": 1793724933.703252,
+    "ast_hash": "d6cf878e41d8fbdd101f5b6610de328f",
+    "semantic_hash": ""
+  },
+  "backgrounds/horror/download (1).png": {
+    "mtime": 1793724556.1712024,
+    "seen": 1793724933.703253,
+    "ast_hash": "065d95c70a7ba532a8182dc4a6d0ace8",
+    "semantic_hash": ""
+  },
+  "backgrounds/horror/download.png": {
+    "mtime": 1793724556.2170045,
+    "seen": 1793724933.703254,
+    "ast_hash": "f25ee651e6a07072eb20365599a04fcb",
+    "semantic_hash": ""
+  },
+  "backgrounds/horror/e60ea63e7d141bcf4d5ffb2704fb0362.jpg": {
+    "mtime": 1793724556.2461686,
+    "seen": 1793724933.703254,
+    "ast_hash": "eb1f277a08b337b0e32b328aef880600",
+    "semantic_hash": ""
+  },
+  "backgrounds/horror/ea9eebbebf50356423886adeafccfe67.webp": {
+    "mtime": 1793724556.222146,
+    "seen": 1793724933.703255,
+    "ast_hash": "8d545d12af31f78e6f69db56794c129b",
+    "semantic_hash": ""
+  },
+  "backgrounds/horror/eb1f458de5cf75ab8d02c1b6dce8f0c9.jpg": {
+    "mtime": 1793724556.2241397,
+    "seen": 1793724933.7032561,
+    "ast_hash": "23e7468614697d180e32a90ebd30b885",
+    "semantic_hash": ""
+  },
+  "backgrounds/satanic/2bc8fe565448bd031b7ccb23d33d88f0.webp": {
+    "mtime": 1793724556.3037488,
+    "seen": 1793724933.703257,
+    "ast_hash": "021a9080d994e4aaef349206c32f1535",
+    "semantic_hash": ""
+  },
+  "backgrounds/satanic/2e51b81dadc1ceffadde3fcd0b3ae281.jpg": {
+    "mtime": 1793724556.2847514,
+    "seen": 1793724933.703257,
+    "ast_hash": "e51228bd73180e447c57570138082e5e",
+    "semantic_hash": ""
+  },
+  "backgrounds/satanic/3796a0463a3fbaae0751d95aede1de6c.jpg": {
+    "mtime": 1793724556.2575173,
+    "seen": 1793724933.703258,
+    "ast_hash": "2197ff60dec35371f7b145ac3174240a",
+    "semantic_hash": ""
+  },
+  "backgrounds/satanic/42f98e79224e8f3bd37aeb898b6a64d7.jpg": {
+    "mtime": 1793724556.299483,
+    "seen": 1793724933.703259,
+    "ast_hash": "52c1dc885975a946310c10f3da2571c1",
+    "semantic_hash": ""
+  },
+  "backgrounds/satanic/4e7783d3a7387b11e88cd5a9ae69f113.webp": {
+    "mtime": 1793724556.2748933,
+    "seen": 1793724933.70326,
+    "ast_hash": "923da3b69ab833dd01a299216b7c69a4",
+    "semantic_hash": ""
+  },
+  "backgrounds/satanic/503d7dda14a15629f38f173d3b7bc1f8.jpg": {
+    "mtime": 1793724556.2895498,
+    "seen": 1793724933.703261,
+    "ast_hash": "0c2be06a38f67637b592dec73126394b",
+    "semantic_hash": ""
+  },
+  "backgrounds/satanic/51eaf7ffd2f1bafa99df69451e07df0a.webp": {
+    "mtime": 1793724556.2806904,
+    "seen": 1793724933.7032619,
+    "ast_hash": "0935e92be46d3af2b8c7709c5e9a47bf",
+    "semantic_hash": ""
+  },
+  "backgrounds/satanic/79b895b4b2be2a8a219f1a66e5324141.jpg": {
+    "mtime": 1793724556.2911906,
+    "seen": 1793724933.7032619,
+    "ast_hash": "e4e71ffc9bfc7d32d9567ade0a266726",
+    "semantic_hash": ""
+  },
+  "backgrounds/satanic/7cf217285955275276f5fdc156b4a340.jpg": {
+    "mtime": 1793724556.2707767,
+    "seen": 1793724933.703263,
+    "ast_hash": "7668f9f24a086f687279f5ace9e75e7e",
+    "semantic_hash": ""
+  },
+  "backgrounds/satanic/86ab480b8028358c6734a827ba75a3c8.jpg": {
+    "mtime": 1793724556.2860775,
+    "seen": 1793724933.703264,
+    "ast_hash": "d7af0f2d3502d079d83f72fbd1dd8edb",
+    "semantic_hash": ""
+  },
+  "backgrounds/satanic/96638c1641cb71cf408e661499b718ea.webp": {
+    "mtime": 1793724556.287294,
+    "seen": 1793724933.703265,
+    "ast_hash": "4ad554a5181b6fc549227ba1efe64d6f",
+    "semantic_hash": ""
+  },
+  "backgrounds/satanic/9c4821fe46bf25acf2969b8f55a188a1.jpg": {
+    "mtime": 1793724556.2541952,
+    "seen": 1793724933.7032661,
+    "ast_hash": "80aec6d1e5c8fd4d22c0867d6b919d74",
+    "semantic_hash": ""
+  },
+  "backgrounds/satanic/a6502bace73ef4d7b0c93f65692d7a18.webp": {
+    "mtime": 1793724556.2726197,
+    "seen": 1793724933.7032661,
+    "ast_hash": "9044f1f5fa6f811335857a66a900fdc2",
+    "semantic_hash": ""
+  },
+  "backgrounds/satanic/ac83f5d00892a57ba722cfdd0085b815.jpg": {
+    "mtime": 1793724556.2944996,
+    "seen": 1793724933.703267,
+    "ast_hash": "3dd10ce7941ec2bf1e71e16ebfcea195",
+    "semantic_hash": ""
+  },
+  "backgrounds/satanic/b5144ee0141580f5ecbfc3b4b36371bc.webp": {
+    "mtime": 1793724556.3019807,
+    "seen": 1793724933.703268,
+    "ast_hash": "435f226dcb4827885baf0f33cd17d3a6",
+    "semantic_hash": ""
+  },
+  "backgrounds/satanic/d4009dda8610c8c0d5c38916f47f85c2.jpg": {
+    "mtime": 1793724556.2832801,
+    "seen": 1793724933.703269,
+    "ast_hash": "4f2630b1b5929f9af35e9d8ef93a6d85",
+    "semantic_hash": ""
+  },
+  "backgrounds/satanic/efbc207722ed5ff6ad604f17f5f56e4c.jpg": {
+    "mtime": 1793724556.2969594,
+    "seen": 1793724933.70327,
+    "ast_hash": "0f40644d9267bc5e92fb4b9248090157",
+    "semantic_hash": ""
+  },
+  "assets/js/alchemical_colors.js": {
+    "mtime": 1793741140.6650789,
+    "seen": 1793741560.512095,
+    "ast_hash": "e03f5bfbc4cb8549fe2e5c494d5506b8",
+    "semantic_hash": ""
+  },
+  "assets/js/ambient_sound.js": {
+    "mtime": 1793741119.0001888,
+    "seen": 1793741560.512096,
+    "ast_hash": "f209049f63edc50fa4570e3d4a887a4f",
+    "semantic_hash": ""
+  },
+  "assets/audio/mcp-subliminal.mp3": {
+    "mtime": 1793740951.185122,
+    "seen": 1793741560.5121589,
+    "ast_hash": "3164c11851fb965f96a0b6ad47af4719",
+    "semantic_hash": ""
+  },
+  "android/app/build.gradle": {
+    "mtime": 1793751303.5592232,
+    "seen": 1793751734.0130649,
+    "ast_hash": "df6e74bdbde521e5a99a680c0f631feb",
+    "semantic_hash": ""
+  },
+  "android/app/capacitor.build.gradle": {
+    "mtime": 1794002004.4237456,
+    "seen": 1794012408.907493,
+    "ast_hash": "1be4d5126c15aeb8e9b206576f8fcf54",
+    "semantic_hash": ""
+  },
+  "android/app/src/androidTest/java/com/getcapacitor/myapp/ExampleInstrumentedTest.java": {
+    "mtime": 1793204073.0,
+    "seen": 1793751734.01307,
+    "ast_hash": "fbaf7cc870c663eb52dcf218531c439d",
+    "semantic_hash": ""
+  },
+  "android/app/src/main/java/com/mcpos/sancktumalktar/MainActivity.java": {
+    "mtime": 1793751332.6324975,
+    "seen": 1793751734.013071,
+    "ast_hash": "295e2e0a92aab01cf9f12dd6b88d401c",
+    "semantic_hash": ""
+  },
+  "android/app/src/test/java/com/getcapacitor/myapp/ExampleUnitTest.java": {
+    "mtime": 1793204073.0,
+    "seen": 1793751734.0130718,
+    "ast_hash": "e91b4501c14da821682fa5c26a16d616",
+    "semantic_hash": ""
+  },
+  "android/build.gradle": {
+    "mtime": 1793204073.0,
+    "seen": 1793751734.0130718,
+    "ast_hash": "682315a426653617c6a74fc12bef55b6",
+    "semantic_hash": ""
+  },
+  "android/capacitor.settings.gradle": {
+    "mtime": 1794002004.4234788,
+    "seen": 1794012408.907499,
+    "ast_hash": "439c1e5c5291c7f02fcf499427a73458",
+    "semantic_hash": ""
+  },
+  "android/gradlew": {
+    "mtime": 1793204073.0,
+    "seen": 1793751734.013074,
+    "ast_hash": "794669d78aef1dd5c7d889ef618b311a",
+    "semantic_hash": ""
+  },
+  "android/settings.gradle": {
+    "mtime": 1793204073.0,
+    "seen": 1793751734.0130749,
+    "ast_hash": "f6cd925b3f859e23c3d819fe2459e0e4",
+    "semantic_hash": ""
+  },
+  "android/variables.gradle": {
+    "mtime": 1793204073.0,
+    "seen": 1793751734.013077,
+    "ast_hash": "4b3fce8ea2a515a9d2e47e74757172ec",
+    "semantic_hash": ""
+  },
+  "capacitor.config.json": {
+    "mtime": 1793751142.0691776,
+    "seen": 1793751734.0130901,
+    "ast_hash": "bdd478664d7e3210fbade8fa5b8fa42d",
+    "semantic_hash": ""
+  },
+  "android/app/src/main/res/drawable-land-hdpi/splash.png": {
+    "mtime": 1793204073.0,
+    "seen": 1793751734.013094,
+    "ast_hash": "f7a80786dd355bd39014e58027aa6e19",
+    "semantic_hash": ""
+  },
+  "android/app/src/main/res/drawable-land-mdpi/splash.png": {
+    "mtime": 1793204073.0,
+    "seen": 1793751734.013095,
+    "ast_hash": "acc976d4a36479233371a53021525c0c",
+    "semantic_hash": ""
+  },
+  "android/app/src/main/res/drawable-land-xhdpi/splash.png": {
+    "mtime": 1793204073.0,
+    "seen": 1793751734.0130959,
+    "ast_hash": "b8c72969bc1f78aab71a76035360d4af",
+    "semantic_hash": ""
+  },
+  "android/app/src/main/res/drawable-land-xxhdpi/splash.png": {
+    "mtime": 1793204073.0,
+    "seen": 1793751734.0130959,
+    "ast_hash": "f87e988387b07d843905f38b084929fb",
+    "semantic_hash": ""
+  },
+  "android/app/src/main/res/drawable-land-xxxhdpi/splash.png": {
+    "mtime": 1793204073.0,
+    "seen": 1793751734.013097,
+    "ast_hash": "055a69553b16b0bf5f72094a2e459fc7",
+    "semantic_hash": ""
+  },
+  "android/app/src/main/res/drawable-port-hdpi/splash.png": {
+    "mtime": 1793204073.0,
+    "seen": 1793751734.013098,
+    "ast_hash": "5eb10d16c81338abe8bbc033d49638a8",
+    "semantic_hash": ""
+  },
+  "android/app/src/main/res/drawable-port-mdpi/splash.png": {
+    "mtime": 1793204073.0,
+    "seen": 1793751734.013099,
+    "ast_hash": "d855a76a5070c8e6fcfd83a27549bdce",
+    "semantic_hash": ""
+  },
+  "android/app/src/main/res/drawable-port-xhdpi/splash.png": {
+    "mtime": 1793204073.0,
+    "seen": 1793751734.0131001,
+    "ast_hash": "df100b2a36bdb98b711cca58941728de",
+    "semantic_hash": ""
+  },
+  "android/app/src/main/res/drawable-port-xxhdpi/splash.png": {
+    "mtime": 1793204073.0,
+    "seen": 1793751734.0131001,
+    "ast_hash": "2c1b668364e815256f67b71dcdfa4d6e",
+    "semantic_hash": ""
+  },
+  "android/app/src/main/res/drawable-port-xxxhdpi/splash.png": {
+    "mtime": 1793204073.0,
+    "seen": 1793751734.013101,
+    "ast_hash": "b5b1b22b59abe686c1df0d74a423d034",
+    "semantic_hash": ""
+  },
+  "android/app/src/main/res/drawable/splash.png": {
+    "mtime": 1793204073.0,
+    "seen": 1793751734.013102,
+    "ast_hash": "acc976d4a36479233371a53021525c0c",
+    "semantic_hash": ""
+  },
+  "android/app/src/main/res/mipmap-hdpi/ic_launcher.png": {
+    "mtime": 1793806192.6661904,
+    "seen": 1793806754.998105,
+    "ast_hash": "f895a1f47c4371abdd13c88fea8aae78",
+    "semantic_hash": ""
+  },
+  "android/app/src/main/res/mipmap-hdpi/ic_launcher_foreground.png": {
+    "mtime": 1793806192.6776555,
+    "seen": 1793806754.9981089,
+    "ast_hash": "17556196eb58f72ecf86d73029855967",
+    "semantic_hash": ""
+  },
+  "android/app/src/main/res/mipmap-hdpi/ic_launcher_round.png": {
+    "mtime": 1793806192.6668193,
+    "seen": 1793806754.998112,
+    "ast_hash": "f895a1f47c4371abdd13c88fea8aae78",
+    "semantic_hash": ""
+  },
+  "android/app/src/main/res/mipmap-mdpi/ic_launcher.png": {
+    "mtime": 1793806192.6495166,
+    "seen": 1793806754.998115,
+    "ast_hash": "12d2fd9a4a84325a49fb0162fd9a7e91",
+    "semantic_hash": ""
+  },
+  "android/app/src/main/res/mipmap-mdpi/ic_launcher_foreground.png": {
+    "mtime": 1793806192.6586273,
+    "seen": 1793806754.9981172,
+    "ast_hash": "d8530108fe5dda1c7477f35f6cefeb52",
+    "semantic_hash": ""
+  },
+  "android/app/src/main/res/mipmap-mdpi/ic_launcher_round.png": {
+    "mtime": 1793806192.6499813,
+    "seen": 1793806754.9981198,
+    "ast_hash": "12d2fd9a4a84325a49fb0162fd9a7e91",
+    "semantic_hash": ""
+  },
+  "android/app/src/main/res/mipmap-xhdpi/ic_launcher.png": {
+    "mtime": 1793806192.6874847,
+    "seen": 1793806754.998122,
+    "ast_hash": "aa5ac3a312f4b045f55101e7a225f002",
+    "semantic_hash": ""
+  },
+  "android/app/src/main/res/mipmap-xhdpi/ic_launcher_foreground.png": {
+    "mtime": 1793806192.703247,
+    "seen": 1793806754.998125,
+    "ast_hash": "c8002170462bbf47b1b6520551c74aac",
+    "semantic_hash": ""
+  },
+  "android/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png": {
+    "mtime": 1793806192.6885586,
+    "seen": 1793806754.9981272,
+    "ast_hash": "aa5ac3a312f4b045f55101e7a225f002",
+    "semantic_hash": ""
+  },
+  "android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png": {
+    "mtime": 1793806192.717648,
+    "seen": 1793806754.9981298,
+    "ast_hash": "278c319a2559435cdc2c2ffc3001c48b",
+    "semantic_hash": ""
+  },
+  "android/app/src/main/res/mipmap-xxhdpi/ic_launcher_foreground.png": {
+    "mtime": 1793806192.7435493,
+    "seen": 1793806754.998133,
+    "ast_hash": "b28c358d909e99895f36b9e71c7c54f7",
+    "semantic_hash": ""
+  },
+  "android/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png": {
+    "mtime": 1793806192.7196176,
+    "seen": 1793806754.998136,
+    "ast_hash": "278c319a2559435cdc2c2ffc3001c48b",
+    "semantic_hash": ""
+  },
+  "android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png": {
+    "mtime": 1793806192.763622,
+    "seen": 1793806754.9981382,
+    "ast_hash": "b8d0dffc19dab85ba78965b496f77302",
+    "semantic_hash": ""
+  },
+  "android/app/src/main/res/mipmap-xxxhdpi/ic_launcher_foreground.png": {
+    "mtime": 1793806192.8061106,
+    "seen": 1793806754.9981408,
+    "ast_hash": "4fb6ea68506c6a7078a9df99dcbb03e9",
+    "semantic_hash": ""
+  },
+  "android/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png": {
+    "mtime": 1793806192.766405,
+    "seen": 1793806754.998144,
+    "ast_hash": "b8d0dffc19dab85ba78965b496f77302",
+    "semantic_hash": ""
+  }
+}

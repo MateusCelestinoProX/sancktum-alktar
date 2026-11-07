@@ -65,7 +65,19 @@ class SigilChargerEngine {
     if (this.patternSelect) {
       this.patternSelect.addEventListener('change', (e) => {
         if (this.isCharging) {
-          this.applyPattern(e.target.value);
+          const newPat = e.target.value;
+          if (newPat.startsWith('bg_')) {
+            document.body.classList.add('is-energizing-photo');
+            if (window.backgroundEngine && typeof window.backgroundEngine.resumeSlideshow === 'function') {
+              window.backgroundEngine.resumeSlideshow();
+            }
+          } else {
+            document.body.classList.remove('is-energizing-photo');
+            if (window.backgroundEngine && typeof window.backgroundEngine.pauseSlideshow === 'function') {
+              window.backgroundEngine.pauseSlideshow();
+            }
+          }
+          this.applyPattern(newPat);
         }
       });
     }
@@ -138,6 +150,21 @@ class SigilChargerEngine {
 
     if (this.isCharging) {
       document.body.classList.add('is-energizing');
+
+      // Se o usuário selecionou uma coleção fotográfica, mantemos a foto específica visível
+      if (pattern.startsWith('bg_')) {
+        document.body.classList.add('is-energizing-photo');
+        if (window.backgroundEngine && typeof window.backgroundEngine.resumeSlideshow === 'function') {
+          window.backgroundEngine.resumeSlideshow();
+        }
+      } else {
+        // Para shaders WebGL, 2D/3D e YouTube: o background geral do sistema NÃO pode aparecer
+        document.body.classList.remove('is-energizing-photo');
+        if (window.backgroundEngine && typeof window.backgroundEngine.pauseSlideshow === 'function') {
+          window.backgroundEngine.pauseSlideshow();
+        }
+      }
+
       this.applyPattern(pattern);
       if (this.toggleChargeBtn) {
         this.toggleChargeBtn.textContent = 'Pausar Energização';
@@ -153,17 +180,13 @@ class SigilChargerEngine {
         this.stageContainer.classList.add('stage-energized');
       }
 
-      // O background do sistema permanece visível e ativo em harmonia com a energia
-      if (window.backgroundEngine && typeof window.backgroundEngine.resumeSlideshow === 'function') {
-        window.backgroundEngine.resumeSlideshow();
-      }
-
       // Auto-fechar janela do energizador conforme ordem do usuário
       if (typeof window.closeAllAltarModals === 'function') {
         window.closeAllAltarModals();
       }
     } else {
       document.body.classList.remove('is-energizing');
+      document.body.classList.remove('is-energizing-photo');
       if (this.hypnoticEngine) this.hypnoticEngine.stop();
       if (this.ytIframe) {
         this.ytIframe.style.display = 'none';
@@ -183,7 +206,7 @@ class SigilChargerEngine {
         this.stageContainer.classList.remove('stage-energized');
       }
 
-      // Restaurar background do sistema
+      // Restaurar background geral do sistema no altar
       if (window.backgroundEngine && typeof window.backgroundEngine.resumeSlideshow === 'function') {
         window.backgroundEngine.resumeSlideshow();
       }
@@ -192,13 +215,13 @@ class SigilChargerEngine {
 
   applyPattern(pattern) {
     if (pattern.startsWith('yt_')) {
-      const videoId = this.ytVideos[pattern] || '4m58zTmoqkw';
+      const videoId = this.ytVideos[pattern] || 'QxzU3FBy57k';
       if (this.hypnoticEngine) this.hypnoticEngine.stop();
       if (this.ytIframe) {
         const origin = window.location.origin || 'https://sancktum-alktar.vercel.app';
         this.ytIframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
         this.ytIframe.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
-        this.ytIframe.src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}&controls=0&showinfo=0&rel=0&iv_load_policy=3&enablejsapi=1&origin=${encodeURIComponent(origin)}`;
+        this.ytIframe.src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}&controls=0&showinfo=0&rel=0&iv_load_policy=3&playsinline=1&modestbranding=1&enablejsapi=1&origin=${encodeURIComponent(origin)}`;
         this.ytIframe.style.display = 'block';
       }
     } else {
